@@ -1,6 +1,7 @@
 import { LinksFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
 import { getUrlOriginWithPath } from '~/utils';
 import styles from './_index.module.scss';
+import styles0 from './route.module.scss';
 
 export const loader = ({ request }: LoaderFunctionArgs) => {
     return { canonicalUrl: getUrlOriginWithPath(request.url) };
@@ -9,10 +10,15 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
 export default function HomePage() {
     return (
         <div className={styles.root}>
-            <h2 className={styles.title}>Welcome To App Homepage 🎉</h2>
+            <h2 className={styles.title}>OAK HILLS FARM </h2>
+            <img
+                src="https://intothewind.com/media/catalog/product/cache/dc3560df08734d00f5064f375c421c32/6/e/6ef6c8cf-3ed8-4f95-86a1-084b745e07d2.jpg"
+                alt=""
+                className={styles0.img1}
+            />
             <span className={styles.paragraph}>
-                Drag here elements from the Add Elements Panel
-                <br /> and style them using the Styles panel
+                Neigh dude
+                <br />
             </span>
         </div>
     );
