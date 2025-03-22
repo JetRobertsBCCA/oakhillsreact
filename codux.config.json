@@ -2,8 +2,12 @@
   "$schema": "https://wixplosives.github.io/codux-config-schema/codux.config.schema.json",
   "boardGlobalSetup": "./_codux/board-global-setup.ts",
   "componentsDiscovery": {
-    "include": ["src/**"],
-    "exclude": ["_codux/component-templates/**"]
+    "include": [
+      "src/**"
+    ],
+    "exclude": [
+      "_codux/component-templates/**"
+    ]
   },
   "boardsPath": "_codux/boards",
   "newComponent": {
@@ -21,7 +25,11 @@
       "title": "Install",
       "description": "Run install",
       "command": "npm i",
-      "trigger": ["checkout", "pull", "setup"]
+      "trigger": [
+        "checkout",
+        "pull",
+        "setup"
+      ]
     }
   },
   "styling": {
@@ -51,5 +59,13 @@
       "node:assert": false
     }
   },
-  "svgLoader": "both"
+  "svgLoader": "both",
+  "addPanel": {
+    "assets": [
+      "@codux-boards/react-bootstrap",
+      "@codux-boards/react-semantic",
+      "@codux-boards/react-nivo",
+      "@codux-boards/react-blueprint"
+    ]
+  }
 }
