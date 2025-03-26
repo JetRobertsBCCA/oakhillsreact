@@ -10,14 +10,19 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
 export default function HomePage() {
     return (
         <div className={styles.root}>
+            <nav className={styles0.nav1}>
+                <a href="/home">Home</a> | <a href="/projects">Projects</a> |{' '}
+                <a href="/about">About</a> | <a href="/contact">Contact Us</a>
+            </nav>
             <h2 className={styles.title}>OAK HILLS FARM </h2>
-            <img
-                src="https://intothewind.com/media/catalog/product/cache/dc3560df08734d00f5064f375c421c32/6/e/6ef6c8cf-3ed8-4f95-86a1-084b745e07d2.jpg"
-                alt=""
-                className={styles0.img1}
-            />
+            <p>
+                This is a placeholder paragraph. It is here to provide structure while you work on
+                your content. You can replace this text with your own words once you are ready.
+                Placeholders like this are great for visualizing the layout and flow of your
+                document before finalizing the content.
+                <button>Button</button>
+            </p>
             <span className={styles.paragraph}>
-                Neigh dude
                 <br />
             </span>
         </div>
