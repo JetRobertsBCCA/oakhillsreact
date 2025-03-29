@@ -18,7 +18,7 @@ export default function HomePage() {
                 </a>{' '}
                 |{' '}
                 <a href="/projects" className={styles0.a2}>
-                    Projects
+                    Events
                 </a>{' '}
                 |{' '}
                 <a href="/about" className={styles0.a3}>
@@ -395,7 +395,9 @@ export default function HomePage() {
                 />
                 <h1 className={styles0.aboutTitleText}>How to find us!</h1>
                 <h5 className={styles0.aboutSubtitleText}>Upcoming Events!</h5>
-                <div className={styles0.aboutContentText}>Location goes here </div>
+                <div className={styles0.aboutContentText}>
+                    Location goes here <a href="/">!</a>
+                </div>
                 <div className={styles0.aboutButtonCell}>
                     <button className={styles0.aboutButton}>Contact Info</button>
                 </div>
