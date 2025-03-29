@@ -7,7 +7,7 @@
 }
 .nav1 {
     height: 50px;
-    background-color: white;
+    background-color: w;
     background-image: none;
     background-position: 0% 0%;
     background-size: auto;
@@ -15,4 +15,337 @@
     background-attachment: scroll;
     background-origin: padding-box;
     background-clip: border-box;
+    border: 0px solid black;
+    border-radius: 66px;
+    position: static;
+    align-content: center;
+}
+.a1 {
+    font-family: Georgia, serif;
+    color: var(--white);
+    font-size: 25px;
+    background-color: #615047;
+    border-radius: 6px;
+    padding: 7px;
+}
+.a2 {
+    font-family: Georgia, serif;
+    color: var(--white);
+    font-size: 25px;
+    background-color: #615047;
+    border-radius: 6px;
+    padding: 7px;
+}
+.a3 {
+    font-family: Georgia, serif;
+    color: var(--white);
+    background-color: #615047;
+    font-size: 25px;
+    border-radius: 6px;
+    padding: 7px;
+}
+.a4 {
+    font-family: Georgia, serif;
+    background-color: #615047;
+    font-size: 25px;
+    color: var(--white);
+    border: 0px solid black;
+    border-radius: 6px;
+    padding: 7px;
+}
+.services {
+    display: flex;
+    padding: 76px;
+    background-image: linear-gradient(90deg, #e1e2ff 0%, #e3fbf9 100%);
+    gap: 60px;
+
+    @media (width <= 1024px) {
+        flex-direction: column;
+    }
+}
+
+.servicesTitle {
+    font-size: 47px;
+    line-height: 1.3em;
+    font-weight: 700;
+    padding-bottom: 16px;
+    color: #615047;
+}
+
+.servicesDescription {
+    font-size: 16px;
+    line-height: 1.6em;
+    padding-bottom: 28px;
+}
+
+.servicesContent {
+    min-width: 275px;
+}
+
+.servicesCards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media (width <= 768px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.servicesCard {
+    padding: 24px;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
+    min-width: 265px;
+}
+
+.servicesCardTitle {
+    font-size: 20px;
+    line-height: 1.5em;
+    font-weight: 700;
+    padding-bottom: 8px;
+}
+
+.servicesCardDescription {
+}
+
+.servicesCardIcon {
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin: 0 0 24px auto;
+}
+
+.servicesButton {
+    display: inline-flex;
+    padding: 10px 30px;
+    border: 5px solid #e6e0e0;
+    border-radius: 50px;
+    cursor: pointer;
+    background-color: #615047;
+    color: var(--white);
+    &:hover {
+        background-color: #000000;
+        border-color: #729991;
+        color: #ffffff;
+    }
+}
+.quotesSection {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.quotesSectionTitle {
+    font-size: 40px;
+    text-align: center;
+    font-weight: 700;
+    @media (width <= 480px) {
+        font-size: 22px;
+    }
+}
+
+.quotesCardsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    background-color: #d5d7d;
+    @media (width < 1024px) {
+        grid-template-columns: 1fr 1fr;
+    }
+    @media (width < 480px) {
+        grid-template-columns: 1fr;
+    }
+}
+.quoteCard {
+    padding: 24px;
+    border-radius: 12px;
+    background: #fafafa;
+    border: 1px solid #cecece;
+    @media (width < 1024px) {
+        padding: 16px;
+    }
+}
+
+.quoteRating {
+    display: flex;
+    gap: 4px;
+    justify-content: center;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.ratingStarIcon {
+    width: 20px;
+    height: 20px;
+
+    @media (width <= 768px) {
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.customerImage {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border-radius: 50px;
+    background-color: #d5d7d2;
+    @media (width <= 768px) {
+        width: 56px;
+        height: 56px;
+    }
+}
+
+.quotePerson {
+    display: flex;
+    gap: 8px;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.customerDetails {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+}
+
+.customerName {
+    font-weight: 600;
+    text-align: center;
+}
+
+.customerTitle {
+    color: #676767;
+    font-size: 14px;
+}
+
+.quoteText {
+    font-size: 20px;
+    line-height: 1.3;
+    text-wrap: pretty;
+    text-align: center;
+
+    @media (width <= 768px) {
+        font-size: 16px;
+    }
+}
+.p1 {
+    font-size: 25px;
+}
+.about {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 16px;
+    margin: 48px;
+    @media (width < 768px) {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr 1fr 0.5fr 1fr;
+    }
+
+    @media (width < 480px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.5fr;
+        margin: 20px;
+    }
+}
+
+.aboutImage {
+    height: 100%;
+    border-radius: 12px;
+}
+
+.aboutTitleText {
+    background-color: #e0e5fc;
+    font-size: 60px;
+    font-weight: 700;
+    grid-column: 2 / 4;
+    border-radius: 12px;
+    text-align: center;
+    align-content: center;
+    padding: 36px;
+
+    @media (width < 480px) {
+        grid-column: 1 / 1;
+        font-size: 20px;
+    }
+}
+
+.aboutSubtitleText {
+    text-align: center;
+    align-content: center;
+    border-radius: 12px;
+    background-color: #e0e5fc;
+    font-size: 24px;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+}
+
+.aboutContentText {
+    width: 100%;
+    background-color: #e0e5fc;
+    border-radius: 12px;
+    align-content: center;
+    line-height: 28px;
+    padding: 20px;
+    @media (width < 768px) {
+        grid-column: 2 / 4;
+    }
+    @media (width < 480px) {
+        grid-row: 4;
+        grid-column: 1;
+    }
+}
+
+.aboutButtonCell {
+    display: flex;
+    padding: 20px;
+    background-color: #e0e5fc;
+    border-radius: 12px;
+    justify-content: center;
+    align-items: center;
+
+    @media (width < 768px) {
+        grid-row: 3 / 4;
+        grid-column: 1 / 4;
+    }
+    @media (width < 480px) {
+        grid-row: 5;
+        grid-column: 1;
+    }
+}
+
+.aboutButton {
+    padding: 16px 26px;
+    border: 1px solid black;
+    border-radius: 32px;
+    background-color: transparent;
+}
+
+.aboutButton:hover {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.aboutSecondImage {
+    grid-column: 1 / 4;
+    max-height: 160px;
+    border-radius: 12px;
+    object-fit: cover;
+    width: 100%;
+
+    @media (width < 768px) {
+        grid-row: 4 / 4;
+        grid-column: 1 / 4;
+    }
+    @media (width < 480px) {
+        grid-row: 6;
+        grid-column: 1;
+    }
 }

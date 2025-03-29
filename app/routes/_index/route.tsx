@@ -10,21 +10,402 @@ export const loader = ({ request }: LoaderFunctionArgs) => {
 export default function HomePage() {
     return (
         <div className={styles.root}>
+            <span></span>
             <nav className={styles0.nav1}>
-                <a href="/home">Home</a> | <a href="/projects">Projects</a> |{' '}
-                <a href="/about">About</a> | <a href="/contact">Contact Us</a>
+                <div />
+                <a href="/home" className={styles0.a1}>
+                    Home
+                </a>{' '}
+                |{' '}
+                <a href="/projects" className={styles0.a2}>
+                    Projects
+                </a>{' '}
+                |{' '}
+                <a href="/about" className={styles0.a3}>
+                    About
+                </a>{' '}
+                |{' '}
+                <a href="/contact" className={styles0.a4}>
+                    Contact Us
+                </a>
             </nav>
-            <h2 className={styles.title}>OAK HILLS FARM </h2>
-            <p>
-                This is a placeholder paragraph. It is here to provide structure while you work on
-                your content. You can replace this text with your own words once you are ready.
-                Placeholders like this are great for visualizing the layout and flow of your
-                document before finalizing the content.
-                <button>Button</button>
+            <h2 className={styles.title}>Oak Hill Farms</h2>
+            <p className={styles0.p1}>
+                Boarding Lessons, Trail rides, Training, Birthday Parties<button></button>
             </p>
             <span className={styles.paragraph}>
+                <div className={styles0.services}>
+                    <div className={styles0.servicesContent}>
+                        <h2 className={styles0.servicesTitle}>Our Training Programs</h2>
+                        <p className={styles0.servicesDescription}>
+                            Horseback riding, Home Schooling, and More...
+                        </p>
+                        <a href="#a" className={styles0.servicesButton}>
+                            Sign up for programs here!
+                        </a>
+                    </div>
+                    <div className={styles0.servicesCards}>
+                        <div className={styles0.servicesCard}>
+                            <img
+                                className={styles0.servicesCardIcon}
+                                src="https://static.wixstatic.com/shapes/27eba2_d9c1368c073d449fb7f70d1f27cdd94a.svg"
+                                alt=""
+                            />
+                            <h6 className={styles0.servicesCardTitle}>Horse Boarding</h6>
+                            <p className={styles0.servicesCardDescription}>
+                                This is the space to describe the service and explain how customers
+                                or clients can benefit from it. It’s an opportunity to add a short
+                                description that includes relevant details.
+                            </p>
+                        </div>
+                        <div className={styles0.servicesCard}>
+                            <img
+                                className={styles0.servicesCardIcon}
+                                src="https://static.wixstatic.com/shapes/27eba2_81a4aae870434124b16c503e6ed35e04.svg"
+                                alt=""
+                            />
+                            <h6 className={styles0.servicesCardTitle}>Home Schooling</h6>
+                            <p className={styles0.servicesCardDescription}>
+                                This is the space to describe the service and explain how customers
+                                or clients can benefit from it. It’s an opportunity to add a short
+                                description that includes relevant details.
+                            </p>
+                        </div>
+                        <div className={styles0.servicesCard}>
+                            <img
+                                className={styles0.servicesCardIcon}
+                                src="https://static.wixstatic.com/shapes/27eba2_db3d5faaafdb48d8acc17eaa13c45dca.svg"
+                                alt=""
+                            />
+                            <h6 className={styles0.servicesCardTitle}>Private sessions</h6>
+                            <p className={styles0.servicesCardDescription}>
+                                This is the space to describe the service and explain how customers
+                                or clients can benefit from it. It’s an opportunity to add a short
+                                description that includes relevant details.
+                            </p>
+                        </div>
+                        <div className={styles0.servicesCard}>
+                            <img
+                                className={styles0.servicesCardIcon}
+                                src="https://static.wixstatic.com/shapes/27eba2_e55d51b82da445fd890f374888fd9bea.svg"
+                                alt=""
+                            />
+                            <h6 className={styles0.servicesCardTitle}>Horse Training</h6>
+                            <p className={styles0.servicesCardDescription}>
+                                This is the space to describe the service and explain how customers
+                                or clients can benefit from it. It’s an opportunity to add a short
+                                description that includes relevant details.
+                            </p>
+                        </div>
+                    </div>
+                </div>
                 <br />
             </span>
+            <span>
+                <div className={styles0.quotesSection}>
+                    <h2 className={styles0.quotesSectionTitle}>Our Horses</h2>
+                    <div className={styles0.quotesCardsContainer}>
+                        <div className={styles0.quoteCard}>
+                            <div className={styles0.quotePerson}>
+                                <img
+                                    src="https://static.wixstatic.com/media/11062b_2f4734e9d65b4847925a2a44148fe382~mv2.jpg/v1/fill/w_1620,h_1080,fp_0.49_0.48,q_85,usm_0.66_1.00_0.01,enc_pavif,quality_auto/Portrait%20with%20Beanie.jpg"
+                                    alt=""
+                                    className={styles0.customerImage}
+                                />
+                                <div className={styles0.customerDetails}>
+                                    <p className={styles0.customerName}>Horse 1</p>
+                                    <p className={styles0.customerTitle}>
+                                        Product Manager, Startup
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles0.quoteRating}>
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                            </div>
+                            <p className={styles0.quoteText}>
+                                &quot;I&apos;ve been using it for 3 years already! It changed the
+                                way I work and I can only recommend it! and this is just a little
+                                longer text&quot;
+                            </p>
+                        </div>
+                        <div className={styles0.quoteCard}>
+                            <div className={styles0.quotePerson}>
+                                <img
+                                    src="https://static.wixstatic.com/media/9f02946fed104b4890d595af25220904.jpg/v1/fill/w_1620,h_1080,fp_0.49_0.33,q_85,usm_0.66_1.00_0.01,enc_pavif,quality_auto/Smiling%20Girl.jpg"
+                                    alt=""
+                                    className={styles0.customerImage}
+                                />
+                                <div className={styles0.customerDetails}>
+                                    <p className={styles0.customerName}>Horse 2</p>
+                                    <p className={styles0.customerTitle}>
+                                        Customer Success, Startup
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles0.quoteRating}>
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                            </div>
+                            <p className={styles0.quoteText}>
+                                &quot;We can&apos;t imagine a better thing than this! A true
+                                lifesaver&quot;
+                            </p>
+                        </div>
+                        <div className={styles0.quoteCard}>
+                            <div className={styles0.quotePerson}>
+                                <img
+                                    src="https://static.wixstatic.com/media/11062b_2f4734e9d65b4847925a2a44148fe382~mv2.jpg/v1/fill/w_1620,h_1080,fp_0.49_0.48,q_85,usm_0.66_1.00_0.01,enc_pavif,quality_auto/Portrait%20with%20Beanie.jpg"
+                                    alt=""
+                                    className={styles0.customerImage}
+                                />
+                                <div className={styles0.customerDetails}>
+                                    <p className={styles0.customerName}>Horse 3</p>
+                                    <p className={styles0.customerTitle}>
+                                        Product Manager, Startup
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles0.quoteRating}>
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                            </div>
+                            <p className={styles0.quoteText}>
+                                &quot;I&apos;ve been using it for 3 years already! It changed the
+                                way I work and I can only recommend it! and this is just a little
+                                longer text&quot;
+                            </p>
+                        </div>
+                        <div className={styles0.quoteCard}>
+                            <div className={styles0.quotePerson}>
+                                <img
+                                    src="https://static.wixstatic.com/media/9f02946fed104b4890d595af25220904.jpg/v1/fill/w_1620,h_1080,fp_0.49_0.33,q_85,usm_0.66_1.00_0.01,enc_pavif,quality_auto/Smiling%20Girl.jpg"
+                                    alt=""
+                                    className={styles0.customerImage}
+                                />
+                                <div className={styles0.customerDetails}>
+                                    <p className={styles0.customerName}>Horse 4</p>
+                                    <p className={styles0.customerTitle}>
+                                        Customer Success, Startup
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles0.quoteRating}>
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                            </div>
+                            <p className={styles0.quoteText}>
+                                &quot;We can&apos;t imagine a better thing than this! A true
+                                lifesaver&quot;
+                            </p>
+                        </div>
+                        <div className={styles0.quoteCard}>
+                            <div className={styles0.quotePerson}>
+                                <img
+                                    src="https://static.wixstatic.com/media/11062b_2f4734e9d65b4847925a2a44148fe382~mv2.jpg/v1/fill/w_1620,h_1080,fp_0.49_0.48,q_85,usm_0.66_1.00_0.01,enc_pavif,quality_auto/Portrait%20with%20Beanie.jpg"
+                                    alt=""
+                                    className={styles0.customerImage}
+                                />
+                                <div className={styles0.customerDetails}>
+                                    <p className={styles0.customerName}>Horse 5</p>
+                                    <p className={styles0.customerTitle}>
+                                        Product Manager, Startup
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles0.quoteRating}>
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                            </div>
+                            <p className={styles0.quoteText}>
+                                &quot;I&apos;ve been using it for 3 years already! It changed the
+                                way I work and I can only recommend it! and this is just a little
+                                longer text&quot;
+                            </p>
+                        </div>
+                        <div className={styles0.quoteCard}>
+                            <div className={styles0.quotePerson}>
+                                <img
+                                    src="https://static.wixstatic.com/media/9f02946fed104b4890d595af25220904.jpg/v1/fill/w_1620,h_1080,fp_0.49_0.33,q_85,usm_0.66_1.00_0.01,enc_pavif,quality_auto/Smiling%20Girl.jpg"
+                                    alt=""
+                                    className={styles0.customerImage}
+                                />
+                                <div className={styles0.customerDetails}>
+                                    <p className={styles0.customerName}>Horse 6</p>
+                                    <p className={styles0.customerTitle}>
+                                        Customer Success, Startup
+                                    </p>
+                                </div>
+                            </div>
+                            <div className={styles0.quoteRating}>
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                                <img
+                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
+                                    alt=""
+                                    className={styles0.ratingStarIcon}
+                                />
+                            </div>
+                            <p className={styles0.quoteText}>
+                                &quot;We can&apos;t imagine a better thing than this! A true
+                                lifesaver&quot;
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </span>
+            <div className={styles0.about}>
+                <img
+                    src="https://static.wixstatic.com/media/8586f3_f6d2538ac6374f71b6dc29511c5cd1a3~mv2.png/v1/fill/w_960,h_689,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Frame%206.png"
+                    alt=""
+                    className={styles0.aboutImage}
+                />
+                <h1 className={styles0.aboutTitleText}>How to find us!</h1>
+                <h5 className={styles0.aboutSubtitleText}>Upcoming Events!</h5>
+                <div className={styles0.aboutContentText}>Location goes here </div>
+                <div className={styles0.aboutButtonCell}>
+                    <button className={styles0.aboutButton}>Contact Info</button>
+                </div>
+                <img
+                    src="https://static.wixstatic.com/media/8586f3_f6d2538ac6374f71b6dc29511c5cd1a3~mv2.png/v1/fill/w_960,h_689,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Frame%206.png"
+                    alt=""
+                    className={styles0.aboutSecondImage}
+                />
+            </div>
+            <span></span>
         </div>
     );
 }
