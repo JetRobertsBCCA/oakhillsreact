@@ -1,0 +1,139 @@
+.root {
+    margin: 0 auto;
+    padding: 2.3em 3em 2em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    border: 25px solid #615047;
+    border-radius: 30px;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: center;
+    background-color: var(--primary);
+    align-content: center;
+    color: #615047;
+    text-shadow: 3px 3px 2px rgba(0, 0, 0, 0), 3px 3px 2px rgba(0, 0, 0, 0);
+    font-family: Georgia, serif;
+    font-size: 20px;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    align-items: center;
+}
+
+.title {
+    font: var(--large-font);
+    color: #615047;
+    font-family: Georgia, serif;
+    box-shadow: 0 0 black;
+    text-decoration-color: #615047;
+    text-align: center;
+    font-weight: 700;
+    font-variant: normal;
+    font-stretch: normal;
+    text-shadow: 6.95px 7.19px 2px var(--white);
+    
+    margin-bottom: 2em;
+}
+
+.paragraph {
+    font-size: 12px;
+    margin-top: 80px;
+    gap: 3px;
+    justify-content: center;
+    font: var(--paragraph-font);
+    color: var(--black);
+
+    margin-bottom: 3em;
+}
+
+.detail {
+    font: var(--small-font);
+   
+    margin-bottom: 2em;
+}
+
+nav1 {
+    height: 50px;
+    background-color: w;
+    background-image: none;
+    background-position: 0% 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    border: 0px solid black;
+    border-radius: 66px;
+    position: static;
+    align-content: center;
+ 
+}
+
+.a1 {
+    font-family: Georgia, serif;
+    color: var(--white);
+    font-size: 25px;
+    background-color: #615047;
+    border-radius: 6px;
+    padding: 7px;
+}
+
+.a2 {
+    font-family: Georgia, serif;
+    color: var(--white);
+    font-size: 25px;
+    background-color: #615047;
+    border-radius: 6px;
+    padding: 7px;
+}
+
+.a3 {
+    font-family: Georgia, serif;
+    color: var(--white);
+    background-color: #615047;
+    font-size: 25px;
+    border-radius: 6px;
+    padding: 7px;
+}
+
+.a4 {
+    font-family: Georgia, serif;
+    background-color: #615047;
+    font-size: 25px;
+    color: var(--white);
+    border: 0px solid black;
+    border-radius: 6px;
+    padding: 7px;
+}
+
+.p1 {
+    font-family: Georgia, serif;
+    
+    margin-bottom: 2em;
+    margin-top: 50px;
+    font-size: 45px;
+}
+
+.header1 {
+    font-family: Georgia, serif;
+   
+    margin-bottom: 2em;
+}
+
+.div1 {
+    font-family: Georgia, serif;
+ 
+    margin-bottom: 2em;
+}
+
+.strong1 {
+    font-family: Georgia, serif;
+  
+    margin-bottom: 2em;
+}
+
+.div2 {
+    font-family: Georgia, serif;
+    
+    margin-bottom: 2em;
+}
