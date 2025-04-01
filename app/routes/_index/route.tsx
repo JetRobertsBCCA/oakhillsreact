@@ -2,6 +2,9 @@ import { LinksFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node
 import { getUrlOriginWithPath } from '~/utils';
 import styles from './_index.module.scss';
 import styles0 from './route.module.scss';
+import Pxl20250308163053898Jpg from '../../../src/assets/pxl_20250308_163053898.jpg';
+import Pxl20250308163137314Jpg from '../../../src/assets/pxl_20250308_163137314.jpg';
+import Pxl20250308162929633Jpg from '../../../src/assets/pxl_20250308_162929633.jpg';
 
 export const loader = ({ request }: LoaderFunctionArgs) => {
     return { canonicalUrl: getUrlOriginWithPath(request.url) };
@@ -99,10 +102,7 @@ export default function HomePage() {
                     <div className={styles0.quotesCardsContainer}>
                         <div className={styles0.quoteCard}>
                             <div className={styles0.quotePerson}>
-                                <img
-                                    src="https://static.wixstatic.com/media/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg/v1/fill/w_600,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg"
-                                    alt=""
-                                />
+                                <img src={Pxl20250308163053898Jpg} alt="" />
                                 <div className={styles0.customerDetails}>
                                     <p className={styles0.customerName}>Bella</p>
                                     <p className={styles0.customerTitle}>
@@ -143,10 +143,7 @@ export default function HomePage() {
                         </div>
                         <div className={styles0.quoteCard}>
                             <div className={styles0.quotePerson}>
-                                <img
-                                    src="https://static.wixstatic.com/media/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg/v1/fill/w_600,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg"
-                                    alt=""
-                                />
+                                <img src={Pxl20250308163137314Jpg} alt="" />
                                 <div className={styles0.customerDetails}>
                                     <p className={styles0.customerName}>Horse 2</p>
                                     <p className={styles0.customerTitle}>
@@ -187,10 +184,7 @@ export default function HomePage() {
                         </div>
                         <div className={styles0.quoteCard}>
                             <div className={styles0.quotePerson}>
-                                <img
-                                    src="https://static.wixstatic.com/media/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg/v1/fill/w_600,h_399,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/11062b_25e218a68cae48e98a21198d1280a6bd~mv2.jpg"
-                                    alt=""
-                                />
+                                <img src={Pxl20250308162929633Jpg} alt="" />
                                 <div className={styles0.customerDetails}>
                                     <p className={styles0.customerName}>Horse 3</p>
                                     <p className={styles0.customerTitle}>
