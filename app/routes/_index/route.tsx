@@ -1,313 +1,130 @@
-import { LinksFunction, LoaderFunctionArgs, MetaFunction } from '@remix-run/node';
-import { getUrlOriginWithPath } from '~/utils';
-import styles from './_index.module.scss';
-import styles0 from './route.module.scss';
-import Pxl20250308163053898Jpg from '../../../src/assets/pxl_20250308_163053898.jpg';
-import Pxl20250308163137314Jpg from '../../../src/assets/pxl_20250308_163137314.jpg';
-import Pxl20250308162929633Jpg from '../../../src/assets/pxl_20250308_162929633.jpg';
+import React from 'react';
+import { Link } from '@remix-run/react';
+import styles from './page.module.scss'; // it should link to is own css thing on the folders this is tempoary
+//we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
+//in case it interferes with quans code
 
-export const loader = ({ request }: LoaderFunctionArgs) => {
-    return { canonicalUrl: getUrlOriginWithPath(request.url) };
-};
-
-export default function HomePage() {
+export default function ContactUs() {
     return (
-        <div className={styles.root}>
-            <span></span>
-            <nav className={styles0.nav1}>
-                <div />
-                <a href="/home" className={styles0.a1}>
-                    Home
-                </a>{' '}
-                |{' '}
-                <a href="/projects" className={styles0.a2}>
-                    Events
-                </a>{' '}
-                |{' '}
-                <a href="/about" className={styles0.a3}>
-                    About
-                </a>{' '}
-                |{' '}
-                <a href="/contact" className={styles0.a4}>
-                    Contact Us
-                </a>
-            </nav>
-            <h2 className={styles.title}>Oak Hill Farms</h2>
-            <p className={styles0.p1}>
-                Boarding Lessons, Trail rides, Training, Birthday Parties<button></button>
-            </p>
-            <span className={styles.paragraph}>
-                <div className={styles0.services}>
-                    <div className={styles0.servicesContent}>
-                        <h2 className={styles0.servicesTitle}>Our Training Programs</h2>
-                        <p className={styles0.servicesDescription}>
-                            Horseback riding, Home Schooling, and More...
-                        </p>
-                        <a href="#a" className={styles0.servicesButton}>
-                            Sign up for programs here!
-                        </a>
-                    </div>
-                    <div className={styles0.servicesCards}>
-                        <div className={styles0.servicesCard}>
-                            <img
-                                className={styles0.servicesCardIcon}
-                                src="https://static.wixstatic.com/shapes/27eba2_d9c1368c073d449fb7f70d1f27cdd94a.svg"
-                                alt=""
-                            />
-                            <h6 className={styles0.servicesCardTitle}>Horse Boarding</h6>
-                            <p className={styles0.servicesCardDescription}>
-                                We fluently train riders from beginner to intermediate! 
-                            </p>
-                        </div>
-                        <div className={styles0.servicesCard}>
-                            <img
-                                className={styles0.servicesCardIcon}
-                                src="https://static.wixstatic.com/shapes/27eba2_81a4aae870434124b16c503e6ed35e04.svg"
-                                alt=""
-                            />
-                            <h6 className={styles0.servicesCardTitle}>Home Schooling</h6>
-                            <p className={styles0.servicesCardDescription}>
-                                Best homeschooling in the area! Offering a variety of classes.
-                            </p>
-                        </div>
-                        <div className={styles0.servicesCard}>
-                            <img
-                                className={styles0.servicesCardIcon}
-                                src="https://static.wixstatic.com/shapes/27eba2_db3d5faaafdb48d8acc17eaa13c45dca.svg"
-                                alt=""
-                            />
-                            <h6 className={styles0.servicesCardTitle}>Private sessions</h6>
-                            <p className={styles0.servicesCardDescription}>
-                                Each private sessions is a great way to get some 1 on 1 time.
-                            </p>
-                        </div>
-                        <div className={styles0.servicesCard}>
-                            <img
-                                className={styles0.servicesCardIcon}
-                                src="https://static.wixstatic.com/shapes/27eba2_e55d51b82da445fd890f374888fd9bea.svg"
-                                alt=""
-                            />
-                            <h6 className={styles0.servicesCardTitle}>Horse Training</h6>
-                            <p className={styles0.servicesCardDescription}>
-                                We have the best horse training in Mississippi!
-                            </p>
-                        </div>
+        <div className={styles.pageContainer}>
+            <div className={styles.headerBar}>
+                <div className={styles.headerContent}>
+                    <div className={styles.navRight}>
+                        <Link to="/routes/AboutUs" className={styles.navLinkRight}>
+                            About Us
+                        </Link>
+                        <Link to="/horses" className={styles.navLinkRight}>
+                            Our Horses
+                        </Link>
+                        <Link to="/" className={styles.navLinkRight}>
+                            Home
+                        </Link>
+                        <Link to="/events" className={styles.navLinkRight}>
+                            Events
+                        </Link>
+                        <Link to="/routes/ContactUs" className={styles.navLinkRight}>
+                            Contact Us
+                        </Link>
                     </div>
                 </div>
-                <br />
-            </span>
-            <span>
-                <div className={styles0.quotesSection}>
-                    <h2 className={styles0.quotesSectionTitle}>Our Horses</h2>
-                    <div className={styles0.quotesCardsContainer}>
-                        <div className={styles0.quoteCard}>
-                            <div className={styles0.quotePerson}>
-                                <img src={Pxl20250308163053898Jpg} alt="" />
-                                <div className={styles0.customerDetails}>
-                                    <p className={styles0.customerName}>Bella</p>
-                                    <p className={styles0.customerTitle}>
-                                        Product Manager, Startup
-                                    </p>
-                                </div>
-                            </div>
-                            <div className={styles0.quoteRating}>
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                            </div>
-                            <p className={styles0.quoteText}>
-                                I am a 3 y/o horse who loves being the life of the party!
-                            </p>
-                        </div>
-                        <div className={styles0.quoteCard}>
-                            <div className={styles0.quotePerson}>
-                                <img src={Pxl20250308163137314Jpg} alt="" />
-                                <div className={styles0.customerDetails}>
-                                    <p className={styles0.customerName}>Horse 2</p>
-                                    <p className={styles0.customerTitle}>
-                                        Customer Success, Startup
-                                    </p>
-                                </div>
-                            </div>
-                            <div className={styles0.quoteRating}>
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                            </div>
-                            <p className={styles0.quoteText}>
-                                I am a 7 y/o horse who pretty much the sheriff here!
-                            </p>
-                        </div>
-                        <div className={styles0.quoteCard}>
-                            <div className={styles0.quotePerson}>
-                                <img src={Pxl20250308162929633Jpg} alt="" />
-                                <div className={styles0.customerDetails}>
-                                    <p className={styles0.customerName}>Horse 3</p>
-                                    <p className={styles0.customerTitle}>
-                                        Product Manager, Startup
-                                    </p>
-                                </div>
-                            </div>
-                            <div className={styles0.quoteRating}>
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                                <img
-                                    src="https://static.wixstatic.com/media/27eba2_94cc08057c4a418cb015d71e8787618a~mv2.png"
-                                    alt=""
-                                    className={styles0.ratingStarIcon}
-                                />
-                            </div>
-                            <p className={styles0.quoteText}>
-                                I am just here for the free food and friends.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </span>
-            <div className={styles0.about}>
-                <img
-                    src="https://static.wixstatic.com/media/8586f3_f6d2538ac6374f71b6dc29511c5cd1a3~mv2.png/v1/fill/w_960,h_689,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Frame%206.png"
-                    alt=""
-                    className={styles0.aboutImage}
-                />
-                <h1 className={styles0.aboutTitleText}>How to find us!</h1>
-                <h5 className={styles0.aboutSubtitleText}>Upcoming Events!</h5>
-                <div className={styles0.aboutContentText}>
-                    Location goes here <a href="/">!</a>
-                </div>
-                <div className={styles0.aboutButtonCell}>
-                    <button className={styles0.aboutButton}>Contact Info</button>
-                </div>
-                <img
-                    src="https://static.wixstatic.com/media/8586f3_f6d2538ac6374f71b6dc29511c5cd1a3~mv2.png/v1/fill/w_960,h_689,al_c,q_90,usm_0.66_1.00_0.01,enc_auto/Frame%206.png"
-                    alt=""
-                    className={styles0.aboutSecondImage}
-                />
             </div>
-            <span></span>
+
+            <div className={styles.contactSection}>
+                <div className={styles.contentWrapper}>
+                    <h1 className={styles.mainHeading}>Oak Hill Farms</h1>
+                    <h2 className={styles.subHeading}>Contact Us</h2>
+
+                    <div className={styles.contactInfo}>
+                        <p>
+                            <strong>Phone:</strong>
+                            <br />
+                            (123) 456-7890
+                        </p>
+                        <p>
+                            <strong>Email:</strong>
+                            <br />
+                            info@oakhillfarms.com
+                        </p>
+                        <p>
+                            <strong>Business Hours:</strong>
+                            <br />
+                            Monday – Friday: 9:00 AM – 5:00 PM
+                            <br />
+                            Saturday: 10:00 AM – 3:00 PM
+                            <br />
+                            Sunday: Closed
+                        </p>
+                        <p>
+                            <strong>Social Media:</strong>
+                            <br />
+                            Follow us on our social media channels for the latest updates, events,
+                            and pictures!
+                        </p>
+                        <ul>
+                            <li>
+                                Facebook:{' '}
+                                <a
+                                    href="https://facebook.com/oakhillfarms"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    facebook.com/oakhillfarms
+                                </a>{' '}
+                                {/* Replace placeholder */}
+                            </li>
+                            <li>
+                                Instagram:{' '}
+                                <a
+                                    href="https://instagram.com/oakhillfarms"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    @oakhillfarms
+                                </a>{' '}
+                                {/* Replace placeholder */}
+                            </li>
+                            <li>
+                                Twitter:{' '}
+                                <a
+                                    href="https://twitter.com/oakhillfarms"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                >
+                                    @oakhillfarms
+                                </a>{' '}
+                                {/* Replace placeholder */}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div className={styles.locationSection}>
+                <div className={styles.locationContent}>
+                    <h2 className={styles.subHeading}>How to find us!</h2>
+                    <p className={styles.bodyText}>We are located in Water Valley MS</p>
+                    <Link to="/waitlist" className={styles.button}>
+                        Join Waitlist
+                    </Link>
+                </div>
+            </div>
+            <div className={styles.footerSection}>
+                <div className={styles.footerLinks}>
+                    <Link to="/pricing" className={styles.footerLink}>
+                        Pricing
+                    </Link>
+                    <Link to="/terms" className={styles.footerLink}>
+                        Terms &amp; Conditions
+                    </Link>
+                    <Link to="/refund-policy" className={styles.footerLink}>
+                        Refund Policy
+                    </Link>
+                    <Link to="/routes/ContactUs" className={styles.footerLink}>
+                        Contact Us
+                    </Link>
+                </div>
+                <div className={styles.copyright}>Copyright © 2025 Oak Hill Farm</div>
+            </div>
         </div>
     );
 }
-
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-    const title = 'Blank Starter';
-    const description = 'Welcome to the Blank Starter';
-    const imageUrl = 'https://website-starter.com/og-image.png';
-
-    return [
-        { title },
-        {
-            name: 'description',
-            content: description,
-        },
-        {
-            tagName: 'link',
-            rel: 'canonical',
-            href: data?.canonicalUrl,
-        },
-        {
-            property: 'robots',
-            content: 'index, follow',
-        },
-        {
-            property: 'og:title',
-            content: title,
-        },
-        {
-            property: 'og:description',
-            content: description,
-        },
-        {
-            property: 'og:image',
-            content: imageUrl,
-        },
-        {
-            name: 'twitter:card',
-            content: 'summary_large_image',
-        },
-        {
-            name: 'twitter:title',
-            content: title,
-        },
-        {
-            name: 'twitter:description',
-            content: description,
-        },
-        {
-            name: 'twitter:image',
-            content: imageUrl,
-        },
-    ];
-};
-
-export const links: LinksFunction = () => {
-    return [
-        {
-            rel: 'icon',
-            href: '/favicon.ico',
-            type: 'image/ico',
-        },
-    ];
-};

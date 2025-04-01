@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@remix-run/react';
-import styles from './page.module.scss'; // it should link to is own css thing on the folders this is tempoary
+import styles from './contactUs.module.scss'; // it should link to is own css thing on the folders this is tempoary
 //we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
 //in case it interferes with quans code
 
@@ -70,7 +70,7 @@ export default function ContactUs() {
                                 >
                                     facebook.com/oakhillfarms
                                 </a>{' '}
-                                {/* Replace placeholder */}
+                            
                             </li>
                             <li>
                                 Instagram:{' '}
@@ -81,7 +81,7 @@ export default function ContactUs() {
                                 >
                                     @oakhillfarms
                                 </a>{' '}
-                                {/* Replace placeholder */}
+                            
                             </li>
                             <li>
                                 Twitter:{' '}
@@ -92,7 +92,7 @@ export default function ContactUs() {
                                 >
                                     @oakhillfarms
                                 </a>{' '}
-                                {/* Replace placeholder */}
+                             
                             </li>
                         </ul>
                     </div>
