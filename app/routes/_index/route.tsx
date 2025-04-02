@@ -16,9 +16,6 @@ export default function ContactUs() {
                         <Link to="/horses" className={styles.navLinkRight}>
                             Our Horses
                         </Link>
-                        <Link to="/" className={styles.navLinkRight}>
-                            Home
-                        </Link>
                         <Link to="/events" className={styles.navLinkRight}>
                             Events
                         </Link>
@@ -110,18 +107,14 @@ export default function ContactUs() {
             </div>
             <div className={styles.footerSection}>
                 <div className={styles.footerLinks}>
-                    <Link to="/pricing" className={styles.footerLink}>
-                        Pricing
-                    </Link>
+                    <Link to="/pricing" className={styles.footerLink}></Link>
                     <Link to="/terms" className={styles.footerLink}>
                         Terms &amp; Conditions
                     </Link>
                     <Link to="/refund-policy" className={styles.footerLink}>
                         Refund Policy
                     </Link>
-                    <Link to="/routes/ContactUs" className={styles.footerLink}>
-                        Contact Us
-                    </Link>
+                    <Link to="/routes/ContactUs" className={styles.footerLink}></Link>
                 </div>
                 <div className={styles.copyright}>Copyright © 2025 Oak Hill Farm</div>
             </div>

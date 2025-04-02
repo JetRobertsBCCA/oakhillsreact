@@ -14,14 +14,12 @@ export default function Aboutus() {
             <div className={styles.headerBar}>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
-                        <Link to="/routes/AboutUs" className={styles.navLinkRight}>
-                            About Us
-                        </Link>
+                        <Link to="/routes/AboutUs" className={styles.navLinkRight}></Link>
                         <Link to="/horses" className={styles.navLinkRight}>
-                            Our Horses
+                            Home
                         </Link>
                         <Link to="/" className={styles.navLinkRight}>
-                            Home
+                            Our Horses
                         </Link>
                         <Link to="/events" className={styles.navLinkRight}>
                             Events
@@ -38,18 +36,14 @@ export default function Aboutus() {
             <div className={styles.locationSection}></div>
             <div className={styles.footerSection}>
                 <div className={styles.footerLinks}>
-                    <Link to="/pricing" className={styles.footerLink}>
-                        Pricing
-                    </Link>
+                    <Link to="/pricing" className={styles.footerLink}></Link>
                     <Link to="/terms" className={styles.footerLink}>
                         Terms &amp; Conditions
                     </Link>
                     <Link to="/refund-policy" className={styles.footerLink}>
                         Refund Policy
                     </Link>
-                    <Link to="/routes/ContactUs" className={styles.footerLink}>
-                        Contact Us
-                    </Link>
+                    <Link to="/routes/ContactUs" className={styles.footerLink}></Link>
                 </div>
                 <div className={styles.copyright}>Copyright © 2025 Oak Hill Farm</div>
             </div>
