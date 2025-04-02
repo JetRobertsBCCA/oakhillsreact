@@ -12,49 +12,48 @@ body {
 .pageContainer {
   background-color: #d4d6d1;
   color: #475569;
-  min-width: 100vw;
-  min-height: 100vh;
 }
 
 .headerBar {
   position: sticky;
   top: 15px;
+  left: 0;
+  width: 100%;
   background-color: rgba(97, 80, 71, 0.15);
   backdrop-filter: blur(10px);
   padding: 0;
   z-index: 100;
   box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.14);
   border-radius: 10px;
-  text-align: center;
-  width: 95%;
-  display: inline-block;
-  bottom: auto;
-  margin-top: 15px;
-  margin-bottom: 0;
-  align-content: center;
-  object-fit: fill;
-  flex-direction: row;
-  align-items: center;
-  flex-wrap: wrap;
-  max-width: 95%;
-  min-width: 95%;
-  right: auto;
-  justify-items: center;
-  justify-content: center;
-  left: 2.5%;
+  margin: 15px 20px 0 20px;
 }
 
 .headerContent {
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  position: static;
-  width: 95vw;
-  align-content: center;
+}
+
+.navLeft {
+  display: flex;
+  flex: 0 1 auto;
+}
+
+.navLinkLeft {
+  color: #475569;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 10px 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: rgb(36, 99, 235);
+    text-decoration: underline;
+  }
 }
 
 .navRight {
@@ -63,7 +62,6 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   gap: 5px;
-  text-align: start;
 }
 
 .navLinkRight {
@@ -78,10 +76,17 @@ body {
   transition: background-color 0.2s ease;
   display: inline-block;
   vertical-align: top;
+
+  &:hover {
+    background-color: rgba(97, 80, 71, 0.1);
+  }
 }
 
-.navLinkRight:hover {
-  background-color: rgba(97, 80, 71, 0.1);
+.aboutSection {
+  background-color: #d3d6d1;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
 }
 
 .contactSection {
@@ -89,7 +94,6 @@ body {
   padding: 80px 20px;
   display: flex;
   justify-content: center;
-  align-content: center;
 }
 
 .contentWrapper {
@@ -133,6 +137,16 @@ body {
   text-align: center;
 }
 
+.centerImage {
+  display: block;
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px auto 0;
+}
+
 .contactInfo {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.1rem;
@@ -142,33 +156,33 @@ body {
   text-align: left;
   margin-top: 10px;
   padding: 10px;
-}
 
-.contactInfo p {
-  margin-bottom: 1.5em;
-}
+  p {
+    margin-bottom: 1.5em;
+  }
 
-.contactInfo strong {
-  color: #333;
-}
+  strong {
+    color: #333;
+  }
 
-.contactInfo ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5em;
-}
+  ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5em;
+  }
 
-.contactInfo li {
-  margin-bottom: 0.8em;
-}
+  li {
+    margin-bottom: 0.8em;
+  }
 
-.contactInfo a {
-  color: #0056b3;
-  text-decoration: none;
-}
+  a {
+    color: #0056b3;
+    text-decoration: none;
 
-.contactInfo a:hover {
-  text-decoration: underline;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .locationSection {
@@ -190,19 +204,19 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0px 10px 15px 0 rgba(0, 0, 0, 0.07);
   background-color: white;
-}
 
-.locationContent .subHeading {
-  font-size: 2.5rem;
-  color: #615047;
-  margin-bottom: 10px;
-}
+  .subHeading {
+    font-size: 2.5rem;
+    color: #615047;
+    margin-bottom: 10px; 
+  }
 
-.locationContent .bodyText {
-  margin-top: 15px;
-  margin-bottom: 35px;
-  padding: 10px 0px;
-  max-width: 750px;
+  .bodyText {
+    margin-top: 15px; 
+    margin-bottom: 35px;
+    padding: 10px 0px;
+    max-width: 750px;
+  }
 }
 
 .button {
@@ -218,10 +232,10 @@ body {
   margin-top: 20px;
   transition: background-color 0.2s ease;
   vertical-align: top;
-}
 
-.button:hover {
-  background-color: #4e4039;
+  &:hover {
+    background-color: #4e4039;
+  }
 }
 
 .footerSection {
@@ -240,75 +254,78 @@ body {
   justify-content: center;
   gap: 30px;
   margin-bottom: 30px;
-  margin-top: 30px;
-  flex: 0 1 auto;
+  margin-top: 30px; 
+  flex: 0 1 auto; 
 }
 
 .footerLink {
   color: #475569;
   text-decoration: none;
   font-size: 0.95rem;
-  display: block;
-}
+  display: block; 
 
-.footerLink:hover {
-  text-decoration: underline;
-  color: #000;
+  &:hover {
+    text-decoration: underline;
+    color: #000;
+  }
 }
 
 .copyright {
-  color: rgb(36, 99, 235);
+  color: rgb(36, 99, 235); 
   font-size: 0.8rem;
-  opacity: 0.75;
+  opacity: 0.75; 
   text-align: center;
   padding: 10px;
   margin-top: 20px;
 }
 
+
+
 @media (max-width: 768px) {
+  .navLeft {
+    display: none;
+  }
   .headerContent {
-    justify-content: center;
+     justify-content: center; 
   }
 }
 
 @media (max-width: 480px) {
   .navRight {
-    min-width: 0px;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 5px;
+     min-width: 0px;
+     flex-wrap: wrap;
+     justify-content: center;
+     gap: 5px;
   }
   .headerBar {
-    margin-left: 0;
-    margin-right: 0;
-    padding-left: 0;
-    padding-right: 0;
+     margin-left: 0;
+     margin-right: 0;
+     padding-left: 0; 
+     padding-right: 0; 
   }
   .mainHeading {
     font-size: 2rem;
   }
   .subHeading {
-    font-size: 1rem;
+    font-size: 1rem; 
   }
   .bodyText {
     font-size: 1rem;
   }
   .contactInfo {
-    font-size: 1rem;
-    text-align: center;
-  }
+     font-size: 1rem;
+     text-align: center;
+   }
   .locationContent {
-    padding: 25px;
-  }
-  .locationContent .subHeading {
-    font-size: 1.8rem;
-  }
+      padding: 25px;
+      .subHeading {
+         font-size: 1.8rem; 
+      }
+   }
   .footerLinks {
-    gap: 10px 20px;
+      gap: 10px 20px;
   }
-  .contactSection,
-  .locationSection,
-  .footerSection {
-    padding: 60px 15px;
+  .contactSection, .locationSection, .footerSection {
+     padding: 60px 15px;
   }
 }
