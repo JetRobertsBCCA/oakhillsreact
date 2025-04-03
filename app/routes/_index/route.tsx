@@ -2,7 +2,9 @@ import React from 'react';
 import { Link } from '@remix-run/react';
 import styles from './home.module.scss';
 import classes from './route.module.scss';
-import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg'; // it should link to is own css thing on the folders this is tempoary
+import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg';
+import OakfarmlogoTesterPng from '../../../src/assets/oakfarmlogo_tester.png';
+import classNames from 'classnames'; // it should link to is own css thing on the folders this is tempoary
 //we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
 //in case it interferes with quans code
 
@@ -29,9 +31,10 @@ export default function ContactUs() {
             </div>
 
             <div className={styles.footerSection}>
-                <h1 className="largeFont">Oak Hill Farms</h1>
-                <h1>Boarding Lessons, Trail rides, Training, Birthday Parties</h1>
-                <button>Sign up for events here!</button>
+                <h1 className={classNames('largeFont', classes.header2)}>Oak Hill Farms</h1>
+                <h1 className={classes.header1}>
+                    Boarding Lessons, Trail rides, Training, Birthday Parties
+                </h1>
                 <div className={classes.heroImage}>
                     <img
                         src={Pxl20250308162929633Copy1Jpg}
@@ -52,7 +55,9 @@ export default function ContactUs() {
                             equestrian companion, we invite you to experience the beauty and
                             tranquility of Oak Hill Farms.
                         </p>
-                        <button className={classes.heroImageExploreButton}>Explore</button>
+                        <button className={classes.heroImageExploreButton}>
+                            View our horses here! 
+                        </button>
                     </div>
                 </div>
                 <div className={classes.pricing}>
@@ -64,9 +69,7 @@ export default function ContactUs() {
                                     Horse Boarding Lessons
                                 </h2>
                                 <h1 className={classes.pricingHeaderCost}>$150</h1>
-                                <p className={classes.pricingHeaderDescription}>
-                                    Valid for 3 months
-                                </p>
+                                <p className={classes.pricingHeaderDescription}></p>
                             </div>
                             <ul className={classes.pricingPlanFeatures}>
                                 <li className={classes.pricingFeature}>
@@ -102,15 +105,15 @@ export default function ContactUs() {
                                     <p>Describe the above</p>
                                 </li>
                             </ul>
-                            <button className={classes.pricingButton}>Buy Now</button>
+                            <button className={classes.pricingButton}>
+                                View All Lessons Here!
+                            </button>
                         </div>
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
                                 <h2 className={classes.pricingHeaderTitle}>Upcoming Events</h2>
                                 <h1 className={classes.pricingHeaderCost}>$200</h1>
-                                <p className={classes.pricingHeaderDescription}>
-                                    Valid for 12 months
-                                </p>
+                                <p className={classes.pricingHeaderDescription}></p>
                             </div>
                             <ul className={classes.pricingPlanFeatures}>
                                 <li className={classes.pricingFeature}>
@@ -119,7 +122,7 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Trail rides          </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -127,7 +130,7 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Birthday Parties</p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -135,7 +138,7 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Haunted Trail    </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -143,18 +146,18 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>More Events !   </p>
                                 </li>
                             </ul>
-                            <button className={classes.pricingButton}>Buy Now</button>
+                            <button className={classes.pricingButton}>
+                                View Upcoming Events! 
+                            </button>
                         </div>
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
                                 <h2 className={classes.pricingHeaderTitle}>Home Schooling</h2>
                                 <h1 className={classes.pricingHeaderCost}>$150</h1>
-                                <p className={classes.pricingHeaderDescription}>
-                                    Valid for 3 months
-                                </p>
+                                <p className={classes.pricingHeaderDescription}></p>
                             </div>
                             <ul className={classes.pricingPlanFeatures}>
                                 <li className={classes.pricingFeature}>
@@ -190,8 +193,19 @@ export default function ContactUs() {
                                     <p>Describe the above</p>
                                 </li>
                             </ul>
-                            <button className={classes.pricingButton}>Buy Now</button>
+                            <button className={classes.pricingButton}>Sign up Here! </button>
                         </div>
+                    </div>
+                </div>
+                <div className={classes.about}>
+                    <h5 className={classes.aboutSubtitleText}>
+                        <img src={OakfarmlogoTesterPng} alt="" />
+                    </h5>
+                    <div className={classes.aboutContentText}>
+                        We are Located in Water Valley MS!
+                    </div>
+                    <div className={classes.aboutButtonCell}>
+                        <button className={classes.aboutButton}>Contact Us!</button>
                     </div>
                 </div>
                 <button></button>
