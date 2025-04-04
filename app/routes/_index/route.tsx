@@ -31,9 +31,11 @@ export default function ContactUs() {
             </div>
 
             <div className={styles.footerSection}>
-                <h1 className={classNames('largeFont', classes.header2)}>Oak Hill Farms</h1>
-                <h1 className={classes.header1}>
-                    Boarding Lessons, Trail rides, Training, Birthday Parties
+                <h1 className={classNames('largeFont', classes.header2)}></h1>
+                <h1 className={classNames('largeFont', classes.header3)}>
+                    Oak Hill Farms
+                    <span></span>
+                    <img src={OakfarmlogoTesterPng} alt="" />
                 </h1>
                 <div className={classes.heroImage}>
                     <img
@@ -56,7 +58,7 @@ export default function ContactUs() {
                             tranquility of Oak Hill Farms.
                         </p>
                         <button className={classes.heroImageExploreButton}>
-                            View our horses here! 
+                            View our horses here!
                         </button>
                     </div>
                 </div>

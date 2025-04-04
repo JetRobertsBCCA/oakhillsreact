@@ -29,7 +29,7 @@
     gap: 20px;
     background-color: #d3d6d1;
     padding: 30px;
-    border: 1px solid #;
+    border: 1px solid;
     border-radius: 0px;
 }
 
@@ -39,12 +39,16 @@
     @media (width <= 1024px) {
         font-size: 52px;
         border-radius: 22px;
+        font-family: Bradley Hand, cursive;
+        color: #615047;
     }
 }
 
 .heroImageDescription {
     font-size: 24px;
     text-wrap: pretty;
+    font-family: Arial Black, sans-serif;
+    color: #615047;
 }
 
 .heroImageExploreButton {
@@ -350,13 +354,19 @@
     }
 }
 .header1 {
-    padding: 20px;
+    padding: 40px;
     font-family: Verdana, sans-serif;
-    color: #615047;
+    color: var(--white);
+    background-color: #615047;
 }
 .header2 {
     font-family: Georgia, serif;
     color: #615047;
     text-shadow: 6.18px -3.29px 2px var(--secondary);
     text-decoration-color: #615047;
+    box-shadow: 6.91px 1.12px var(--secondary);
+}
+.header3 {
+    text-shadow: 7.25px 3.38px var(--white);
+    color: var(--black);
 }
