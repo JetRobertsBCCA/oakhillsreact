@@ -14,7 +14,7 @@ export const loader = async () => {
     // Check if user is already authenticated
     const user = auth.currentUser;
     if (user) {
-        return redirect('/admin-events'); // Redirect to admin events if already logged in
+        return redirect('/admin-home'); // Redirect to admin events if already logged in
     }
     return json({});
 };
@@ -33,7 +33,7 @@ const LoginPage = () => {
                 await auth.signOut();
             } else {
                 // Redirect to admin events page after successful login
-                window.location.href = '/admin-events';
+                window.location.href = '/admin-home';
             }
         } catch (error) {
             setError(error.message);
