@@ -1,0 +1,317 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+.pageContainer {
+    background-color: #d4d6d1;
+    color: #475569;
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.headerBar {
+    position: sticky;
+    top: 15px;
+    background-color: rgba(97, 80, 71, 0.15);
+    backdrop-filter: blur(10px);
+    padding: 0;
+    z-index: 100;
+    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.14);
+    border-radius: 10px;
+    text-align: center;
+    width: 95%;
+    display: inline-block;
+    bottom: auto;
+    margin-top: 15px;
+    margin-bottom: 0;
+    align-content: center;
+    object-fit: fill;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 95%;
+    min-width: 95%;
+    right: auto;
+    justify-items: center;
+    justify-content: center;
+    left: 2.5%;
+}
+
+.headerContent {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    position: static;
+    width: 95vw;
+    align-content: center;
+}
+
+.navRight {
+    display: flex;
+    flex: 0 1 auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 5px;
+    text-align: start;
+}
+
+.navLinkRight {
+    color: #475569;
+    background-color: rgba(97, 80, 71, 0.03);
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: Georgia, serif;
+    text-align: center;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.navLinkRight:hover {
+    background-color: rgba(97, 80, 71, 0.1);
+}
+
+.contactSection {
+    background-color: #d3d6d1;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.contentWrapper {
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.mainHeading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    color: #615047;
+    margin: 0;
+    text-align: center;
+}
+
+.subHeading {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+    color: #615047;
+    margin: 0;
+    padding: 10px;
+    max-width: 750px;
+    margin-bottom: 15px;
+    text-align: center;
+    line-height: 30px;
+}
+
+.bodyText {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: #615047;
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.contactInfo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: #615047;
+    line-height: 1.8;
+    max-width: 600px;
+    text-align: left;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+.contactInfo p {
+    margin-bottom: 1.5em;
+}
+
+.contactInfo strong {
+    color: #333;
+}
+
+.contactInfo ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5em;
+}
+
+.contactInfo li {
+    margin-bottom: 0.8em;
+}
+
+.contactInfo a {
+    color: #0056b3;
+    text-decoration: none;
+}
+
+.contactInfo a:hover {
+    text-decoration: underline;
+}
+
+.locationSection {
+    background-color: #d6d8d3;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.locationContent {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0px 10px 15px 0 rgba(0, 0, 0, 0.07);
+    background-color: white;
+}
+
+.locationContent .subHeading {
+    font-size: 2.5rem;
+    color: #615047;
+    margin-bottom: 10px;
+}
+
+.locationContent .bodyText {
+    margin-top: 15px;
+    margin-bottom: 35px;
+    padding: 10px 0px;
+    max-width: 750px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #615047;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-family: Georgia, serif;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.2s ease;
+    vertical-align: top;
+}
+
+.button:hover {
+    background-color: #4e4039;
+}
+
+.footerSection {
+    background-color: #615047;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding-right: 20px;
+    padding-bottom: 80px;
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.footerLinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    flex: 0 1 auto;
+}
+
+.footerLink {
+    color: var(--white);
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+}
+
+.footerLink:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.copyright {
+    color: var(--white);
+    opacity: 0.75;
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 22px;
+}
+
+@media (max-width: 768px) {
+    .headerContent {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .navRight {
+        min-width: 0px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .headerBar {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .mainHeading {
+        font-size: 2rem;
+    }
+    .subHeading {
+        font-size: 1rem;
+    }
+    .bodyText {
+        font-size: 1rem;
+    }
+    .contactInfo {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .locationContent {
+        padding: 25px;
+    }
+    .locationContent .subHeading {
+        font-size: 1.8rem;
+    }
+    .footerLinks {
+        gap: 10px 20px;
+    }
+    .contactSection,
+    .locationSection,
+    .footerSection {
+        padding: 60px 15px;
+    }
+}
