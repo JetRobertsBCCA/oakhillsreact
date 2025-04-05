@@ -1,4 +1,4 @@
-// src/ManageImages.js
+// app/routes/manage-images.tsx
 import React from 'react';
 
 const ManageImages = () => {

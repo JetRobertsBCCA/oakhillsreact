@@ -1,13 +1,23 @@
-// src/LoginPage.js
+// app/routes/login.tsx
 import React, { useState } from 'react';
-import { auth } from './firebaseConfig';
+import { auth } from '../firebaseConfig';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { json, redirect } from '@remix-run/node';
 
 const allowedEmails = [
     'njetroberts@gmail.com',
     'admin2@example.com',
     // Add more whitelisted emails here
 ];
+
+export const loader = async () => {
+    // Check if user is already authenticated
+    const user = auth.currentUser;
+    if (user) {
+        return redirect('/admin-events'); // Redirect to admin events if already logged in
+    }
+    return json({});
+};
 
 const LoginPage = () => {
     const [error, setError] = useState('');
@@ -21,6 +31,9 @@ const LoginPage = () => {
             if (!allowedEmails.includes(userEmail)) {
                 setError('You are not authorized to access this portal.');
                 await auth.signOut();
+            } else {
+                // Redirect to admin events page after successful login
+                window.location.href = '/admin-events';
             }
         } catch (error) {
             setError(error.message);

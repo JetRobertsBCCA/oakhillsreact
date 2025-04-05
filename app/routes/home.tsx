@@ -1,7 +1,7 @@
-// src/HomePage.js
+// app/routes/home.tsx
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { auth } from './firebaseConfig';
+import { auth } from '../firebaseConfig';
 
 const HomePage = () => {
     const navigate = useNavigate();
