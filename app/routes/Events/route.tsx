@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from '@remix-run/react';
-import styles from './aboutUs.module.scss';
+import styles from '../AboutUs/aboutus.module.scss';
 import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg';
 import styles0 from './events.module.scss';
 import classNames from 'classnames';
