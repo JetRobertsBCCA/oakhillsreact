@@ -2,6 +2,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth } from '../firebaseConfig';
+import styles from './admin-home.module.scss';
 
 const HomePage = () => {
     const navigate = useNavigate();
@@ -12,8 +13,8 @@ const HomePage = () => {
     };
 
     return (
-        <div>
-            <h1>Welcome to the Admin Portal</h1>
+        <div className={styles.div1}>
+            <h1 className={styles.header1}>Welcome to the Admin Portal</h1>
             <button onClick={() => navigate('/admin-events')}>Manage Events</button>
             <button onClick={() => navigate('/manage-images')}>Manage Images</button>
             <button onClick={handleLogout}>Logout</button>
