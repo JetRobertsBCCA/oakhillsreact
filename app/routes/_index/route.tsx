@@ -35,7 +35,11 @@ export default function ContactUs() {
                 <h1 className={classNames('largeFont', classes.header3)}>
                     Oak Hill Farms
                     <span></span>
-                    <img src={OakfarmlogoTesterPng} alt="" />
+                    <video
+                        controls={true}
+                        src="https://video.wixstatic.com/video/604302_5625733f4f4642dfb33652d680e51846/480p/mp4/file.mp4"
+                        className={classes.video1}
+                    />
                 </h1>
                 <div className={classes.heroImage}>
                     <img
