@@ -1,7 +1,7 @@
 import { createBoard } from '@wixc3/react-board';
 import { createRemixStub } from '@remix-run/testing';
 import App from 'app/root';
-import HomePage from 'app/routes/_index/route';
+import HomePage from '~/page/_index/route';
 import { ROUTES } from '~/router/config';
 
 const AppWrapper = createRemixStub([
