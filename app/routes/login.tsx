@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { auth } from '../firebaseConfig';
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { json, redirect } from '@remix-run/node';
+import styles from './login.module.scss';
 
 const allowedEmails = [
     'njetroberts@gmail.com',
@@ -42,8 +43,10 @@ const LoginPage = () => {
 
     return (
         <div>
-            <h1>Login</h1>
-            <button onClick={handleGoogleSignIn}>Sign in with Google</button>
+            <h1 className={styles.header1}>Login</h1>
+            <button onClick={handleGoogleSignIn} className={styles.button1}>
+                Sign in with Google
+            </button>
             {error && <p>{error}</p>}
         </div>
     );
