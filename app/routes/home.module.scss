@@ -248,9 +248,9 @@ body {
 }
 
 .footerLink {
-    color: #475569;
+    color: var(--white);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 18px;
     display: block;
 }
 
@@ -260,12 +260,12 @@ body {
 }
 
 .copyright {
-    color: rgb(36, 99, 235);
-    font-size: 0.8rem;
+    color: var(--white);
     opacity: 0.75;
     text-align: center;
     padding: 10px;
     margin-top: 20px;
+    font-size: 22px;
 }
 
 @media (max-width: 768px) {

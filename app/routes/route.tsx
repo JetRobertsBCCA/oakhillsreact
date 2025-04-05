@@ -35,7 +35,11 @@ export default function ContactUs() {
                 <h1 className={classNames('largeFont', classes.header3)}>
                     Oak Hill Farms
                     <span></span>
-                    <img src={OakfarmlogoTesterPng} alt="" />
+                    <video
+                        controls={true}
+                        src="https://video.wixstatic.com/video/604302_5625733f4f4642dfb33652d680e51846/480p/mp4/file.mp4"
+                        className={classes.video1}
+                    />
                 </h1>
                 <div className={classes.heroImage}>
                     <img
@@ -210,7 +214,6 @@ export default function ContactUs() {
                         <button className={classes.aboutButton}>Contact Us!</button>
                     </div>
                 </div>
-                <button></button>
                 <div className={styles.footerLinks}>
                     <Link to="/pricing" className={styles.footerLink}></Link>
                     <Link to="/terms" className={styles.footerLink}>
