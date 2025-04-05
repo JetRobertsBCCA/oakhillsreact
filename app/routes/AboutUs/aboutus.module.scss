@@ -9,6 +9,39 @@ body {
   background-color: #f0f0f0;
 }
 
+
+.imageWrapper { 
+  margin-top: 20px;
+  margin-bottom: 30px; 
+  line-height: 0; 
+}
+
+.staffImage {
+  display: block; 
+  max-width: 100%; 
+  height: auto; 
+  margin-left: auto; 
+  margin-right: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.mapContainer {
+  width: 100%;
+  max-width: 800px; 
+  margin-top: 30px; 
+  margin-bottom: 20px; // lines 13 to 26 is teh css for the google maps thing on about us in case we need to update
+}
+
+
+.mapContainer iframe {
+  display: block; 
+  width: 100%; 
+  border-radius: 8px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+
+
 .pageContainer {
   background-color: #d4d6d1;
   color: #475569;
@@ -116,7 +149,7 @@ body {
   color: #615047;
   margin: 0;
   padding: 10px;
-  max-width: 750px;
+  max-width: 500px;
   margin-bottom: 15px;
   text-align: center;
   line-height: 30px;
@@ -179,8 +212,8 @@ body {
 }
 
 .locationContent {
-  max-width: 1200px;
-  width: 100%;
+  max-width: 600px;
+  width: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
