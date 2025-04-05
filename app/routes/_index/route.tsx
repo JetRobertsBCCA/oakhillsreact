@@ -210,7 +210,6 @@ export default function ContactUs() {
                         <button className={classes.aboutButton}>Contact Us!</button>
                     </div>
                 </div>
-                <button></button>
                 <div className={styles.footerLinks}>
                     <Link to="/pricing" className={styles.footerLink}></Link>
                     <Link to="/terms" className={styles.footerLink}>
