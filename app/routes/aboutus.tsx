@@ -1,6 +1,6 @@
 
 import { Link } from '@remix-run/react';
-import styles from './aboutUs.module.scss';
+import styles from './aboutus.module.scss';
 
 import classNames from 'classnames';
 
@@ -12,10 +12,9 @@ export default function Aboutus() {
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
                         <Link to="/" className={styles.navLinkRight}>Home</Link>
-                        <Link to="/about-us" className={styles.navLinkRight}>About Us</Link>
                         <Link to="/horses" className={styles.navLinkRight}>Our Horses</Link>
                         <Link to="/events" className={styles.navLinkRight}>Events</Link>
-                        <Link to="/contact-us" className={styles.navLinkRight}>Contact Us</Link>
+                        <Link to="/contactus" className={styles.navLinkRight}>Contact Us</Link>
                     </div>
                 </div>
             </div>

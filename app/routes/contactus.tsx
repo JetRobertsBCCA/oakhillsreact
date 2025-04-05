@@ -10,7 +10,7 @@ export default function ContactUs() {
             <div className={styles.headerBar}>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
-                        <Link to="/routes/AboutUs" className={styles.navLinkRight}>
+                        <Link to="/aboutus" className={styles.navLinkRight}>
                             About Us
                         </Link>
                         <Link to="/horses" className={styles.navLinkRight}>
@@ -18,9 +18,6 @@ export default function ContactUs() {
                         </Link>
                         <Link to="/events" className={styles.navLinkRight}>
                             Events
-                        </Link>
-                        <Link to="/routes/ContactUs" className={styles.navLinkRight}>
-                            Contact Us
                         </Link>
                     </div>
                 </div>
@@ -67,7 +64,7 @@ export default function ContactUs() {
                                 >
                                     facebook.com/oakhillfarms
                                 </a>{' '}
-                                {/* Replace placeholder */}
+                           
                             </li>
                             <li>
                                 Instagram:{' '}
@@ -78,7 +75,7 @@ export default function ContactUs() {
                                 >
                                     @oakhillfarms
                                 </a>{' '}
-                                {/* Replace placeholder */}
+                               
                             </li>
                             <li>
                                 Twitter:{' '}
@@ -89,7 +86,7 @@ export default function ContactUs() {
                                 >
                                     @oakhillfarms
                                 </a>{' '}
-                                {/* Replace placeholder */}
+                            
                             </li>
                         </ul>
                     </div>

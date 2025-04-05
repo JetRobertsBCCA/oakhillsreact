@@ -14,16 +14,16 @@ export default function ContactUs() {
             <div className={styles.headerBar}>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
-                        <Link to="/routes/AboutUs" className={styles.navLinkRight}>
+                        <Link to="aboutus" className={styles.navLinkRight}>
                             About Us
                         </Link>
                         <Link to="/horses" className={styles.navLinkRight}>
                             Our Horses
                         </Link>
-                        <Link to="/events" className={styles.navLinkRight}>
+                        <Link to="events" className={styles.navLinkRight}>
                             Events
                         </Link>
-                        <Link to="/routes/ContactUs" className={styles.navLinkRight}>
+                        <Link to="contactus" className={styles.navLinkRight}>
                             Contact Us
                         </Link>
                     </div>
