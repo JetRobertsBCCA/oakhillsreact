@@ -1,51 +1,33 @@
-// app/routes/Events/route.tsx
 import React, { useEffect, useState } from 'react';
-import { db } from '../../firebaseConfig'; // Adjust the import path if necessary
-import { collection, getDocs } from 'firebase/firestore';
-import styles from './events.scss'; // Adjust the path if necessary
+import { loader } from '../../../data/eventLoader'; // Adjust the path based on your structure
 
 const Events = () => {
     const [events, setEvents] = useState([]);
 
     useEffect(() => {
-        const fetchEvents = async () => {
-            try {
-                const eventsCollection = collection(db, 'events');
-                const eventSnapshot = await getDocs(eventsCollection);
-                const eventList = eventSnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-                setEvents(eventList);
-            } catch (error) {
-                console.error('Error fetching events: ', error);
-            }
+        const loadEvents = async () => {
+            const response = await loader();
+            setEvents(response);
         };
 
-        fetchEvents();
+        loadEvents();
     }, []);
 
     return (
-        <div className={styles.pageContainer}>
+        <div>
             <h1>Upcoming Events</h1>
             <ul>
-                {events.map((event) => (
-                    <li key={event.id}>
+                {events.map((event, index) => (
+                    <li key={index}>
                         <h3>{event.eventName}</h3>
-                        <p>
-                            <strong>Date:</strong> {event.eventTime}
-                        </p>
-                        <p>
-                            <strong>Location:</strong> {event.location}
-                        </p>
-                        <p>
-                            <strong>Cost:</strong> ${event.cost}
-                        </p>
+                        <p><strong>Date:</strong> {event.eventTime}</p>
+                        <p><strong>Location:</strong> {event.location}</p>
+                        <p><strong>Cost:</strong> ${event.cost}</p>
                         <p>{event.description}</p>
-                        <a href={event.paymentLink} target="_blank" rel="noopener noreferrer">
-                            Payment Link
-                        </a>
+                        <a href={event.paymentLink} target="_blank" rel="noopener noreferrer">Payment Link</a>
                     </li>
                 ))}
-            </ul>{' '}
-            {/* Link to the admin event creation page */}
+            </ul>
         </div>
     );
 };

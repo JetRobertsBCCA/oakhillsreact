@@ -1,8 +1,6 @@
 // app/routes/admin-events.tsx
 import React, { useState } from 'react';
 import { Link } from '@remix-run/react';
-import { db } from '../firebaseConfig'; // Adjust the import path if necessary
-import { collection, addDoc } from 'firebase/firestore';
 
 export default function AdminEvents() {
     const [eventName, setEventName] = useState('');
@@ -23,19 +21,22 @@ export default function AdminEvents() {
             paymentLink,
         };
 
-        try {
-            // Add a new document with a generated ID
-            await addDoc(collection(db, 'events'), newEvent);
-            // Clear the form
-            setEventName('');
-            setEventTime('');
-            setLocation('');
-            setCost('');
-            setDescription('');
-            setPaymentLink('');
-        } catch (error) {
-            console.error("Error adding document: ", error);
-        }
+        // Send the new event to the server to save it in the JSON file
+        await fetch('/save-event', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(newEvent),
+        });
+
+        // Clear the form
+        setEventName('');
+        setEventTime('');
+        setLocation('');
+        setCost('');
+        setDescription('');
+        setPaymentLink('');
     };
 
     return (
