@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { loader } from '../../../data/eventLoader'; // Adjust the path based on your structure
+import { loader } from '../../../data/eventLoader'; 
 
 const Events = () => {
     const [events, setEvents] = useState([]);

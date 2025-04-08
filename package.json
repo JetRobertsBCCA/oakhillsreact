@@ -39,6 +39,7 @@
     "@nivo/treemap": "^0.88.0",
     "@nivo/voronoi": "^0.88.0",
     "@nivo/waffle": "^0.88.0",
+    "@octokit/rest": "^21.1.1",
     "@remix-run/node": "^2.16.4",
     "@remix-run/react": "^2.16.4",
     "@types/node": "^22.13.1",
@@ -49,6 +50,7 @@
     "react": "^18.3.1",
     "react-bootstrap": "^2.10.7",
     "react-dom": "^18.3.1",
+    "react-responsive-carousel": "^3.2.23",
     "remix": "^2.16.4",
     "semantic-ui-css": "^2.5.0",
     "semantic-ui-react": "^2.1.5"

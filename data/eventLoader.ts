@@ -1,6 +1,6 @@
 export const loader = async () => {
     try {
-        const response = await fetch('/data/events.json'); // Adjust the path based on your server setup
+        const response = await fetch('/data/events.json'); 
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
