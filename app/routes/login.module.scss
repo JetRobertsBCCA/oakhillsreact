@@ -1,6 +1,22 @@
 .header1 {
     text-align: center;
+    font-family: Lucida Console, monospace;
+    font-size: 63px;
 }
 .button1 {
     background-color: var(--primary);
+    font-family: Times New Roman, serif;
+    font-weight: 900;
+    font-variant: diagonal-fractions;
+    text-align: center;
+    font-size: 25px;
+    border-radius: 13px;
+}
+.div1 {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

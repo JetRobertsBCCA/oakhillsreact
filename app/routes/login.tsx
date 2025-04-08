@@ -42,7 +42,7 @@ const LoginPage = () => {
     };
 
     return (
-        <div>
+        <div className={styles.div1}>
             <h1 className={styles.header1}>Login</h1>
             <button onClick={handleGoogleSignIn} className={styles.button1}>
                 Sign in with Google
