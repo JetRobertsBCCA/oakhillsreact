@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from '@remix-run/react';
-import styles from './contactUs.module.scss'; // it should link to is own css thing on the folders this is tempoary
+import styles from './contactUs.module.scss';
+import styles0 from './contactus.module.scss'; // it should link to is own css thing on the folders this is tempoary
 //we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
 //in case it interferes with quans code
 
@@ -87,7 +88,7 @@ export default function ContactUs() {
                             </li>
                         </ul>
                     </div>
-                    <form>
+                    <form className={styles0.form1}>
                         <label>First name:</label>
                         <br />
                         <input type="text" />
@@ -97,7 +98,7 @@ export default function ContactUs() {
                         <input type="text" />
                         <br />
                         <br />
-                        <input type="submit" value="Submit" />
+                        <input type="submit" value="Submit" className={styles0.input1} />
                     </form>
                 </div>
             </div>
