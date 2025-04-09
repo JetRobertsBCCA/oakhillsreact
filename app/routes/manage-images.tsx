@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import styles from './manage-images.module.scss';
 
 const ManageImages = () => {
     const [file, setFile] = useState<File | null>(null);
@@ -21,19 +22,27 @@ const ManageImages = () => {
     const handleDelete = (imageName: string) => {
         // Remove the image from the local images folder
         // This part is conceptual; actual file deletion needs server-side logic
-        setImages(images.filter(image => image !== imageName));
+        setImages(images.filter((image) => image !== imageName));
     };
 
     return (
-        <div>
-            <h1>Manage Images</h1>
-            <input type="file" onChange={(e) => setFile(e.target.files?.[0] || null)} />
-            <button onClick={handleUpload}>Upload</button>
-            <ul>
+        <div className={styles.div1}>
+            <h1 className={styles.header1}>Manage Images</h1>
+            <input
+                type="file"
+                onChange={(e) => setFile(e.target.files?.[0] || null)}
+                className={styles.input1}
+            />
+            <button onClick={handleUpload} className={styles.button1}>
+                Upload Image!!!
+            </button>
+            <ul className={styles.ul1}>
                 {images.map((image, index) => (
                     <li key={index}>
                         {image}
-                        <button onClick={() => handleDelete(image)}>Delete</button>
+                        <button onClick={() => handleDelete(image)} className={styles.button2}>
+                            Delete
+                        </button>
                     </li>
                 ))}
             </ul>

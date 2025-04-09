@@ -10,6 +10,22 @@
         flex-direction: column;
     }
 }
+.imageWrapper { 
+  margin-top: 20px;
+  margin-bottom: 30px; 
+  line-height: 0; 
+}
+
+.staffImage {
+  display: block; 
+  max-width: 100%; 
+  height: auto; 
+  margin-left: auto; 
+  margin-right: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
 
 .heroImageImg {
     object-fit: cover;
