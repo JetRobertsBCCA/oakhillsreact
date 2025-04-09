@@ -47,6 +47,10 @@
     border: 5px solid black;
     background-color: rgba(217, 212, 212, 0.83);
     box-shadow: 5.67px 4.11px 34px 8px black;
+    width: auto;
+    height: auto;
+    object-fit: fill;
+    align-items: center;
 }
 .input1 {
     margin: 5px;
