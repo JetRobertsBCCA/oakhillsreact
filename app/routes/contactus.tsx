@@ -64,7 +64,6 @@ export default function ContactUs() {
                                 >
                                     facebook.com/oakhillfarms
                                 </a>{' '}
-                           
                             </li>
                             <li>
                                 Instagram:{' '}
@@ -75,7 +74,6 @@ export default function ContactUs() {
                                 >
                                     @oakhillfarms
                                 </a>{' '}
-                               
                             </li>
                             <li>
                                 Twitter:{' '}
@@ -86,10 +84,21 @@ export default function ContactUs() {
                                 >
                                     @oakhillfarms
                                 </a>{' '}
-                            
                             </li>
                         </ul>
                     </div>
+                    <form>
+                        <label>First name:</label>
+                        <br />
+                        <input type="text" />
+                        <br />
+                        <label>Last name:</label>
+                        <br />
+                        <input type="text" />
+                        <br />
+                        <br />
+                        <input type="submit" value="Submit" />
+                    </form>
                 </div>
             </div>
 
