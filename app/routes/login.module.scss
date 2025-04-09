@@ -11,6 +11,7 @@
     text-align: center;
     font-size: 25px;
     border-radius: 13px;
+    border: 5px solid #27a12b;
 }
 .div1 {
     width: 100vw;
@@ -19,4 +20,12 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(180deg, #86bb87 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
 }

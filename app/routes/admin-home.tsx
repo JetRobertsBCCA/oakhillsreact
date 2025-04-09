@@ -15,9 +15,15 @@ const HomePage = () => {
     return (
         <div className={styles.div1}>
             <h1 className={styles.header1}>Welcome to the Admin Portal</h1>
-            <button onClick={() => navigate('/admin-events')}>Manage Events</button>
-            <button onClick={() => navigate('/manage-images')}>Manage Images</button>
-            <button onClick={handleLogout}>Logout</button>
+            <button onClick={() => navigate('/admin-events')} className={styles.button3}>
+                Manage Events
+            </button>
+            <button onClick={() => navigate('/manage-images')} className={styles.button2}>
+                Manage Images
+            </button>
+            <button onClick={handleLogout} className={styles.button1}>
+                Logout
+            </button>
         </div>
     );
 };

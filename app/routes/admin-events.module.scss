@@ -28,16 +28,25 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: linear-gradient(180deg, #86bb87 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
 }
 .form2 {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     align-content: center;
     padding: 10px;
     margin: 10px;
     border: 5px solid black;
+    background-color: rgba(217, 212, 212, 0.83);
+    box-shadow: 5.67px 4.11px 34px 8px black;
 }
 .input1 {
     margin: 5px;
@@ -66,4 +75,11 @@
         font-size: 35px;
         cursor: pointer;
     }
+}
+.header2 {
+    margin: 70px;
+}
+.link {
+    margin: 40px;
+    cursor: pointer;
 }

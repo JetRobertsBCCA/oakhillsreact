@@ -42,7 +42,7 @@ export default function AdminEvents() {
 
     return (
         <div className={styles.div2}>
-            <h1>Create New Event</h1>
+            <h1 className={styles.header2}>Create New Event</h1>
             <form onSubmit={handleSubmit} className={styles.form2}>
                 <input
                     type="text"
@@ -93,7 +93,9 @@ export default function AdminEvents() {
                     Create Event
                 </button>
             </form>
-            <Link to="/events">Back to Events</Link>
+            <Link to="/events" className={styles.link}>
+                Back to Events
+            </Link>
         </div>
     );
 }
