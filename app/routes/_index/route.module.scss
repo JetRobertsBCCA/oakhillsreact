@@ -38,7 +38,7 @@
 }
 
 .heroImageContentBox {
-    display: flex;
+    display: block;
     flex-direction: column;
     justify-content: center;
     gap: 20px;
@@ -62,8 +62,9 @@
 .heroImageDescription {
     font-size: 24px;
     text-wrap: pretty;
-    font-family: Arial Black, sans-serif;
-    color: #615047;
+    color: var(--black);
+    font-family: Arial, sans-serif;
+    font-weight: 500;
 }
 
 .heroImageExploreButton {
@@ -78,7 +79,11 @@
     @media (width <= 1024px) {
         font-size: 16px;
         background-color: #615047;
-        align-content: end;
+        align-content: center;
+        display: inline-block;
+        align-items: center;
+        flex-direction: column;
+        flex-wrap: nowrap;
     }
 }
 
@@ -260,6 +265,8 @@
     grid-template-columns: 1fr 2fr 1fr;
     gap: 16px;
     margin: 48px;
+    align-items: center;
+    justify-items: center;
     @media (width < 768px) {
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr 1fr 0.5fr 1fr;
