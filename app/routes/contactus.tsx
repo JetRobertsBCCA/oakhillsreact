@@ -88,18 +88,6 @@ export default function ContactUs() {
                             </li>
                         </ul>
                     </div>
-                    <form className={styles0.form1}>
-                        <label>First name:</label>
-                        <br />
-                        <input type="text" />
-                        <br />
-                        <label>Last name:</label>
-                        <br />
-                        <input type="text" />
-                        <br />
-                        <br />
-                        <input type="submit" value="Submit" className={styles0.input1} />
-                    </form>
                 </div>
             </div>
 
@@ -116,7 +104,7 @@ export default function ContactUs() {
                         referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                     <Link to="/waitlist" className={styles.button}>
-                        Join Waitlist
+                        Contact us here!
                     </Link>
                 </div>
             </div>
