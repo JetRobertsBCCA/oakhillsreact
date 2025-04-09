@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from '@remix-run/react';
-import styles from './contactUs.module.scss'; // it should link to is own css thing on the folders this is tempoary
+import styles from './contactUs.module.scss';
+import styles0 from './contactus.module.scss'; // it should link to is own css thing on the folders this is tempoary
 //we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
 //in case it interferes with quans code
 
@@ -87,27 +88,23 @@ export default function ContactUs() {
                             </li>
                         </ul>
                     </div>
-                    <form>
-                        <label>First name:</label>
-                        <br />
-                        <input type="text" />
-                        <br />
-                        <label>Last name:</label>
-                        <br />
-                        <input type="text" />
-                        <br />
-                        <br />
-                        <input type="submit" value="Submit" />
-                    </form>
                 </div>
             </div>
 
             <div className={styles.locationSection}>
                 <div className={styles.locationContent}>
                     <h2 className={styles.subHeading}>How to find us!</h2>
-                    <p className={styles.bodyText}>We are located in Water Valley MS</p>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.059960857979!2d-89.5879805256308!3d34.170384611485176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8880697720080de9%3A0x5adbc59099274ad9!2sOak%20Hill%20Farm%20Water%20Valley%20Mississippi!5e0!3m2!1sen!2sus!4v1743825641509!5m2!1sen!2sus"
+                        width="100%"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                     <Link to="/waitlist" className={styles.button}>
-                        Join Waitlist
+                        Contact us here!
                     </Link>
                 </div>
             </div>

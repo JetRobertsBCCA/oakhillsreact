@@ -66,6 +66,24 @@ body {
     text-align: start;
 }
 
+.imageWrapper { 
+  margin-top: 20px;
+  margin-bottom: 30px; 
+  line-height: 0; 
+}
+
+.staffImage {
+  display: block; 
+  max-width: 100%; 
+  height: auto; 
+  margin-left: auto; 
+  margin-right: auto; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+
+
 .navLinkRight {
     color: #475569;
     background-color: rgba(97, 80, 71, 0.03);
@@ -315,4 +333,12 @@ body {
     .footerSection {
         padding: 60px 15px;
     }
+}
+.form1 {
+    background-color: #615047;
+    color: var(--white);
+    position: sticky;
+}
+.input1 {
+    color: var(--black);
 }

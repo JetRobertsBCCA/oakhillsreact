@@ -199,13 +199,21 @@ export default function ContactUs() {
                     <h5 className={classes.aboutSubtitleText}>
                         <img src={OakfarmlogoTesterPng} alt="" />
                     </h5>
-                    <div className={classes.aboutContentText}>
-                        We are Located in Water Valley MS!
-                    </div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.059960857979!2d-89.5879805256308!3d34.170384611485176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8880697720080de9%3A0x5adbc59099274ad9!2sOak%20Hill%20Farm%20Water%20Valley%20Mississippi!5e0!3m2!1sen!2sus!4v1743825641509!5m2!1sen!2sus"
+                        width="100%"
+                        height="450"
+                        style={{ border: 0 }}
+                        allowFullScreen
+                        loading="lazy"
+                        referrerPolicy="no-referrer-when-downgrade"
+                    ></iframe>
                     <div className={classes.aboutButtonCell}>
                         <button className={classes.aboutButton}>Contact Us!</button>
                     </div>
                 </div>
+            </div>
+            <div className={styles.mapContainer}>
                 <div className={styles.footerLinks}>
                     <Link to="/pricing" className={styles.footerLink}></Link>
                     <Link to="/terms" className={styles.footerLink}>
