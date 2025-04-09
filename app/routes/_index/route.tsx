@@ -74,7 +74,7 @@ export default function ContactUs() {
                                 <h2 className={classes.pricingHeaderTitle}>
                                     Horse Boarding Lessons
                                 </h2>
-                                <h1 className={classes.pricingHeaderCost}>$150</h1>
+                                <h1 className={classes.pricingHeaderCost}>$300+</h1>
                                 <p className={classes.pricingHeaderDescription}></p>
                             </div>
                             <ul className={classes.pricingPlanFeatures}>
@@ -84,7 +84,7 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Full payments               </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -92,7 +92,7 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Deposit non refundable</p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -100,15 +100,10 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Waiver sign on site:      </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
-                                    <img
-                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png/v1/fit/w_640,h_640/V Logo.png"
-                                        alt="V Logo on Dark Background"
-                                        className={classes.pricingImage}
-                                    />
-                                    <p>Describe the above</p>
+                                    <p></p>
                                 </li>
                             </ul>
                             <button className={classes.pricingButton}>
@@ -118,7 +113,7 @@ export default function ContactUs() {
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
                                 <h2 className={classes.pricingHeaderTitle}>Upcoming Events</h2>
-                                <h1 className={classes.pricingHeaderCost}>$200</h1>
+                                <h1 className={classes.pricingHeaderCost}>$200+</h1>
                                 <p className={classes.pricingHeaderDescription}></p>
                             </div>
                             <ul className={classes.pricingPlanFeatures}>
@@ -162,7 +157,7 @@ export default function ContactUs() {
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
                                 <h2 className={classes.pricingHeaderTitle}>Home Schooling</h2>
-                                <h1 className={classes.pricingHeaderCost}>$150</h1>
+                                <h1 className={classes.pricingHeaderCost}>$300+</h1>
                                 <p className={classes.pricingHeaderDescription}></p>
                             </div>
                             <ul className={classes.pricingPlanFeatures}>
@@ -172,7 +167,7 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Full Payments               </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -180,7 +175,7 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Deposit non refundable</p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -188,18 +183,15 @@ export default function ContactUs() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Describe the above</p>
+                                    <p>Waiver sign at site!       </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
-                                    <img
-                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png/v1/fit/w_640,h_640/V Logo.png"
-                                        alt="V Logo on Dark Background"
-                                        className={classes.pricingImage}
-                                    />
-                                    <p>Describe the above</p>
+                                    <p></p>
                                 </li>
                             </ul>
-                            <button className={classes.pricingButton}>Sign up Here! </button>
+                            <button className={classes.pricingButton}>
+                                View All Schooling Here! 
+                            </button>
                         </div>
                     </div>
                 </div>
