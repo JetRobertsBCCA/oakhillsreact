@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from '@remix-run/react';
-import styles from './contactUs.module.scss'; // it should link to is own css thing on the folders this is tempoary
+import styles from './contactUs.module.scss';
+import styles0 from './contactus.module.scss'; // it should link to is own css thing on the folders this is tempoary
 //we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
 //in case it interferes with quans code
 
@@ -87,18 +88,6 @@ export default function ContactUs() {
                             </li>
                         </ul>
                     </div>
-                    <form>
-                        <label>First name:</label>
-                        <br />
-                        <input type="text" />
-                        <br />
-                        <label>Last name:</label>
-                        <br />
-                        <input type="text" />
-                        <br />
-                        <br />
-                        <input type="submit" value="Submit" />
-                    </form>
                 </div>
             </div>
 
@@ -115,7 +104,7 @@ export default function ContactUs() {
                         referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                     <Link to="/waitlist" className={styles.button}>
-                        Join Waitlist
+                        Contact us here!
                     </Link>
                 </div>
             </div>
