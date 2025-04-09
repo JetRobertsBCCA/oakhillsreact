@@ -189,7 +189,9 @@ export default function ContactUs() {
                                     <p></p>
                                 </li>
                             </ul>
-                            <button className={classes.pricingButton}>Sign up Here! </button>
+                            <button className={classes.pricingButton}>
+                                View All Schooling Here! 
+                            </button>
                         </div>
                     </div>
                 </div>
