@@ -33,22 +33,30 @@ export default function ContactUs() {
                         <p>
                             <strong>Phone:</strong>
                             <br />
-                            (123) 456-7890
+                            (662) 202-8899
                         </p>
                         <p>
                             <strong>Email:</strong>
                             <br />
-                            info@oakhillfarms.com
+                            robinson.llinda@yahoo.com
                         </p>
-                        <p>
+                    
                             <strong>Business Hours:</strong>
                             <br />
-                            Monday – Friday: 9:00 AM – 5:00 PM
+                            Monday: Closed
                             <br />
-                            Saturday: 10:00 AM – 3:00 PM
+                            Tuesday: Closed
                             <br />
-                            Sunday: Closed
-                        </p>
+                            Wednesday: Closed
+                            <br />
+                            Thursday: 9:00 AM – 5:00 PM
+                            <br />
+                            Friday: 9:00 AM – 5:00 PM
+                            <br />
+                            Saturday: 9:00 AM – 5:00 PM
+                            <br />
+                            Sunday: 9:00 AM – 5:00 PM
+          
                         <p>
                             <strong>Social Media:</strong>
                             <br />
@@ -59,7 +67,7 @@ export default function ContactUs() {
                             <li>
                                 Facebook:{' '}
                                 <a
-                                    href="https://facebook.com/oakhillfarms"
+                                    href="https://facebook.com/PLaceholder"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -69,7 +77,7 @@ export default function ContactUs() {
                             <li>
                                 Instagram:{' '}
                                 <a
-                                    href="https://instagram.com/oakhillfarms"
+                                    href="https://instagram.com/placeholder"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -79,7 +87,7 @@ export default function ContactUs() {
                             <li>
                                 Twitter:{' '}
                                 <a
-                                    href="https://twitter.com/oakhillfarms"
+                                    href="https://twitter.com/placehlder"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
@@ -111,9 +119,7 @@ export default function ContactUs() {
             <div className={styles.footerSection}>
                 <div className={styles.footerLinks}>
                     <Link to="/pricing" className={styles.footerLink}></Link>
-                    <Link to="/terms" className={styles.footerLink}>
-                        Terms &amp; Conditions
-                    </Link>
+                    <Link to="/terms" className={styles.footerLink}>Terms & Conditions</Link>
                     <Link to="/refund-policy" className={styles.footerLink}>
                         Refund Policy
                     </Link>
