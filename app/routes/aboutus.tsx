@@ -31,8 +31,10 @@ const staffMembers = [
 export default function Aboutus() {
     return (
         <div className={styles.pageContainer}>
+            <div className={styles.topStickyCover}></div>
+       
 
-            {/* --- Header --- */}
+          
             <div className={styles.headerBar}>
                  <div className={styles.headerContent}>
                     <div className={styles.navRight}>
@@ -44,7 +46,7 @@ export default function Aboutus() {
                 </div>
             </div>
 
-            {/* --- Original "About Us" Section --- */}
+           
             <div className={styles.contactSection}>
                  <div className={styles.contentWrapper}>
                     <h1 className={styles.mainHeading}>Oak Hill Farms</h1>
