@@ -9,36 +9,147 @@ body {
   background-color: #f0f0f0;
 }
 
-
-.imageWrapper { 
-  margin-top: 20px;
-  margin-bottom: 30px; 
-  line-height: 0; 
+.teamSectionWrapper {
+  background-color: #615047;
+  padding: 60px 20px;
+  color: #f0f0f0;
 }
 
-.staffImage {
-  display: block; 
-  max-width: 100%; 
-  height: auto; 
-  margin-left: auto; 
-  margin-right: auto; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+.teamIntro {
+  max-width: 800px;
+  margin: 0 auto 50px auto;
+  text-align: center;
+
+  h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-weight: normal;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #dfe4ea;
+  }
+}
+
+.staffList {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 40px;
+}
+
+.staffCard {
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.staffBioLayout {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+}
+
+.layoutReverse {
+  flex-direction: row-reverse;
+}
+
+.staffTextContent {
+  flex: 3;
+  min-width: 280px;
+  text-align: left;
+
+  h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.8rem;
+    color: #615047;
+    margin-top: 0;
+    margin-bottom: 5px;
+  }
+
+  h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: #615047;
+    margin-bottom: 15px;
+    font-weight: bold;
+  }
+
+  p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 0;
+  }
+}
+
+.staffImageContainer {
+  flex: 2;
+  min-width: 250px;
+}
+
+.staffImageNew {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 450px;
+}
+
+@media (max-width: 768px) {
+  .staffBioLayout {
+    flex-direction: column !important;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .staffTextContent,
+  .staffImageContainer {
+    flex-basis: auto;
+    width: 100%;
+    min-width: unset;
+  }
+
+  .staffTextContent {
+    text-align: center;
+    h3 { font-size: 1.6rem; }
+    h4 { font-size: 1rem; }
+    p { font-size: 0.95rem;}
+  }
+
+  .teamIntro {
+    h2 { font-size: 2rem; }
+    p { font-size: 1rem; }
+  }
+
+  .teamSectionWrapper {
+    padding: 40px 15px;
+  }
 }
 
 .mapContainer {
   width: 100%;
-  max-width: 800px; 
-  margin-top: 30px; 
-  margin-bottom: 20px; // lines 13 to 26 is teh css for the google maps thing on about us in case we need to update
+  max-width: 800px;
+  margin-top: 30px;
+  margin-bottom: 20px;
 }
 
 
 .mapContainer iframe {
-  display: block; 
-  width: 100%; 
-  border-radius: 8px; 
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+  display: block;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 
@@ -166,43 +277,7 @@ body {
   text-align: center;
 }
 
-.contactInfo {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.1rem;
-  color: #615047;
-  line-height: 1.8;
-  max-width: 600px;
-  text-align: left;
-  margin-top: 10px;
-  padding: 10px;
-}
 
-.contactInfo p {
-  margin-bottom: 1.5em;
-}
-
-.contactInfo strong {
-  color: #333;
-}
-
-.contactInfo ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 1.5em;
-}
-
-.contactInfo li {
-  margin-bottom: 0.8em;
-}
-
-.contactInfo a {
-  color: #0056b3;
-  text-decoration: none;
-}
-
-.contactInfo a:hover {
-  text-decoration: underline;
-}
 
 .locationSection {
   background-color: #d6d8d3;
@@ -238,24 +313,7 @@ body {
   max-width: 750px;
 }
 
-.button {
-  display: inline-block;
-  background-color: #615047;
-  color: white;
-  padding: 12px 25px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-family: Georgia, serif;
-  text-align: center;
-  margin-top: 20px;
-  transition: background-color 0.2s ease;
-  vertical-align: top;
-}
 
-.button:hover {
-  background-color: #4e4039;
-}
 
 .footerSection {
   background-color: #d5d8d3;
@@ -289,8 +347,16 @@ body {
   color: #000;
 }
 
+.footerLogo {
+  display: block;
+  max-width: 150px; 
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .copyright {
-  color: rgb(36, 99, 235);
+  color: #615047;
   font-size: 0.8rem;
   opacity: 0.75;
   text-align: center;
@@ -326,10 +392,7 @@ body {
   .bodyText {
     font-size: 1rem;
   }
-  .contactInfo {
-    font-size: 1rem;
-    text-align: center;
-  }
+  
   .locationContent {
     padding: 25px;
   }
