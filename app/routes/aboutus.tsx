@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 import styles from './aboutus.module.scss';
-import logoImage from '../../src/assets/about_us_pictures/oakhillsHDlogo.png';
+import logoImage from '../../src/about_us_pictures/oakhillshdlogo.png';
 
 
 const staffMembers = [
