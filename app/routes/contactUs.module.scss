@@ -66,23 +66,21 @@ body {
     text-align: start;
 }
 
-.imageWrapper { 
-  margin-top: 20px;
-  margin-bottom: 30px; 
-  line-height: 0; 
+.imageWrapper {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    line-height: 0;
 }
 
 .staffImage {
-  display: block; 
-  max-width: 100%; 
-  height: auto; 
-  margin-left: auto; 
-  margin-right: auto; 
-  border-radius: 8px; 
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
-
 
 .navLinkRight {
     color: #475569;
@@ -111,8 +109,6 @@ body {
 }
 
 .contentWrapper {
-    max-width: 800px;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,8 +116,15 @@ body {
     gap: 10px;
     background-color: var(--white);
     border: 0px solid #615047;
-    border-radius: 25px;
     box-shadow: inset 0 0 #615047;
+    width: 50%;
+    padding: 50px;
+    max-width: 1200px;
+    margin: 9px;
+    border-radius: 50px;
+    font-family: Arial, sans-serif;
+    position: static;
+    justify-content: center;
 }
 
 .mainHeading {
@@ -164,6 +167,8 @@ body {
     text-align: left;
     margin-top: 10px;
     padding: 10px;
+    border: 1px solid var(--white);
+    border-radius: 50px;
 }
 
 .contactInfo p {
@@ -202,7 +207,6 @@ body {
 
 .locationContent {
     max-width: 1200px;
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -212,6 +216,9 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0px 10px 15px 0 rgba(0, 0, 0, 0.07);
     background-color: white;
+    width: 50%;
+    font-family: Arial, sans-serif;
+    justify-content: center;
 }
 
 .locationContent .subHeading {
