@@ -16,6 +16,16 @@ body {
     min-height: 100vh;
 }
 
+.topStickyCover {//for the hidng effect thing 
+  position: sticky;       
+  top: 0;                 
+  left: 0;                
+  width: 100%;           
+  height: 15px;           
+  background-color: #d4d6d1; 
+  z-index: 99;            
+}
+
 .headerBar {
     position: sticky;
     top: 15px;
