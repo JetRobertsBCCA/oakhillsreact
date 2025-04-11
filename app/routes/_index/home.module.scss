@@ -16,6 +16,20 @@ body {
     min-height: 100vh;
 }
 
+.topStickyCover {
+  position: sticky;       
+  top: 0;                 
+  left: 0;                
+  width: 100%;           
+  height: 15px;           
+  background-color: #d4d6d1; 
+  z-index: 99;            
+}
+
+
+
+
+
 .headerBar {
     position: sticky;
     top: 15px;
@@ -235,6 +249,7 @@ body {
     padding-bottom: 80px;
     padding-left: 20px;
     padding-top: 20px;
+    align-content: center;
 }
 
 .footerLinks {

@@ -7,8 +7,10 @@ import styles0 from './contactus.module.scss'; // it should link to is own css t
 
 export default function ContactUs() {
     return (
+       
         <div className={styles.pageContainer}>
             <div className={styles.headerBar}>
+            <div className={styles.topStickyCover}></div>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
                         <Link to="/aboutus" className={styles.navLinkRight}>

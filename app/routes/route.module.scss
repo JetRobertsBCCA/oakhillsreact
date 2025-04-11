@@ -11,6 +11,17 @@
     }
 }
 
+.topStickyCover {//for the hidng effect thing 
+  position: sticky;       
+  top: 0;                 
+  left: 0;                
+  width: 100%;           
+  height: 15px;           
+  background-color: #d4d6d1; 
+  z-index: 99;            
+}
+
+
 .heroImageImg {
     object-fit: cover;
     width: 50%;

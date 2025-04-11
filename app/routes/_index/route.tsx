@@ -11,6 +11,7 @@ import classNames from 'classnames'; // it should link to is own css thing on th
 export default function ContactUs() {
     return (
         <div className={styles.pageContainer}>
+        <div className={styles.topStickyCover}></div>
             <div className={styles.headerBar}>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
