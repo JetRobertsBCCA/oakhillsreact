@@ -15,14 +15,15 @@ body {
     min-width: 100vw;
     min-height: 100vh;
 }
-.topStickyCover {//for the hidng effect thing 
-  position: sticky;       
-  top: 0;                 
-  left: 0;                
-  width: 100%;           
-  height: 15px;           
-  background-color: #d4d6d1; 
-  z-index: 99;            
+.topStickyCover {
+    //for the hidng effect thing
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background-color: #d4d6d1;
+    z-index: 99;
 }
 
 .headerBar {
@@ -144,7 +145,8 @@ body {
     padding: 50px;
 }
 
-.locationContent, .contactInfo {
+.locationContent,
+.contactInfo {
     flex: 1;
     max-width: 450px;
 }
@@ -170,7 +172,8 @@ body {
     margin: 0 auto;
 }
 
-.contactForm input, .contactForm textarea {
+.contactForm input,
+.contactForm textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;

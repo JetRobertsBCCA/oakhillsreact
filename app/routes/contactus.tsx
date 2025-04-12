@@ -103,7 +103,7 @@ export default function ContactUs() {
                 <form className={styles.contactForm}>
                     <input type="text" placeholder="Your Name" required />
                     <input type="email" placeholder="Your Email" required />
-                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <textarea placeholder="Your Message" required></textarea>
                     <button type="submit" className={styles.button}>Send Message</button>
                 </form>
             </div>
