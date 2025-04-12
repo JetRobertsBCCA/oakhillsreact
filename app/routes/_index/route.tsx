@@ -2,16 +2,16 @@ import React from 'react';
 import { Link } from '@remix-run/react';
 import styles from './home.module.scss';
 import classes from './route.module.scss';
-import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg';
 import OakfarmlogoTesterPng from '../../../src/assets/oakfarmlogo_tester.png';
-import classNames from 'classnames'; // it should link to is own css thing on the folders this is tempoary
+import classNames from 'classnames';
+import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg'; // it should link to is own css thing on the folders this is tempoary
 //we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
 //in case it interferes with quans code
 
 export default function ContactUs() {
     return (
         <div className={styles.pageContainer}>
-        <div className={styles.topStickyCover}></div>
+            <div className={styles.topStickyCover}></div>
             <div className={styles.headerBar}>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
@@ -35,14 +35,16 @@ export default function ContactUs() {
                 <h1 className={classNames('largeFont', classes.header2)}></h1>
                 <h1 className={classNames('largeFont', classes.header3)}>
                     <span></span>
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        controls={true}
-                        src="https://video.wixstatic.com/video/604302_5625733f4f4642dfb33652d680e51846/480p/mp4/file.mp4"
-                        className={classes.video1}
-                    />
+                    <div className={styles.videoWrapper}>
+                        <video
+                            className={classNames(styles.videoBackground, classes.video1)}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            src="https://video.wixstatic.com/video/604302_bccfa2f9026b4de8a4b2a0809a893cc3/480p/mp4/file.mp4"
+                        />
+                    </div>
                 </h1>
                 <div className={classes.heroImage}>
                     <img
