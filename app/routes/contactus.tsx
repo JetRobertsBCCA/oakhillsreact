@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from '@remix-run/react';
 import styles from './contactUs.module.scss';
 import styles0 from './contactus.module.scss'; // it should link to is own css thing on the folders this is tempoary
@@ -6,6 +6,36 @@ import styles0 from './contactus.module.scss'; // it should link to is own css t
 //in case it interferes with quans code
 
 export default function ContactUs() {
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [message, setMessage] = useState("");
+    const [submitted, setSubmitted] = useState(false);
+
+    const handleSubmit = async (e: { preventDefault: () => void; }) => {
+        e.preventDefault();
+
+        try {
+            const response = await fetch("https://script.google.com/a/macros/basecampcodingacademy.org/s/AKfycbxyjyjzuUS0VgLvcHcfx_pMWGLL526BfIji2Aiq6gX9UEyrBu3zkEtie-iM3LNd_S5kZA/exec", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            if (response.ok) {
+                setSubmitted(true);
+                setName("");
+                setEmail("");
+                setMessage("");
+            } else {
+                alert("There was an error. Please try again later.");
+            }
+        } catch (err) {
+            console.error("Submission error:", err);
+            alert("Something went wrong. Try again!");
+        }
+    };
     return (
        
         <div className={styles.pageContainer}>
@@ -87,6 +117,7 @@ export default function ContactUs() {
                 <div className={styles.copyright}>© 2025 Oak Hill Farm</div>
             </div>
         </div>
+    </div>    
     );
 }
              
