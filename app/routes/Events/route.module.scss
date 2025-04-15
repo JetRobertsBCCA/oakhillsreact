@@ -1,8 +1,52 @@
-.div1 {
-    width: 100vw;
-    height: 100vh;
-    align-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.eventsWrapper {
+    padding: 2rem;
+    background-color: #f9f5f2;
+    min-height: 100vh;
+}
+
+.eventsTitle {
+    font-family: 'Georgia', serif;
+    font-size: 2.5rem;
+    color: #615047;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #615047;
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.stickyNoteGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.stickyNote {
+    background-color: #f5deb3;
+    border: 2px solid #d2b48c;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    width: 100%;
+    max-width: 300px;
+    transform: rotate(-1deg);
+    font-family: 'Courier New', Courier, monospace;
+    position: relative;
+    transition: transform 0.2s;
+}
+
+.stickyNote:hover {
+    transform: rotate(0deg) scale(1.05);
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stickyNote h3 {
+    color: #615047;
+    margin-bottom: 0.5rem;
+}
+
+.stickyNote a {
+    color: #8b4513;
+    font-weight: bold;
+    text-decoration: underline;
 }
