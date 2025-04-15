@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './route.module.scss';
+import { db } from '../../firebaseConfig'; // Adjust the path if necessary
+import { collection, getDocs } from 'firebase/firestore';
 
 const Events = () => {
     const [events, setEvents] = useState([]);
@@ -7,11 +9,8 @@ const Events = () => {
     useEffect(() => {
         const loadEvents = async () => {
             try {
-                const response = await fetch('/data/events.json');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch events');
-                }
-                const eventsData = await response.json();
+                const querySnapshot = await getDocs(collection(db, 'events')); // 'events' is the collection name
+                const eventsData = querySnapshot.docs.map(doc => doc.data());
                 setEvents(eventsData);
             } catch (error) {
                 console.error('Error loading events:', error);
@@ -26,20 +25,17 @@ const Events = () => {
             <h1>Upcoming Events</h1>
             {events.map((event, index) => (
                 <div key={index} className={styles.eventContainer}>
-                    <h3>{event.eventName}</h3>
+                    <h3>{event.name}</h3>
                     <p>
-                        <strong>Date:</strong> {event.eventTime}
+                        <strong>Date:</strong> {event.date}
+                    </p>
+                    <p>
+                        <strong>Time:</strong> {event.time}
                     </p>
                     <p>
                         <strong>Location:</strong> {event.location}
                     </p>
-                    <p>
-                        <strong>Cost:</strong> ${event.cost}
-                    </p>
-                    <p>{event.description}</p>
-                    <a href={event.paymentLink} target="_blank" rel="noopener noreferrer">
-                        Payment Link
-                    </a>
+                    {/* Add any additional fields you may have */}
                 </div>
             ))}
         </div>
