@@ -25,20 +25,17 @@ const Events = () => {
             <h1>Upcoming Events</h1>
             {events.map((event, index) => (
                 <div key={index} className={styles.eventContainer}>
-                    <h3>{event.eventName}</h3>
+                    <h3>{event.name}</h3>
                     <p>
-                        <strong>Date:</strong> {event.eventTime}
+                        <strong>Date:</strong> {event.date}
+                    </p>
+                    <p>
+                        <strong>Time:</strong> {event.time}
                     </p>
                     <p>
                         <strong>Location:</strong> {event.location}
                     </p>
-                    <p>
-                        <strong>Cost:</strong> ${event.cost}
-                    </p>
-                    <p>{event.description}</p>
-                    <a href={event.paymentLink} target="_blank" rel="noopener noreferrer">
-                        Payment Link
-                    </a>
+                    {/* Add any additional fields you may have */}
                 </div>
             ))}
         </div>
