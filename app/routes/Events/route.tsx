@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './route.module.scss';
+import { db } from '../../firebaseConfig'; // Adjust the path if necessary
+import { collection, getDocs } from 'firebase/firestore';
 
 const Events = () => {
     const [events, setEvents] = useState([]);
@@ -7,11 +9,8 @@ const Events = () => {
     useEffect(() => {
         const loadEvents = async () => {
             try {
-                const response = await fetch('/data/events.json');
-                if (!response.ok) {
-                    throw new Error('Failed to fetch events');
-                }
-                const eventsData = await response.json();
+                const querySnapshot = await getDocs(collection(db, 'events')); // 'events' is the collection name
+                const eventsData = querySnapshot.docs.map(doc => doc.data());
                 setEvents(eventsData);
             } catch (error) {
                 console.error('Error loading events:', error);
