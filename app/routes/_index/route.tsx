@@ -11,7 +11,6 @@ import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_16292
 export default function ContactUs() {
     return (
         <div className={styles.pageContainer}>
-            <div className={styles.topStickyCover}></div>
             <div className={styles.headerBar}>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
