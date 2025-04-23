@@ -26,33 +26,33 @@ body {
     z-index: 99;
 }
 
-.headerBar {
-    position: sticky;
-    top: 15px;
-    background-color: rgba(97, 80, 71, 0.15);
-    backdrop-filter: blur(10px);
-    padding: 0;
-    z-index: 100;
-    box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.14);
-    border-radius: 10px;
-    text-align: center;
-    width: 95%;
-    display: inline-block;
-    bottom: auto;
-    margin-top: 15px;
-    margin-bottom: 0;
-    align-content: center;
-    object-fit: fill;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
-    max-width: 95%;
-    min-width: 95%;
-    right: auto;
-    justify-items: center;
-    justify-content: center;
-    left: 2.5%;
-}
+// .headerBar {
+//     position: sticky;
+//     top: 15px;
+//     background-color: rgba(97, 80, 71, 0.15);
+//     backdrop-filter: blur(10px);
+//     padding: 0;
+//     z-index: 100;
+//     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.14);
+//     border-radius: 10px;
+//     text-align: center;
+//     width: 95%;
+//     display: inline-block;
+//     bottom: auto;
+//     margin-top: 15px;
+//     margin-bottom: 0;
+//     align-content: center;
+//     object-fit: fill;
+//     flex-direction: row;
+//     align-items: center;
+//     flex-wrap: wrap;
+//     max-width: 95%;
+//     min-width: 95%;
+//     right: auto;
+//     justify-items: center;
+//     justify-content: center;
+//     left: 2.5%;
+// }
 
 .headerContent {
     padding: 0;
@@ -68,31 +68,40 @@ body {
     margin-left: auto;
 }
 
+.headerBar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(97, 80, 71, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: top 0.3s ease-in-out;
+}
+
 .navRight {
     display: flex;
-    flex: 0 1 auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    gap: 5px;
-    text-align: start;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navLinkRight {
-    color: #475569;
-    background-color: rgba(97, 80, 71, 0.03);
-    padding: 10px 15px;
-    border-radius: 5px;
+    color: white;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-family: Georgia, serif;
-    text-align: center;
-    transition: background-color 0.2s ease;
-    display: inline-block;
-    vertical-align: top;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
 .navLinkRight:hover {
-    background-color: rgba(97, 80, 71, 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 .contactSection {
