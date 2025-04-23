@@ -42,7 +42,7 @@ export default function ContactUs() {
                             muted
                             loop
                             playsInline
-                            src="https://video.wixstatic.com/video/604302_bccfa2f9026b4de8a4b2a0809a893cc3/480p/mp4/file.mp4"
+                            src="https://video.wixstatic.com/video/604302_3fff9fb1ed2a4fa5b186d5177aa52a23/480p/mp4/file.mp4"
                         />
                     </div>
                 </h1>
