@@ -2,7 +2,6 @@ import { Link } from '@remix-run/react';
 import styles from './terms.module.scss';
 
 
-
 export default function Terms() {
     return (
         <div className={styles.pageContainer}>

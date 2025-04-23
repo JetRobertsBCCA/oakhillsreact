@@ -116,7 +116,6 @@ export default function ContactUs() {
                     </div>
                 </div>
 
-                {/* Contact Form */}
                 <div className={styles.formSection}>
                     <h2>Send Us a Message</h2>
                     <form className={styles.contactForm}>
@@ -129,7 +128,7 @@ export default function ContactUs() {
                     </form>
                 </div>
 
-                {/* Footer */}
+            
                 <div className={styles.footerSection}>
                     <div className={styles.footerLinks}>
                         <Link to="/terms" className={styles.footerLink}>
