@@ -28,7 +28,6 @@ body {
 .headerBar {
     position: sticky;
     top: 15px;
-    width: 95%;
     margin: 0 auto;
     padding: 1rem 2rem;
     background-color: rgba(97, 80, 71, 0.95); /* Brown translucent */
@@ -40,14 +39,22 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    width: 100%;
 }
 
 .headerContent {
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: end;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    position: sticky;
+    flex-direction: row;
+    top: 0px;
+    z-index: 999;
+    padding: 1px;
+    min-width: 0px;
+    min-height: 0px;
 }
 
 .navRight {
@@ -91,8 +98,6 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
-
 .contactPage {
     background-color: #f8f4f0;
     font-family: 'Arial', sans-serif;
@@ -111,6 +116,7 @@ body {
     font-size: 36px;
     font-weight: bold;
     margin-bottom: 10px;
+    color: var(--white);
 }
 
 .heroSection p {
@@ -140,7 +146,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 
 .formSection {
     text-align: center;
@@ -179,7 +184,6 @@ body {
     background-color: #4f3e39;
 }
 
-
 .teamSection {
     text-align: center;
     padding: 50px;
@@ -206,7 +210,6 @@ body {
     font-size: 18px;
     margin-top: 10px;
 }
-
 
 .footerSection {
     text-align: center;
