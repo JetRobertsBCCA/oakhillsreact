@@ -160,8 +160,8 @@ export default function ContactUs() {
                         </div>
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
-                                <h2 className={classes.pricingHeaderTitle}>Home Schooling</h2>
-                                <h1 className={classes.pricingHeaderCost}>$300+</h1>
+                                <h2 className={classes.pricingHeaderTitle}>Private Riding Lessons</h2>
+                                <h1 className={classes.pricingHeaderCost}>$50/hour</h1>
                                 <p className={classes.pricingHeaderDescription}></p>
                             </div>
                             <ul className={classes.pricingPlanFeatures}>

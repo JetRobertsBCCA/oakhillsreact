@@ -1,3 +1,4 @@
+
 import '~/styles/reset.scss';
 import '~/styles/colors.scss';
 import '~/styles/typography.scss';
@@ -14,6 +15,10 @@ import {
     useRouteError,
 } from '@remix-run/react';
 import { ErrorComponent } from '~/components/error-component/error-component';
+import { PayPalScriptProvider } from "@paypal/react-paypal-js"; // <-- Import the provider
+
+
+const PAYPAL_CLIENT_ID = "";
 
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -36,7 +41,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
     return (
         <div id="root">
-            <Outlet />
+            {/* Wrap the Outlet with the PayPalScriptProvider */}
+            <PayPalScriptProvider options={{ clientId: PAYPAL_CLIENT_ID, currency: "USD" /* Add other options if needed */ }}>
+                <Outlet />
+            </PayPalScriptProvider>
         </div>
     );
 }
@@ -62,6 +70,10 @@ function getErrorDetails(error: unknown) {
         }
     } else {
         title = 'Unknown error ocurred';
+        // Optionally add more specific error checking here if needed
+        if (error instanceof Error) {
+            message = error.message; // Display standard Error message
+        }
     }
 
     return { title, message };
