@@ -23,7 +23,7 @@ h1 {
     gap: 2rem;
     justify-items: center;
     align-items: stretch;
-    background-color: #615047; /* Same brown color */
+    background-color: rgb(97, 80, 71); /* Same brown color */
     padding: 2rem 0; /* Add padding around the events */
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -31,7 +31,7 @@ h1 {
 
 /* Event card styling */
 .eventContainer {
-    background-color: #fff9d6;
+    background-color: rgb(255, 249, 214);
     border: 2px dashed #615047;
     box-shadow: 6px 6px 10px rgba(0, 0, 0, 0.15);
     padding: 1.2rem;
@@ -42,6 +42,9 @@ h1 {
     transform: rotate(-1deg);
     transition: transform 0.2s ease;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
 .eventContainer:hover {
@@ -77,6 +80,12 @@ h1 {
     text-align: center;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
     margin-top: 10px;
+    position: static;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
 }
 
 .signUpButton:hover {
@@ -264,16 +273,16 @@ h1 {
         flex-direction: column;
         align-items: center;
     }
-    
+
     .slideItem {
         width: 80%;
         max-width: none;
     }
-    
+
     .slideshowImage {
         height: 200px;
     }
-    
+
     .slideshowSection {
         height: auto;
         max-height: 280px;
