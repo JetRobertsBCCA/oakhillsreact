@@ -40,7 +40,7 @@ export default function Home() {
                             muted
                             loop
                             playsInline
-                            src="https://video.wixstatic.com/video/604302_3fff9fb1ed2a4fa5b186d5177aa52a23/480p/mp4/file.mp4"
+                            src="https://video.wixstatic.com/video/604302_170103629c8347c8891c63ad35f4486f/480p/mp4/file.mp4"
                         />
                     </div>
                 </h1>
@@ -110,7 +110,7 @@ export default function Home() {
                                 </li>
                             </ul>
                             <Link to="lessons-info" className={classes.pricingButton}>
-                            View All Schooling Here!
+                                View All Schooling Here!
                             </Link>
                         </div>
                         <div className={classes.pricingCard}>
@@ -159,7 +159,9 @@ export default function Home() {
                         </div>
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
-                                <h2 className={classes.pricingHeaderTitle}>Private Riding Lessons</h2>
+                                <h2 className={classes.pricingHeaderTitle}>
+                                    Private Riding Lessons
+                                </h2>
                                 <h1 className={classes.pricingHeaderCost}>$50/hour</h1>
                                 <p className={classes.pricingHeaderDescription}></p>
                             </div>
@@ -193,7 +195,7 @@ export default function Home() {
                                 </li>
                             </ul>
                             <Link to="lessons-info" className={classes.pricingButton}>
-                            SIGN UP HERE!
+                                SIGN UP HERE!
                             </Link>
                         </div>
                     </div>
