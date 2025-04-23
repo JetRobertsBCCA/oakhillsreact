@@ -163,21 +163,18 @@
     color: black;
     background: transparent;
 }
+
 .pricing {
     background-color: white;
     padding: 24px;
+    width: 100%; /* Changed from 100vw */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     object-fit: cover;
-}
-.pricing {
-    background-color: white;
-    padding: 24px;
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    display: flex; /* Helps align content if needed */
-    flex-direction: column; /* Keeps content stacked vertically */
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
-    object-fit: cover;
+    box-sizing: border-box; /* Added */
 }
 
 .pricingTitle {
@@ -196,38 +193,40 @@
     gap: 20px;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box; /* Added */
 
     @media (max-width: 1024px) {
         padding: 16px;
     }
     @media (max-width: 768px) {
         flex-direction: column;
-        height: auto; /* Adjust height dynamically for smaller screens */
+        height: auto;
     }
 }
 
 .pricingCard {
-    flex: 1; /* Allows cards to grow equally */
-    min-width: 300px; /* Ensures they don't shrink too much */
-    max-width: 100%; /* Prevents them from overflowing */
+    flex: 1;
+    min-width: 300px;
+    max-width: 100%;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     transition: box-shadow 0.3s;
     padding: 16px;
     padding-bottom: 32px;
-    width: 100%; /* Ensures it takes full width inside the parent */
+    width: 100%;
+    box-sizing: border-box; /* Added */
 }
 
 @media (max-width: 1024px) {
     .pricingCard {
-        width: 80%; /* Adjust for medium screens */
+        width: 80%;
     }
 }
 
 @media (max-width: 768px) {
     .pricingCard {
-        width: 100%; /* Full width on smaller screens */
+        width: 100%;
     }
 }
 .pricingPlanOverview {
@@ -439,7 +438,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100vw; /* Kept as 100vw per request */
     height: 100vh;
     overflow: hidden;
     z-index: -1;
@@ -449,7 +448,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw;
+    width: 100vw; /* Kept as 100vw per request */
     height: 100vh;
     object-fit: cover;
     z-index: -1;

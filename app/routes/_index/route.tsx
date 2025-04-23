@@ -1,4 +1,3 @@
-import React from 'react';
 import { Link } from '@remix-run/react';
 import styles from './home.module.scss';
 import classes from './route.module.scss';
@@ -8,7 +7,7 @@ import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_16292
 //we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
 //in case it interferes with quans code
 
-export default function ContactUs() {
+export default function Home() {
     return (
         <div className={styles.pageContainer}>
             <div className={styles.headerBar}>
@@ -17,8 +16,8 @@ export default function ContactUs() {
                         <Link to="aboutus" className={styles.navLinkRight}>
                             About Us
                         </Link>
-                        <Link to="/horses" className={styles.navLinkRight}>
-                            Our Horses
+                        <Link to="FAQ" className={styles.navLinkRight}>
+                            FAQ
                         </Link>
                         <Link to="events" className={styles.navLinkRight}>
                             Events
@@ -110,9 +109,9 @@ export default function ContactUs() {
                                     <p></p>
                                 </li>
                             </ul>
-                            <button className={classes.pricingButton}>
-                                View All Lessons Here!
-                            </button>
+                            <Link to="lessons-info" className={classes.pricingButton}>
+                            View All Schooling Here!
+                            </Link>
                         </div>
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
@@ -193,9 +192,9 @@ export default function ContactUs() {
                                     <p></p>
                                 </li>
                             </ul>
-                            <button className={classes.pricingButton}>
-                                View All Schooling Here! 
-                            </button>
+                            <Link to="lessons-info" className={classes.pricingButton}>
+                            SIGN UP HERE!
+                            </Link>
                         </div>
                     </div>
                 </div>

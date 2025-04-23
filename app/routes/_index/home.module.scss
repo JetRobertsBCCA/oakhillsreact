@@ -12,8 +12,9 @@ body {
 .pageContainer {
     background-color: #d4d6d1;
     color: #475569;
-    min-width: 100vw;
+    min-width: 100%;
     min-height: 100vh;
+    box-sizing: border-box;
 }
 
 .topStickyCover {
@@ -26,33 +27,7 @@ body {
     z-index: 99;
 }
 
-// .headerBar {
-//     position: sticky;
-//     top: 15px;
-//     background-color: rgba(97, 80, 71, 0.15);
-//     backdrop-filter: blur(10px);
-//     padding: 0;
-//     z-index: 100;
-//     box-shadow: 0px 2px 7px 0px rgba(0, 0, 0, 0.14);
-//     border-radius: 10px;
-//     text-align: center;
-//     width: 95%;
-//     display: inline-block;
-//     bottom: auto;
-//     margin-top: 15px;
-//     margin-bottom: 0;
-//     align-content: center;
-//     object-fit: fill;
-//     flex-direction: row;
-//     align-items: center;
-//     flex-wrap: wrap;
-//     max-width: 95%;
-//     min-width: 95%;
-//     right: auto;
-//     justify-items: center;
-//     justify-content: center;
-//     left: 2.5%;
-// }
+
 
 .headerContent {
     padding: 0;
@@ -79,6 +54,8 @@ body {
     justify-content: center;
     align-items: center;
     transition: top 0.3s ease-in-out;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .navRight {
@@ -210,6 +187,7 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.06);
     box-shadow: 0px 10px 15px 0 rgba(0, 0, 0, 0.07);
     background-color: white;
+    box-sizing: border-box;
 }
 
 .locationContent .subHeading {
@@ -256,6 +234,8 @@ body {
     padding-left: 0px;
     padding-top: 20px;
     align-content: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footerLinks {
