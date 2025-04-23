@@ -92,39 +92,56 @@ h1 {
     border: none;
 }
 
-.headerBar {
-    background-color: #4f3e39;
-    margin: 0 auto;
+.headerContent {
     padding: 0;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     flex-wrap: nowrap;
     position: static;
-    width: 95vw;
     align-content: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: auto;
 }
-.navRight {
+
+.headerBar {
+    position: sticky;
+    top: 0;
+    background-color: rgba(97, 80, 71, 0.95);
+    backdrop-filter: blur(8px);
+    z-index: 999;
+    padding: 1rem 0;
     display: flex;
-    gap: 1.5rem;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
+    transition: top 0.3s ease-in-out;
+    margin: 0; /* Make sure there's no margin */
+}
+
+.navRight {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .navLinkRight {
     color: white;
+    background-color: transparent;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    font-family: Georgia, serif;
     font-weight: bold;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .navLinkRight:hover {
-    color: #decab9;
+    background-color: rgba(255, 255, 255, 0.1);
 }
-
 .topStickyCover {
     height: 10px;
     background-color: #615047;
