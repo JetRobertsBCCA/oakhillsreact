@@ -32,19 +32,18 @@ export default function Aboutus() {
                         <Link to="/" className={styles.navLinkRight}>
                             Home
                         </Link>
+                        <Link to="/aboutus" className={styles.navLinkRight}>
+                            About Us
+                        </Link>
                         <Link to="/horses" className={styles.navLinkRight}>
                             Our Horses
                         </Link>
                         <Link to="/events" className={styles.navLinkRight}>
                             Events
                         </Link>
-                        <Link to="/contactus" className={styles.navLinkRight}>
-                            Contact Us
-                        </Link>
                     </div>
                 </div>
             </div>
-
             <div className={styles.contactSection}>
                 <div className={styles.contentWrapper}>
                     <h1 className={styles.mainHeading}>Oak Hill Stable</h1>

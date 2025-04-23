@@ -42,10 +42,9 @@ export default function ContactUs() {
     return (
         <div className={styles.pageContainer}>
             <div className={styles.headerBar}>
-                <div className={styles.topStickyCover}></div>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
-                    <Link to="/" className={styles.navLinkRight}>
+                        <Link to="/" className={styles.navLinkRight}>
                             Home
                         </Link>
                         <Link to="/aboutus" className={styles.navLinkRight}>
@@ -128,7 +127,6 @@ export default function ContactUs() {
                     </form>
                 </div>
 
-            
                 <div className={styles.footerSection}>
                     <div className={styles.footerLinks}>
                         <Link to="/terms" className={styles.footerLink}>
