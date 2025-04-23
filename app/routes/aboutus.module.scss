@@ -490,3 +490,38 @@ body {
         padding: 60px 15px;
     }
 }
+@media (max-width: 480px) {
+    .teamIntro p,
+    .staffTextContent p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  }
+  @media (max-width: 768px) {
+    .locationContent {
+      width: 100%;
+      max-width: 95%;
+    }
+  }
+  @media (max-width: 768px) {
+    .headerContent {
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 10px;
+      align-items: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .staffCard {
+      margin: 0 10px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .teamIntro h2 {
+      left: 0;
+      position: static;
+      text-align: center;
+    }
+  }

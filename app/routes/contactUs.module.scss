@@ -240,3 +240,85 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
     border: none;
 }
+
+@media (max-width: 768px) {
+    .headerBar {
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+    }
+  
+    .headerContent {
+      justify-content: center;
+      padding: 0.5rem;
+    }
+  
+    .navRight {
+      gap: 1rem;
+      flex-direction: column;
+    }
+  
+    .heroSection {
+      padding: 40px 15px;
+    }
+  
+    .heroSection h1 {
+      font-size: 28px;
+    }
+  
+    .heroSection p {
+      font-size: 16px;
+    }
+  
+    .contactSection {
+      flex-direction: column;
+      padding: 30px 20px;
+      gap: 30px;
+    }
+  
+    .locationContent,
+    .contactInfo {
+      max-width: 100%;
+    }
+  
+    .formSection {
+      padding: 30px 20px;
+    }
+  
+    .contactForm {
+      max-width: 100%;
+    }
+  
+    .teamGrid {
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+  
+    .teamSection {
+      padding: 30px 20px;
+    }
+  
+    .footerSection {
+      padding: 15px;
+    }
+  
+    .footerLink {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .locationContent iframe {
+      height: 300px;
+    }
+  
+    .navLinkRight {
+      font-size: 0.95rem;
+      padding: 0.4rem 0.8rem;
+    }
+  
+    .teamMember img {
+      width: 120px;
+      height: 120px;
+    }
+  }
