@@ -6,14 +6,22 @@ import { collection, getDocs } from 'firebase/firestore';
 
 const Events = () => {
     const [events, setEvents] = useState([]);
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentSlide, setCurrentSlide] = useState(0);
 
     const images = [
-        '/images/slide1.jpg', 
-        '/images/slide2.jpg',
-        '/images/slide3.jpg',
-        '/images/slide4.jpg',
+        '../../../images/slide(1).PNG',
+        '../../../images/slide(2).PNG',
+        '../../../images/slide(3).PNG',
+        '../../../images/slide(4).PNG',
+        '../../../images/slide(5).PNG',
+        '../../../images/slide(6).PNG',
+        '../../../images/slide(7).PNG',
+        '../../../images/slide(8).PNG',
+        '../../../images/slide(9).PNG',
     ];
+
+    // Calculate total number of slides (groups of 3 images)
+    const totalSlides = Math.ceil(images.length / 3);
 
     useEffect(() => {
         const loadEvents = async () => {
@@ -30,11 +38,11 @@ const Events = () => {
 
         // Set up the slideshow interval
         const interval = setInterval(() => {
-            setCurrentImageIndex(prevIndex => (prevIndex + 1) % images.length);
+            setCurrentSlide(prevSlide => (prevSlide + 1) % totalSlides);
         }, 5000); // Change every 5 seconds
 
         return () => clearInterval(interval); // Cleanup the interval when the component is unmounted
-    }, []);
+    }, [totalSlides]);
 
     return (
         <div className={styles.div1}>
@@ -52,13 +60,46 @@ const Events = () => {
 
             {/* Hero Section */}
             <div className={styles.heroSection}>
-                <h1>Discover What’s Happening at Oak Hill</h1>
+                <h1>Discover What's Happening at Oak Hill</h1>
                 <p>Sign up for fun, learning, and community—right here at the Stable!</p>
             </div>
 
-            {/* Image Slideshow Section */}
+            {/* Image Slideshow Section - Now showing 3 images per slide */}
             <div className={styles.slideshowSection}>
-                <img src={images[currentImageIndex]} alt="Event Slide" className={styles.slideshowImage} />
+                <div 
+                    className={styles.slideshowWrapper} 
+                    style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+                >
+                    {/* Create groups of 3 images */}
+                    {Array.from({ length: totalSlides }).map((_, slideIndex) => (
+                        <div key={slideIndex} className={styles.slideGroup}>
+                            {/* For each group, display up to 3 images */}
+                            {Array.from({ length: 3 }).map((_, imgIndex) => {
+                                const imageIndex = slideIndex * 3 + imgIndex;
+                                // Only render if we have an image at this index
+                                return imageIndex < images.length ? (
+                                    <div key={imgIndex} className={styles.slideItem}>
+                                        <img 
+                                            src={images[imageIndex]} 
+                                            alt={`Event Slide ${imageIndex + 1}`} 
+                                            className={styles.slideshowImage} 
+                                        />
+                                    </div>
+                                ) : null;
+                            })}
+                        </div>
+                    ))}
+                </div>
+                
+                <div className={styles.slideIndicators}>
+                    {Array.from({ length: totalSlides }).map((_, index) => (
+                        <span 
+                            key={index}
+                            className={`${styles.indicator} ${currentSlide === index ? styles.activeIndicator : ''}`}
+                            onClick={() => setCurrentSlide(index)}
+                        />
+                    ))}
+                </div>
             </div>
 
             {/* Event Posters Grid */}

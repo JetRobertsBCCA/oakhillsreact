@@ -165,7 +165,7 @@ h1 {
 }
 
 .mapSection iframe {
-    width: 80%;  /* Make the map smaller (you can adjust this percentage as needed) */
+    width: 80%; /* Make the map smaller (you can adjust this percentage as needed) */
     height: 300px; /* Smaller height */
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
@@ -174,19 +174,91 @@ h1 {
     display: block;
 }
 
+/* Updated slideshow section for 3 images */
 .slideshowSection {
-    width: 100%;
     max-width: 1000px;
     margin: 2rem auto;
     text-align: center;
-    background-color: #fdf8f2; /* Optional: match the page's background */
+    background-color: #fdf8f2;
     border-radius: 12px;
     overflow: hidden;
+    position: relative;
+    height: 320px; /* Adjust based on your image height */
+}
+
+.slideshowWrapper {
+    display: flex;
+    width: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slideGroup {
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 10px;
+}
+
+.slideItem {
+    width: calc(33.333% - 20px);
+    max-width: 300px;
+    flex: 0 0 auto;
 }
 
 .slideshowImage {
     width: 100%;
-    height: auto;
+    height: 250px;
+    object-fit: cover;
     border-radius: 12px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.slideshowImage:hover {
+    transform: scale(1.05);
+}
+
+/* Slide indicators */
+.slideIndicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #decab9;
+    margin: 0 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.activeIndicator {
+    background-color: #615047;
+    transform: scale(1.2);
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    .slideGroup {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .slideItem {
+        width: 80%;
+        max-width: none;
+    }
+    
+    .slideshowImage {
+        height: 200px;
+    }
+    
+    .slideshowSection {
+        height: auto;
+        max-height: 280px;
+    }
 }
