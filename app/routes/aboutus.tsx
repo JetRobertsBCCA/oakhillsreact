@@ -27,10 +27,9 @@ export default function Aboutus() {
     return (
         <div className={styles.pageContainer}>
             <div className={styles.headerBar}>
-                <div className={styles.topStickyCover}></div>
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
-                    <Link to="/" className={styles.navLinkRight}>
+                        <Link to="/" className={styles.navLinkRight}>
                             Home
                         </Link>
                         <Link to="/aboutus" className={styles.navLinkRight}>
