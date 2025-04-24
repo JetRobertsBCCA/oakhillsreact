@@ -1,5 +1,5 @@
 import { Link } from '@remix-run/react';
-import styles from './home.module.scss';
+import navbar from '../navbarglobal.module.scss';
 import classes from './route.module.scss';
 import OakfarmlogoTesterPng from '../../../src/assets/oakfarmlogo_tester.png';
 import classNames from 'classnames';
@@ -7,33 +7,33 @@ import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_16292
 
 export default function Home() {
     return (
-        <div className={styles.pageContainer}>
-            <div className={styles.headerBar}>
-                <div className={styles.headerContent}>
-                    <div className={styles.navRight}>
-                        <Link to="aboutus" className={styles.navLinkRight}>
-                            About Usss
+        <div className={navbar.pageContainer}>
+            <div className={navbar.headerBar}>
+                <div className={navbar.headerContent}>
+                    <div className={navbar.navRight}>
+                        <Link to="aboutus" className={navbar.navLinkRight}>
+                            About Us
                         </Link>
-                        <Link to="FAQ" className={styles.navLinkRight}>
+                        <Link to="FAQ" className={navbar.navLinkRight}>
                             FAQ
                         </Link>
-                        <Link to="events" className={styles.navLinkRight}>
+                        <Link to="events" className={navbar.navLinkRight}>
                             Events
                         </Link>
-                        <Link to="contactus" className={styles.navLinkRight}>
+                        <Link to="contactus" className={navbar.navLinkRight}>
                             Contact Us
                         </Link>
                     </div>
                 </div>
             </div>
 
-            <div className={styles.footerSection}>
+            <div className={navbar.footerSection}>
                 <h1 className={classNames('largeFont', classes.header2)}></h1>
                 <h1 className={classNames('largeFont', classes.header3)}>
                     <span></span>
-                    <div className={styles.videoWrapper}>
+                    <div className={navbar.videoWrapper}>
                         <video
-                            className={classNames(styles.videoBackground, classes.video1)}
+                            className={classNames(navbar.videoBackground, classes.video1)}
                             autoPlay
                             muted
                             loop
@@ -225,18 +225,18 @@ export default function Home() {
                     ></iframe>
                 </div>
             </div>
-            <div className={styles.mapContainer}>
-                <div className={styles.footerLinks}>
-                    <Link to="/pricing" className={styles.footerLink}></Link>
-                    <Link to="/terms" className={styles.footerLink}>
+            <div className={navbar.mapContainer}>
+                <div className={navbar.footerLinks}>
+                    <Link to="/pricing" className={navbar.footerLink}></Link>
+                    <Link to="/terms" className={navbar.footerLink}>
                         Terms & Conditions
                     </Link>
-                    <Link to="/refund-policy" className={styles.footerLink}>
+                    <Link to="/refund-policy" className={navbar.footerLink}>
                         Refund Policy
                     </Link>
-                    <Link to="/routes/ContactUs" className={styles.footerLink}></Link>
+                    <Link to="/routes/ContactUs" className={navbar.footerLink}></Link>
                 </div>
-                <div className={styles.copyright}>Copyright © 2025 Oak Hill Farm</div>
+                <div className={navbar.copyright}>Copyright © 2025 Oak Hill Farm</div>
             </div>
         </div>
     );

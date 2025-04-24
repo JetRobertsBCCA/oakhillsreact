@@ -1,324 +1,179 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-    background-color: #f0f0f0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background-color: #f0f0f0;
 }
 
-.pageContainer {
-    background-color: #d4d6d1;
-    color: #475569;
-    min-width: 100vw;
-    min-height: 100vh;
-}
+
 .topStickyCover {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 15px;
-    background-color: #d4d6d1;
-    z-index: 99;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 15px;
+  background-color: #d4d6d1;
+  z-index: 99;
 }
 
-.headerBar {
-    position: sticky;
-    top: 15px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    background-color: rgba(97, 80, 71, 0.95); /* Brown translucent */
-    backdrop-filter: blur(8px);
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;
-}
-
-.headerContent {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    align-items: center;
-    flex-wrap: nowrap;
-    position: sticky;
-    flex-direction: row;
-    top: 0px;
-    z-index: 999;
-    padding: 1px;
-    min-width: 0px;
-    min-height: 0px;
-}
-
-.navRight {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-}
-
-.navLinkRight {
-    color: white;
-    background-color: transparent;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: Georgia, serif;
-    font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.navLinkRight:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    transform: scale(1.05);
-}
 
 .imageWrapper {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    line-height: 0;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  line-height: 0;
 }
 
 .staffImage {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .contactPage {
-    background-color: #f8f4f0;
-    font-family: 'Arial', sans-serif;
-    color: #333;
+  background-color: #f8f4f0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
 }
 
-/* Hero Section */
 .heroSection {
-    text-align: center;
-    background: #615047;
-    color: white;
-    padding: 60px 20px;
+  text-align: center;
+  background: #615047;
+  color: white;
+  padding: 60px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .heroSection h1 {
-    font-size: 36px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: var(--white);
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--white);
 }
 
 .heroSection p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: 0 auto;
+  font-size: 18px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
-/* Main Contact Section */
 .contactSection {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    padding: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .locationContent,
 .contactInfo {
-    flex: 1;
-    max-width: 450px;
+  flex: 1;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .contactInfo {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .formSection {
-    text-align: center;
-    padding: 50px;
+  text-align: center;
+  padding: 50px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .contactForm {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    max-width: 400px;
-    margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 20px;
 }
 
 .contactForm input,
 .contactForm textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
 }
 
 .button {
-    background-color: #615047;
-    color: white;
-    padding: 12px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 0.3s;
+  background-color: #615047;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .button:hover {
-    background-color: #4f3e39;
+  background-color: #4f3e39;
 }
 
 .teamSection {
-    text-align: center;
-    padding: 50px;
+  text-align: center;
+  padding: 50px 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .teamGrid {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 
 .teamMember {
-    text-align: center;
+  text-align: center;
 }
 
 .teamMember img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .teamMember h3 {
-    font-size: 18px;
-    margin-top: 10px;
+  font-size: 18px;
+  margin-top: 10px;
 }
 
-.footerSection {
-    text-align: center;
-    background: #615047;
-    color: white;
-    padding: 20px;
-}
-
-.footerLink {
-    color: white;
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-.footerLink:hover {
-    text-decoration: underline;
-}
-
-.copyright {
-    font-size: 14px;
-    margin-top: 10px;
-}
 
 .locationContent iframe {
-    width: 100%;
-    height: 400px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    border: none;
+  width: 100%;
+  max-width: 100%;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  border: none;
+  display: block;
+  margin: 0;
 }
 
-@media (max-width: 768px) {
-    .headerBar {
-      flex-direction: column;
-      align-items: center;
-      padding: 1rem;
-    }
-  
-    .headerContent {
-      justify-content: center;
-      padding: 0.5rem;
-    }
-  
-    .navRight {
-      gap: 1rem;
-      flex-direction: column;
-    }
-  
-    .heroSection {
-      padding: 40px 15px;
-    }
-  
-    .heroSection h1 {
-      font-size: 28px;
-    }
-  
-    .heroSection p {
-      font-size: 16px;
-    }
-  
-    .contactSection {
-      flex-direction: column;
-      padding: 30px 20px;
-      gap: 30px;
-    }
-  
-    .locationContent,
-    .contactInfo {
-      max-width: 100%;
-    }
-  
-    .formSection {
-      padding: 30px 20px;
-    }
-  
-    .contactForm {
-      max-width: 100%;
-    }
-  
-    .teamGrid {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
-  
-    .teamSection {
-      padding: 30px 20px;
-    }
-  
-    .footerSection {
-      padding: 15px;
-    }
-  
-    .footerLink {
-      display: block;
-      margin: 10px 0;
-    }
-  
-    .locationContent iframe {
-      height: 300px;
-    }
-  
-    .navLinkRight {
-      font-size: 0.95rem;
-      padding: 0.4rem 0.8rem;
-    }
-  
-    .teamMember img {
-      width: 120px;
-      height: 120px;
-    }
-  }

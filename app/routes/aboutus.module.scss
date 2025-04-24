@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box;
 }
-
+// i had to manually adjust ALOT of the padding here, unsure if it happend with codux but in my laptop the pages woult not wrap around the e
+//edges like it should properly ,i suspect it might not showed up on yalls screens since the laptop resoltuions
+//arent as high as mine but please let me know if it messed up anything else
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
@@ -11,37 +13,36 @@ body {
 
 .teamSectionWrapper {
     background-color: #615047;
-    padding: 60px 20px;
+    padding: 60px 0;
     color: #f0f0f0;
 }
 
 .teamIntro {
-    max-width: 800px;
-    margin: 0 auto 50px auto;
+    margin-bottom: 50px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-    h2 {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 2.5rem;
-        color: #ffffff;
-        font-weight: normal;
-        align-content: end;
-        margin-bottom: 0px;
-        position: relative;
-        left: 150px;
-        line-height: 40px;
-    }
+.teamIntro h2 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.5rem;
+    color: #ffffff;
+    font-weight: normal;
+    align-content: end;
+    margin-bottom: 0px;
+    line-height: 40px;
+}
 
-    p {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        color: #dfe4ea;
-    }
+.teamIntro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #dfe4ea;
 }
 
 .staffList {
-    max-width: 1100px;
-    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
     display: grid;
     gap: 40px;
 }
@@ -70,30 +71,30 @@ body {
     flex: 3;
     min-width: 280px;
     text-align: left;
+}
 
-    h3 {
-        font-family: Georgia, 'Times New Roman', Times, serif;
-        font-size: 1.8rem;
-        color: #615047;
-        margin-top: 0;
-        margin-bottom: 5px;
-    }
+.staffTextContent h3 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.8rem;
+    color: #615047;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
 
-    h4 {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1.1rem;
-        color: #615047;
-        margin-bottom: 15px;
-        font-weight: bold;
-    }
+.staffTextContent h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    color: #615047;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
 
-    p {
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 1rem;
-        line-height: 1.7;
-        color: #333;
-        margin-bottom: 0;
-    }
+.staffTextContent p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 0;
 }
 
 .staffImageContainer {
@@ -108,61 +109,6 @@ body {
     border-radius: 8px;
     object-fit: cover;
     max-height: 450px;
-}
-
-.headerContent {
-    padding: 0;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    position: static;
-    align-content: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: auto;
-}
-
-.headerBar {
-    position: sticky;
-    top: 0;
-    background-color: rgba(97, 80, 71, 0.95);
-    backdrop-filter: blur(8px);
-    z-index: 999;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: top 0.3s ease-in-out;
-    margin: 0; /* Make sure there's no margin */
-}
-
-.navRight {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.navLinkRight {
-    color: white;
-    background-color: transparent;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: Georgia, serif;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-}
-
-.navLinkRight:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-.topStickyCover {
-    height: 10px;
-    background-color: #615047;
 }
 
 @media (max-width: 768px) {
@@ -181,43 +127,33 @@ body {
 
     .staffTextContent {
         text-align: center;
-        h3 {
-            font-size: 1.6rem;
-        }
-        h4 {
-            font-size: 1rem;
-        }
-        p {
-            font-size: 0.95rem;
-        }
+    }
+    .staffTextContent h3 {
+        font-size: 1.6rem;
+    }
+    .staffTextContent h4 {
+        font-size: 1rem;
+    }
+    .staffTextContent p {
+        font-size: 0.95rem;
     }
 
-    .teamIntro {
-        h2 {
-            font-size: 2rem;
-        }
-        p {
-            font-size: 1rem;
-        }
+    .teamIntro h2 {
+        font-size: 2rem;
+        left: 0;
+        position: static;
+        text-align: center;
+    }
+    .teamIntro p {
+        font-size: 1rem;
     }
 
     .teamSectionWrapper {
-        padding: 40px 15px;
+        padding: 40px 0; 
     }
-}
-
-.mapContainer {
-    width: 100%;
-    max-width: 800px;
-    margin-top: 30px;
-    margin-bottom: 20px;
-}
-
-.mapContainer iframe {
-    display: block;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    .staffCard {
+        margin: 0 10px;
+    }
 }
 
 .pageContainer {
@@ -226,16 +162,6 @@ body {
     min-width: 100vw;
     min-height: 100vh;
     width: 100%;
-}
-
-.topStickyCover {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 15px;
-    background-color: #d4d6d1;
-    z-index: 99;
 }
 
 .headerBar {
@@ -316,20 +242,21 @@ body {
 
 .contactSection {
     background-color: #d3d6d1;
-    padding: 80px 20px;
+    padding: 80px 0;
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
 .contentWrapper {
-    max-width: 800px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 10px;
+    padding: 0 20px; 
+    box-sizing: border-box;
 }
 
 .mainHeading {
@@ -363,48 +290,16 @@ body {
     text-align: center;
 }
 
-.locationSection {
-    background-color: #d6d8d3;
-    padding: 80px 20px;
-    display: flex;
-    justify-content: center;
-}
-
-.locationContent {
-    max-width: 600px;
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    padding: 50px;
-    border-radius: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    box-shadow: 0px 10px 15px 0 rgba(0, 0, 0, 0.07);
-    background-color: white;
-}
-
-.locationContent .subHeading {
-    font-size: 2.5rem;
-    color: #615047;
-    margin-bottom: 10px;
-}
-
-.locationContent .bodyText {
-    margin-top: 15px;
-    margin-bottom: 35px;
-    padding: 10px 0px;
-    max-width: 750px;
-}
-
 .footerSection {
     background-color: #d5d8d3;
-    padding: 80px 20px 80px 20px;
+    padding: 80px 0 80px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .footerLinks {
@@ -449,6 +344,14 @@ body {
 @media (max-width: 768px) {
     .headerContent {
         justify-content: center;
+        margin: 0 auto;
+        width: 100%;
+        padding: 0 10px;
+        align-items: center;
+    }
+    
+    .teamSectionWrapper {
+         padding: 40px 0;
     }
 }
 
@@ -474,54 +377,16 @@ body {
     .bodyText {
         font-size: 1rem;
     }
-
-    .locationContent {
-        padding: 25px;
-    }
-    .locationContent .subHeading {
-        font-size: 1.8rem;
-    }
     .footerLinks {
         gap: 10px 20px;
     }
     .contactSection,
-    .locationSection,
     .footerSection {
-        padding: 60px 15px;
+        padding: 60px 0; 
     }
-}
-@media (max-width: 480px) {
     .teamIntro p,
     .staffTextContent p {
       font-size: 0.9rem;
       line-height: 1.6;
     }
-  }
-  @media (max-width: 768px) {
-    .locationContent {
-      width: 100%;
-      max-width: 95%;
-    }
-  }
-  @media (max-width: 768px) {
-    .headerContent {
-      margin: 0 auto;
-      width: 100%;
-      padding: 0 10px;
-      align-items: center;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .staffCard {
-      margin: 0 10px;
-    }
-  }
-
-  @media (max-width: 768px) {
-    .teamIntro h2 {
-      left: 0;
-      position: static;
-      text-align: center;
-    }
-  }
+}

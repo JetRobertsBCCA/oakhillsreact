@@ -1,5 +1,6 @@
 import { Link } from '@remix-run/react';
 import styles from './aboutus.module.scss';
+import navbar from './navbarglobal.module.scss';
 import logoImage from '../../src/about_us_pictures/oakhillshdlogo.png';
 
 const staffMembers = [
@@ -25,19 +26,27 @@ const staffMembers = [
 
 export default function Aboutus() {
     return (
-        <div className={styles.pageContainer}>
-            <div className={styles.headerBar}>
-                <div className={styles.headerContent}>
-                    <div className={styles.navRight}>
-                        <Link to="/" className={styles.navLinkRight}>
+        <div className={navbar.pageContainer}>
+            <div className={navbar.headerBar}>
+                <div className={navbar.headerContent}>
+                    <div className={navbar.navRight}>
+                        <Link to="/" className={navbar.navLinkRight}>
                             Home
                         </Link>
-                        <Link to="/events" className={styles.navLinkRight}>
+                        <Link to="/FAQ" className={navbar.navLinkRight}>
+                            FAQ
+                        </Link>
+                        <Link to="/events" className={navbar.navLinkRight}>
                             Events
+                        </Link>
+                        <Link to="/contactus" className={navbar.navLinkRight}>
+                            Contact Us
                         </Link>
                     </div>
                 </div>
             </div>
+
+
             <div className={styles.contactSection}>
                 <div className={styles.contentWrapper}>
                     <h1 className={styles.mainHeading}>Oak Hill Stable</h1>

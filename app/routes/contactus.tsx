@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from '@remix-run/react';
 import styles from './contactUs.module.scss';
-import styles0 from './contactus.module.scss'; // it should link to is own css thing on the folders this is tempoary
-//we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
-//in case it interferes with quans code
+import navbar from './navbarglobal.module.scss';
 
 export default function ContactUs() {
     const [name, setName] = useState('');
@@ -11,49 +9,23 @@ export default function ContactUs() {
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
-    const handleSubmit = async (e: { preventDefault: () => void }) => {
-        e.preventDefault();
 
-        try {
-            const response = await fetch(
-                'https://script.google.com/a/macros/basecampcodingacademy.org/s/AKfycbxyjyjzuUS0VgLvcHcfx_pMWGLL526BfIji2Aiq6gX9UEyrBu3zkEtie-iM3LNd_S5kZA/exec',
-                {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ name, email, message }),
-                }
-            );
 
-            if (response.ok) {
-                setSubmitted(true);
-                setName('');
-                setEmail('');
-                setMessage('');
-            } else {
-                alert('There was an error. Please try again later.');
-            }
-        } catch (err) {
-            console.error('Submission error:', err);
-            alert('Something went wrong. Try again!');
-        }
-    };
     return (
-        <div className={styles.pageContainer}>
-            <div className={styles.headerBar}>
-                <div className={styles.headerContent}>
-                    <div className={styles.navRight}>
-                        <Link to="/" className={styles.navLinkRight}>
+        <div className={navbar.pageContainer}>
+            <div className={navbar.headerBar}>
+                <div className={navbar.headerContent}>
+                    <div className={navbar.navRight}>
+                        <Link to="/" className={navbar.navLinkRight}>
                             Home
                         </Link>
-                        <Link to="/aboutus" className={styles.navLinkRight}>
+                        <Link to="/aboutus" className={navbar.navLinkRight}>
                             About Us
                         </Link>
-                        <Link to="/horses" className={styles.navLinkRight}>
-                            Our Horses
+                        <Link to="/FAQ" className={navbar.navLinkRight}>
+                            FAQ
                         </Link>
-                        <Link to="/events" className={styles.navLinkRight}>
+                        <Link to="/events" className={navbar.navLinkRight}>
                             Events
                         </Link>
                     </div>
@@ -69,7 +41,7 @@ export default function ContactUs() {
                     <div className={styles.locationContent}>
                         <h2 className={styles.subHeading}>How to find us!</h2>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.059960857979!2d-89.5879805256308!3d34.170384611485176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8880697720080de9%3A0x5adbc59099274ad9!2sOak%20Hill%20Farm%20Water%20Valley%20Mississippi!5e0!3m2!1sen!2sus!4v1743825641509!5m2!1sen!2sus"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.059960857979!2d-89.5879805256308!3d34.170384611485176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8880697720080de9%3A0x5adbc59099274ad9!2sOak%20Hill%20Farm%20Water%20Valley%20Mississippi!5e0!3m2!1sen!2sus!4v1743825641509!5m2!1sen!2sus" // Consider updating this src if possible
                             width="100%"
                             height="400"
                             allowFullScreen
@@ -77,7 +49,6 @@ export default function ContactUs() {
                         ></iframe>
                     </div>
 
-                    {/* Contact Information */}
                     <div className={styles.contactInfo}>
                         <h2 className={styles.subHeading}>Contact Details</h2>
                         <p>

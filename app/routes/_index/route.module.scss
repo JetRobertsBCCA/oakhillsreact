@@ -11,31 +11,14 @@
     }
 }
 
-.topStickyCover {
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 15px;
+.pageContainer {
     background-color: #d4d6d1;
-    z-index: 99;
+    color: #475569;
+    min-width: 100%;
+    min-height: 1080vh;
+    box-sizing: border-box;
 }
 
-.imageWrapper {
-    margin-top: 20px;
-    margin-bottom: 30px;
-    line-height: 0;
-}
-
-.staffImage {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
 
 .heroImageImg {
     object-fit: cover;
@@ -101,37 +84,9 @@
 .heroImageExploreButton:hover {
     background-color: #848484;
 }
-.heroTitle {
-    min-height: 100vh;
-    padding: 60px;
-    background: linear-gradient(292deg, #e1e2ff 0%, #ddebff 49%, #e3fbf9 98%);
-    align-content: center;
-}
 
-.heroTitleHeading {
-    margin-bottom: 32px;
-    font-size: 120px;
-    font-weight: 700;
-    text-align: center;
 
-    @media (width < 768px) {
-        font-size: 70px;
-    }
-    @media (width < 480px) {
-        font-size: 40px;
-    }
-}
 
-.heroTitleButtons {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    @media (width < 768px) {
-        align-content: center;
-        flex-direction: column;
-    }
-}
 
 .heroTitlePrimaryButton,
 .heroTitleSecondaryButton {
@@ -152,22 +107,11 @@
     }
 }
 
-.heroTitlePrimaryButton,
-.heroTitleSecondaryButton:hover {
-    color: white;
-    background: black;
-}
-
-.heroTitleSecondaryButton,
-.heroTitlePrimaryButton:hover {
-    color: black;
-    background: transparent;
-}
 
 .pricing {
     background-color: white;
     padding: 24px;
-    width: 100%; /* Changed from 100vw */
+    width: 100%; //dont change this!!!!!!! meses up wdethf
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -320,27 +264,6 @@
     }
 }
 
-.aboutImage {
-    height: 100%;
-    border-radius: 12px;
-}
-
-.aboutTitleText {
-    background-color: #e0e5fc;
-    font-size: 60px;
-    font-weight: 700;
-    grid-column: 2 / 4;
-    border-radius: 12px;
-    text-align: center;
-    align-content: center;
-    padding: 36px;
-
-    @media (width < 480px) {
-        grid-column: 1 / 1;
-        font-size: 20px;
-    }
-}
-
 .aboutSubtitleText {
     text-align: center;
     align-content: center;
@@ -352,23 +275,7 @@
     margin: 0;
 }
 
-.aboutContentText {
-    width: 100%;
-    background-color: #615047;
-    border-radius: 12px;
-    align-content: center;
-    line-height: 28px;
-    padding: 20px;
-    color: var(--white);
-    font-size: 28px;
-    @media (width < 768px) {
-        grid-column: 2 / 4;
-    }
-    @media (width < 480px) {
-        grid-row: 4;
-        grid-column: 1;
-    }
-}
+
 
 .aboutButtonCell {
     display: flex;
@@ -401,28 +308,7 @@
     color: white;
     cursor: pointer;
 }
-.aboutSecondImage {
-    grid-column: 1 / 4;
-    max-height: 160px;
-    border-radius: 12px;
-    object-fit: cover;
-    width: 100%;
 
-    @media (width < 768px) {
-        grid-row: 4 / 4;
-        grid-column: 1 / 4;
-    }
-    @media (width < 480px) {
-        grid-row: 6;
-        grid-column: 1;
-    }
-}
-.header1 {
-    padding: 40px;
-    font-family: Verdana, sans-serif;
-    color: var(--white);
-    background-color: #615047;
-}
 .header2 {
     font-family: Georgia, serif;
     color: #615047;
@@ -438,7 +324,7 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw; /* Kept as 100vw per request */
+    width: 100vw; 
     height: 100vh;
     overflow: hidden;
     z-index: -1;
@@ -448,7 +334,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vw; /* Kept as 100vw per request */
+    width: 100vw; 
     height: 100vh;
     object-fit: cover;
     z-index: -1;
