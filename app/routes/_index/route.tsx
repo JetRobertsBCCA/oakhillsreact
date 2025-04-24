@@ -3,9 +3,7 @@ import styles from './home.module.scss';
 import classes from './route.module.scss';
 import OakfarmlogoTesterPng from '../../../src/assets/oakfarmlogo_tester.png';
 import classNames from 'classnames';
-import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg'; // it should link to is own css thing on the folders this is tempoary
-//we weill need to have a global css file so our fonts and stuff are synced across pages but for now jused wanted to separeted it
-//in case it interferes with quans code
+import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg';
 
 export default function Home() {
     return (
@@ -14,7 +12,7 @@ export default function Home() {
                 <div className={styles.headerContent}>
                     <div className={styles.navRight}>
                         <Link to="aboutus" className={styles.navLinkRight}>
-                            About Us
+                            About Usss
                         </Link>
                         <Link to="FAQ" className={styles.navLinkRight}>
                             FAQ
@@ -59,7 +57,7 @@ export default function Home() {
                             With acres of lush pastures, state-of-the-art facilities, and a team
                             dedicated to the care and training of our magnificent horses, Oak Hill
                             Farms is more than just a ranch—it’s a place where memories are made,
-                            and a love for horses is shared. Whether you&apos;re looking for a
+                            and a love for horses is shared. Whether you're looking for a
                             peaceful retreat, a place to learn the art of horsemanship, or a new
                             equestrian companion, we invite you to experience the beauty and
                             tranquility of Oak Hill Farms.
@@ -72,6 +70,49 @@ export default function Home() {
                 <div className={classes.pricing}>
                     <h1 className={classes.pricingTitle}>Our Training Programs</h1>
                     <div className={classes.pricingCards}>
+                        {/* Card 1: Horse Boarding Lessons */}
+                        <div className={classes.pricingCard}>
+                            <div className={classes.pricingPlanOverview}>
+                                <h2 className={classes.pricingHeaderTitle}>
+                                    Horse Boarding Lessons
+                                </h2>
+                                <h1 className={classes.pricingHeaderCost}>$300+</h1>
+                                <p className={classes.pricingHeaderDescription}></p>
+                            </div>
+                            <ul className={classes.pricingPlanFeatures}>
+                                <li className={classes.pricingFeature}>
+                                    <img
+                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png/v1/fit/w_640,h_640/V Logo.png"
+                                        alt="V Logo on Dark Background"
+                                        className={classes.pricingImage}
+                                    />
+                                    <p>Full payments              </p>
+                                </li>
+                                <li className={classes.pricingFeature}>
+                                    <img
+                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png/v1/fit/w_640,h_640/V Logo.png"
+                                        alt="V Logo on Dark Background"
+                                        className={classes.pricingImage}
+                                    />
+                                    <p>Deposit non refundable</p>
+                                </li>
+                                <li className={classes.pricingFeature}>
+                                    <img
+                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png/v1/fit/w_640,h_640/V Logo.png"
+                                        alt="V Logo on Dark Background"
+                                        className={classes.pricingImage}
+                                    />
+                                    <p>Waiver sign on site:       </p>
+                                </li>
+                                <li className={classes.pricingFeature}>
+                                    <p></p>
+                                </li>
+                            </ul>
+                            <Link to="lessons-info" className={classes.pricingButton}>
+                                View All Schooling Here!
+                            </Link>
+                        </div>
+                        {/* Card 2: Upcoming Events */}
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
                                 <h2 className={classes.pricingHeaderTitle}>Upcoming Events</h2>
@@ -85,7 +126,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Trail rides          </p>
+                                    <p>Trail rides         </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -101,7 +142,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Haunted Trail    </p>
+                                    <p>Haunted Trail     </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -109,12 +150,52 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>More Events !   </p>
+                                    <p>More Events !   </p>
                                 </li>
                             </ul>
                             <button className={classes.pricingButton}>
-                                View Upcoming Events! 
+                                View Upcoming Events!
                             </button>
+                        </div>
+                        {/* Card 3: Private Riding Lessons */}
+                        <div className={classes.pricingCard}>
+                            <div className={classes.pricingPlanOverview}>
+                                <h2 className={classes.pricingHeaderTitle}>Private Riding Lessons</h2>
+                                <h1 className={classes.pricingHeaderCost}>$50/hour</h1>
+                                <p className={classes.pricingHeaderDescription}></p>
+                            </div>
+                            <ul className={classes.pricingPlanFeatures}>
+                                <li className={classes.pricingFeature}>
+                                    <img
+                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png/v1/fit/w_640,h_640/V Logo.png"
+                                        alt="V Logo on Dark Background"
+                                        className={classes.pricingImage}
+                                    />
+                                    <p>Full Payments              </p>
+                                </li>
+                                <li className={classes.pricingFeature}>
+                                    <img
+                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png/v1/fit/w_640,h_640/V Logo.png"
+                                        alt="V Logo on Dark Background"
+                                        className={classes.pricingImage}
+                                    />
+                                    <p>Deposit non refundable</p>
+                                </li>
+                                <li className={classes.pricingFeature}>
+                                    <img
+                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png/v1/fit/w_640,h_640/V Logo.png"
+                                        alt="V Logo on Dark Background"
+                                        className={classes.pricingImage}
+                                    />
+                                    <p>Waiver sign at site!       </p>
+                                </li>
+                                <li className={classes.pricingFeature}>
+                                    <p></p>
+                                </li>
+                            </ul>
+                            <Link to="lessons-info" className={classes.pricingButton}>
+                                SIGN UP HERE!
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -148,7 +229,7 @@ export default function Home() {
                 <div className={styles.footerLinks}>
                     <Link to="/pricing" className={styles.footerLink}></Link>
                     <Link to="/terms" className={styles.footerLink}>
-                        Terms &amp; Conditions
+                        Terms & Conditions
                     </Link>
                     <Link to="/refund-policy" className={styles.footerLink}>
                         Refund Policy
