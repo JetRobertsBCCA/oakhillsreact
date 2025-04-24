@@ -106,9 +106,10 @@ body {
     display: block;
     width: 100%;
     height: auto;
-    border-radius: 8px;
     object-fit: cover;
     max-height: 450px;
+    border: 12px solid #615047;
+    border-radius: 25px;
 }
 
 @media (max-width: 768px) {
@@ -149,7 +150,7 @@ body {
     }
 
     .teamSectionWrapper {
-        padding: 40px 0; 
+        padding: 40px 0;
     }
     .staffCard {
         margin: 0 10px;
@@ -255,7 +256,7 @@ body {
     align-items: center;
     text-align: center;
     gap: 10px;
-    padding: 0 20px; 
+    padding: 0 20px;
     box-sizing: border-box;
 }
 
@@ -269,7 +270,6 @@ body {
 
 .subHeading {
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.2rem;
     color: #615047;
     margin: 0;
     padding: 10px;
@@ -277,21 +277,22 @@ body {
     margin-bottom: 15px;
     text-align: center;
     line-height: 30px;
+    font-size: 4rem;
 }
 
 .bodyText {
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.1rem;
     color: #615047;
     line-height: 1.7;
     max-width: 750px;
     margin: 0 auto 20px auto;
     padding: 10px;
     text-align: center;
+    font-size: 3rem;
 }
 
 .footerSection {
-    background-color: #d5d8d3;
+    background-color: #615047;
     padding: 80px 0 80px 0;
     display: flex;
     flex-direction: column;
@@ -313,10 +314,10 @@ body {
 }
 
 .footerLink {
-    color: #475569;
+    color: var(--white);
     text-decoration: none;
-    font-size: 0.95rem;
     display: block;
+    font-size: 3rem;
 }
 
 .footerLink:hover {
@@ -349,9 +350,9 @@ body {
         padding: 0 10px;
         align-items: center;
     }
-    
+
     .teamSectionWrapper {
-         padding: 40px 0;
+        padding: 40px 0;
     }
 }
 
@@ -382,11 +383,14 @@ body {
     }
     .contactSection,
     .footerSection {
-        padding: 60px 0; 
+        padding: 60px 0;
     }
     .teamIntro p,
     .staffTextContent p {
-      font-size: 0.9rem;
-      line-height: 1.6;
+        font-size: 0.9rem;
+        line-height: 1.6;
     }
+}
+.img1 {
+    max-width: 1000px;
 }
