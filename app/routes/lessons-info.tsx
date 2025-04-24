@@ -151,9 +151,9 @@ export default function PrivateLessonsInfoPage() {
            </p>
          
            <a
-            href="/OakHillMap.pdf"// i still need to somehows get a proper map but it will go hereee
-            download // Add the download attribute
-            className={styles.mapDownloadButton} // Style this like a button
+            href="/offlinemap.pdf"// i still need to somehows get a proper map but it will go hereee
+            download 
+            className={styles.mapDownloadButton} 
            >
              Download Property Map (PDF)
            </a>

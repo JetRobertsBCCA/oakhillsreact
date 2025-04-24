@@ -61,13 +61,10 @@ export default function ContactUs() {
             </div>
 
             <div className={styles.contactPage}>
-                {/* Hero Section */}
                 <div className={styles.heroSection}>
                     <h1>Get in Touch with Oak Hill Stable</h1>
                     <p>We’re here to answer any questions and welcome you to our beautiful farm!</p>
                 </div>
-
-                {/* Main Contact Section */}
                 <div className={styles.contactSection}>
                     <div className={styles.locationContent}>
                         <h2 className={styles.subHeading}>How to find us!</h2>
