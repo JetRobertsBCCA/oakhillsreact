@@ -187,29 +187,20 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className={classes.about}>
-                    <h5 className={classes.aboutSubtitleText}>
-                        <img src={OakfarmlogoTesterPng} alt="" />
-                    </h5>
-                    <div className={classes.aboutButtonCell}>
-                        <button className={classes.aboutButton}>Contact Us!</button>
-                    </div>
+            <div className={classes.about}>
+                 <img src={OakfarmlogoTesterPng} alt="Oak Hill Farm Logo" className={classes.aboutLogo} />
+
+                <div className={classes.aboutButtonCell}>
+                    <button className={classes.aboutButton}>Contact Us!</button>
+                </div>
+
+                <div className={classes.mapWrapper}>
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.059960857979!2d-89.5879805256308!3d34.170384611485176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8880697720080de9%3A0x5adbc59099274ad9!2sOak%20Hill%20Farm%20Water%20Valley%20Mississippi!5e0!3m2!1sen!2sus!4v1743825641509!5m2!1sen!2sus"
-                        width="100%"
-                        height="450"
-                        style={{
-                            border: 0,
-                            width: '75%',
-                            display: 'inline',
-                            flexDirection: 'column',
-                            alignItems: 'center',
-                            alignContent: 'center',
-                            height: '75%',
-                        }}
-                        allowFullScreen
-                        loading="lazy"
-                        referrerPolicy="no-referrer-when-downgrade"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.059960857979!2d-89.5879805256308!3d34.170384611485176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8880697720080de9%3A0x5adbc59099274ad9!2sOak%20Hill%20Farm%20Water%20Valley%20Mississippi!5e0!3m2!1sen!2sus!4v1743825641509!5m2!1sen!2sus"
+                    className={classes.map}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
                     ></iframe>
                 </div>
             </div>
@@ -227,5 +218,6 @@ export default function Home() {
                 <div className={navbar.copyright}>Copyright © 2025 Oak Hill Farm</div>
             </div>
         </div>
+    </div>
     );
 }
