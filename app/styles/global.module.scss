@@ -1,0 +1,133 @@
+@import './variables.scss';
+
+.pageContainer {
+    background-color: #f8f4f0;
+    font-family: $primary-font;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.topStickyCover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--background-color);
+    z-index: 998;
+}
+
+.headerBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background-color: var(--background-color);
+    z-index: 999;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.headerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.navRight {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.navLinkRight {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+
+    &:hover {
+        color: var(--primary-color);
+    }
+}
+
+.footer {
+    background-color: #d5d8d3;
+    padding: 20px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footerLogo {
+    max-width: 80px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+}
+
+.footerLinks {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 10px;
+}
+
+.footerLink {
+    color: #475569;
+    text-decoration: none;
+    font-size: 0.95rem;
+
+    &:hover {
+        text-decoration: underline;
+        color: #000;
+    }
+}
+
+.copyright {
+    color: #615047;
+    font-size: 0.9rem;
+    opacity: 0.85;
+}
+
+.about {
+    padding: 4rem 2rem;
+    background-color: #f8f4f0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.aboutLogo {
+    max-width: 100px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .headerContent {
+        padding: 0 1rem;
+    }
+
+    .navRight {
+        gap: 1rem;
+    }
+
+    .about {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        margin-top: 80px;
+        padding: 30px 15px;
+    }
+    .footerLogo {
+        max-width: 60px;
+    }
+} 

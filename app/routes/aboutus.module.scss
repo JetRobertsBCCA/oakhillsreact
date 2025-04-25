@@ -1,166 +1,277 @@
+@use "sass:color";
 
-.teamSectionWrapper {
-    background-color: var(--color-primary-brown); 
-    padding: 60px 20px; 
-    color: #f0f0f0; 
-    width: 100%;
-    box-sizing: border-box;
+.pageContainer {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-.teamIntro {
-    margin-bottom: 50px;
+.contentWrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+.heroSection {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    margin-bottom: var(--spacing-xl);
+    margin-top: 40px;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+
+    .heroImageContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .heroImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.infoSection {
+    margin: var(--spacing-xl) 0;
     text-align: center;
-    max-width: 800px; 
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 20px; 
-    box-sizing: border-box;
+
+    .infoContent {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: var(--spacing-lg);
+
+        h2 {
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary-brown);
+        }
+
+        p {
+            font-family: var(--font-primary);
+            font-size: var(--font-size-md);
+            line-height: 1.6;
+            color: var(--color-text-secondary);
+        }
+    }
 }
 
-.teamIntro h2 {
-    font-family: var(--font-secondary); 
-    font-size: 2.5rem;
-    color: var(--color-white); 
-    font-weight: normal;
-    margin-bottom: 15px; 
-    line-height: 1.3;
-}
+.teamSection {
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
 
-.teamIntro p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #dfe4ea; 
+    h2 {
+        text-align: center;
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-md);
+        color: var(--color-primary-brown);
+    }
+
+    .teamIntro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto var(--spacing-xl);
+        font-family: var(--font-primary);
+        font-size: var(--font-size-md);
+        line-height: 1.6;
+        color: var(--color-text-secondary);
+    }
 }
 
 .staffList {
-    width: 100%;
-    max-width: 1000px; 
-    margin: 0 auto; 
-    box-sizing: border-box;
     display: grid;
-    gap: 40px;
-    padding: 0 20px; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
 }
 
 .staffCard {
-    background-color: var(--color-white); 
-    color: var(--color-text-default); 
-    border-radius: 15px;
+    background: white;
+    border-radius: var(--border-radius-md);
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .staffImageContainer {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+
+        .staffImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .staffTextContent {
+        padding: var(--spacing-md);
+
+        h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.6rem;
+            color: var(--color-primary-brown);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        h4 {
+            font-family: var(--font-secondary);
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+    }
 }
 
-.staffBioLayout {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 30px;
-    padding: 30px;
+.facilitySection {
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-background-light);
+
+    h2 {
+        text-align: center;
+        font-family: var(--font-secondary);
+        font-size: 3rem;
+        color: var(--color-primary-brown);
+        margin-bottom: var(--spacing-lg);
+    }
+
+    .facilityContent {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .facilityText {
+        p {
+            font-family: var(--font-primary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+    }
+
+    .facilityImages {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
+
+        .facilityImage {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    }
 }
 
-.layoutReverse {
-    flex-direction: row-reverse;
+@media (max-width: 768px) {
+    .heroSection {
+        height: 50vh;
+
+        .heroImageContainer {
+            .heroImage {
+                height: 250px;
+            }
+        }
+    }
+
+    .staffList {
+        grid-template-columns: 1fr;
+    }
+
+    .facilityImages {
+        grid-template-columns: 1fr;
+        
+        .facilityImage {
+            height: 250px;
+        }
+    }
 }
-
-.staffTextContent {
-    flex: 3;
-    min-width: 280px;
-    text-align: left;
-}
-
-
-.staffTextContent h3 {
-    font-family: var(--font-secondary); 
-    font-size: 1.8rem;
-    color: var(--color-primary-brown); 
-    margin-top: 0;
-    margin-bottom: 5px;
-}
-
-.staffTextContent h4 {
-    font-family: var(--font-primary);
-    font-size: 1.1rem;
-    color: var(--color-primary-brown); 
-    margin-bottom: 15px;
-    font-weight: bold;
-}
-
-.staffTextContent p {
-    font-family: var(--font-primary); 
-    font-size: 1rem;
-    line-height: 1.7;
-    color: var(--color-text-default); 
-    margin-bottom: 0;
-}
-
-.staffImageContainer {
-    flex: 2;
-    min-width: 250px;
-}
-
-.staffImageNew {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    object-fit: cover;
-    max-height: 450px; 
-}
-
 
 .contactSection {
-   
-    padding: 40px 20px; 
+    padding: 40px 20px;
     display: flex;
     justify-content: center;
     align-content: center;
 }
 
-.contentWrapper {
-    width: 100%;
-    max-width: 800px; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px; 
-    padding: 0 10px; 
-    box-sizing: border-box;
-}
-
-
 .mainHeading {
-    font-family: var(--font-secondary); 
+    font-family: var(--font-secondary);
     font-size: 3rem;
-    color: var(--color-primary-brown); 
-    margin: 0 0 10px 0; 
+    color: var(--color-primary-brown);
+    margin: 0 0 10px 0;
     text-align: center;
 }
 
 .subHeading {
-    font-family: var(--font-secondary); 
-    font-size: 1.5rem; 
-    color: var(--color-primary-brown); 
-    margin: 0 0 15px 0; 
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    color: var(--color-primary-brown);
+    margin: 0 0 15px 0;
     text-align: center;
     line-height: 1.4;
 }
 
 .bodyText {
-    font-family: var(--font-primary); 
+    font-family: var(--font-primary);
     font-size: 1.1rem;
-    color: var(--color-text-secondary); 
+    color: var(--color-text-secondary);
     line-height: 1.7;
     max-width: 750px;
     margin: 0 auto 20px auto;
     text-align: center;
 }
 
+@media (max-width: var(--breakpoint-md)) {
+    h2 {
+        font-size: 2.5rem;
+    }
+    
+    .infoContent p,
+    .teamIntro,
+    .facilityText p {
+        font-size: 1rem;
+    }
 
+    .staffTextContent {
+        h3 {
+            font-size: 1.4rem;
+        }
+        h4 {
+            font-size: 1.1rem;
+        }
+        p {
+            font-size: 0.95rem;
+        }
+    }
 
-@media (max-width: var(--breakpoint-md)) { 
     .staffBioLayout {
-        flex-direction: column !important; 
+        flex-direction: column !important;
         gap: 20px;
         padding: 25px;
     }
@@ -175,16 +286,6 @@
     .staffTextContent {
         text-align: center;
     }
-    .staffTextContent h3 {
-        font-size: 1.6rem;
-    }
-    .staffTextContent h4 {
-        font-size: 1rem;
-    }
-    .staffTextContent p {
-        font-size: 0.95rem;
-    }
-
     .teamIntro h2 {
         font-size: 2rem;
     }
@@ -202,14 +303,15 @@
     .subHeading {
         font-size: 1.3rem;
     }
-     .bodyText {
+    .bodyText {
         font-size: 1rem;
     }
 }
 
-
-@media (max-width: var(--breakpoint-sm)) { 
-
+@media (max-width: var(--breakpoint-sm)) {
+    h2 {
+        font-size: 2rem;
+    }
     .teamIntro h2 {
         font-size: 1.8rem;
     }
@@ -218,19 +320,19 @@
     }
     .staffList {
         gap: 30px;
-        padding: 0 10px; 
+        padding: 0 10px;
     }
-     .staffTextContent h3 {
+    .staffTextContent h3 {
         font-size: 1.5rem;
     }
-     .staffTextContent h4 {
+    .staffTextContent h4 {
         font-size: 0.95rem;
     }
     .staffTextContent p {
         font-size: 0.9rem;
         line-height: 1.6;
     }
-     .staffBioLayout {
+    .staffBioLayout {
         padding: 20px;
     }
 
@@ -248,8 +350,7 @@
         display: flex;
         justify-content: center;
         align-content: center;
-        width: 100%; 
-        box-sizing: border-box; 
-        
+        width: 100%;
+        box-sizing: border-box;
     }
 }
