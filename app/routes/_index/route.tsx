@@ -70,7 +70,7 @@ export default function Home() {
                 <div className={classes.pricing}>
                     <h1 className={classes.pricingTitle}>Our Training Programs</h1>
                     <div className={classes.pricingCards}>
-                        {/* Card 1: Horse Boarding Lessons */}
+                  
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
                                 <h2 className={classes.pricingHeaderTitle}>
@@ -112,7 +112,6 @@ export default function Home() {
                                 View All Schooling Here!
                             </Link>
                         </div>
-                        {/* Card 2: Upcoming Events */}
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
                                 <h2 className={classes.pricingHeaderTitle}>Upcoming Events</h2>
@@ -157,7 +156,6 @@ export default function Home() {
                                 View Upcoming Events!
                             </button>
                         </div>
-                        {/* Card 3: Private Riding Lessons */}
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
                                 <h2 className={classes.pricingHeaderTitle}>Private Riding Lessons</h2>

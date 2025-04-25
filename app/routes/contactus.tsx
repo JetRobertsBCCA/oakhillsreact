@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from '@remix-run/react';
-import styles from './contactUs.module.scss';
-import navbar from './navbarglobal.module.scss';
+import styles from './contactUs.module.scss'; 
+import global from './global.module.scss'; 
 
 export default function ContactUs() {
     const [name, setName] = useState('');
@@ -9,47 +9,64 @@ export default function ContactUs() {
     const [message, setMessage] = useState('');
     const [submitted, setSubmitted] = useState(false);
 
+  
+    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+     
+        console.log('Form submitted:', { name, email, message });
+        setSubmitted(true);
+     
+    };
 
 
     return (
-        <div className={navbar.pageContainer}>
-            <div className={navbar.headerBar}>
-                <div className={navbar.headerContent}>
-                    <div className={navbar.navRight}>
-                        <Link to="/" className={navbar.navLinkRight}>
+    
+        <div className={global.pageContainer}>
+     
+            <div className={global.headerBar}>
+                <div className={global.headerContent}>
+                    <div className={global.navRight}>
+                        <Link to="/" className={global.navLinkRight}>
                             Home
                         </Link>
-                        <Link to="/aboutus" className={navbar.navLinkRight}>
+                        <Link to="/aboutus" className={global.navLinkRight}>
                             About Us
                         </Link>
-                        <Link to="/FAQ" className={navbar.navLinkRight}>
+                        <Link to="/FAQ" className={global.navLinkRight}>
                             FAQ
                         </Link>
-                        <Link to="/events" className={navbar.navLinkRight}>
+                        <Link to="/events" className={global.navLinkRight}>
                             Events
                         </Link>
+                  
                     </div>
                 </div>
             </div>
 
+        
             <div className={styles.contactPage}>
                 <div className={styles.heroSection}>
                     <h1>Get in Touch with Oak Hill Stable</h1>
                     <p>We’re here to answer any questions and welcome you to our beautiful farm!</p>
                 </div>
+
                 <div className={styles.contactSection}>
                     <div className={styles.locationContent}>
+                 
                         <h2 className={styles.subHeading}>How to find us!</h2>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3301.059960857979!2d-89.5879805256308!3d34.170384611485176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8880697720080de9%3A0x5adbc59099274ad9!2sOak%20Hill%20Farm%20Water%20Valley%20Mississippi!5e0!3m2!1sen!2sus!4v1743825641509!5m2!1sen!2sus" // Consider updating this src if possible
-                            width="100%"
-                            height="400"
+                      
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d..."
+                            width="100%" 
+                            height="400" 
                             allowFullScreen
                             loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
                         ></iframe>
                     </div>
 
                     <div className={styles.contactInfo}>
+                   
                         <h2 className={styles.subHeading}>Contact Details</h2>
                         <p>
                             <strong>Phone:</strong> (662) 202-8899
@@ -63,19 +80,20 @@ export default function ContactUs() {
                             <li>Thursday - Sunday: 9:00 AM – 5:00 PM</li>
                         </ul>
                         <h3>Follow Us</h3>
+                     
                         <ul className={styles.socialLinks}>
                             <li>
-                                <a href="https://facebook.com/oakhillfarms" target="_blank">
+                                <a href="https://facebook.com/oakhillfarms" target="_blank" rel="noopener noreferrer">
                                     Facebook
                                 </a>
                             </li>
                             <li>
-                                <a href="https://instagram.com/oakhillfarms" target="_blank">
+                                <a href="https://instagram.com/oakhillfarms" target="_blank" rel="noopener noreferrer">
                                     Instagram
                                 </a>
                             </li>
                             <li>
-                                <a href="https://twitter.com/oakhillfarms" target="_blank">
+                                <a href="https://twitter.com/oakhillfarms" target="_blank" rel="noopener noreferrer">
                                     Twitter
                                 </a>
                             </li>
@@ -84,27 +102,51 @@ export default function ContactUs() {
                 </div>
 
                 <div className={styles.formSection}>
+               
                     <h2>Send Us a Message</h2>
-                    <form className={styles.contactForm}>
-                        <input type="text" placeholder="Your Name" required />
-                        <input type="email" placeholder="Your Email" required />
-                        <textarea placeholder="Your Message" required></textarea>
-                        <button type="submit" className={styles.button}>
-                            Send Message
-                        </button>
-                    </form>
+                    {submitted ? (
+                        <p>Thank you for your message!</p>
+                    ) : (
+                        <form className={styles.contactForm} onSubmit={handleSubmit}>
+                            <input
+                                type="text"
+                                placeholder="Your Name"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                required
+                             />
+                            <input
+                                type="email"
+                                placeholder="Your Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                required
+                            />
+                            <textarea
+                                placeholder="Your Message"
+                                value={message}
+                                onChange={(e) => setMessage(e.target.value)}
+                                required
+                            ></textarea>
+                        
+                            <button type="submit" className={styles.button}>
+                                Send Message
+                            </button>
+                        </form>
+                     )}
                 </div>
 
-                <div className={styles.footerSection}>
-                    <div className={styles.footerLinks}>
-                        <Link to="/terms" className={styles.footerLink}>
+              
+                <div className={global.footerSection}>
+                    <div className={global.footerLinks}>
+                        <Link to="/terms" className={global.footerLink}>
                             Terms & Conditions
                         </Link>
-                        <Link to="/refund-policy" className={styles.footerLink}>
+                        <Link to="/refund-policy" className={global.footerLink}>
                             Refund Policy
                         </Link>
                     </div>
-                    <div className={styles.copyright}>© 2025 Oak Hill Farm</div>
+                    <div className={global.copyright}>© 2025 Oak Hill Farm</div>
                 </div>
             </div>
         </div>

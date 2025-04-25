@@ -1,4 +1,3 @@
-
 import '~/styles/reset.scss';
 import '~/styles/colors.scss';
 import '~/styles/typography.scss';
@@ -13,12 +12,25 @@ import {
     ScrollRestoration,
     isRouteErrorResponse,
     useRouteError,
+    useLoaderData,
 } from '@remix-run/react';
+import { json } from "@remix-run/node";
+import type { LoaderFunctionArgs } from "@remix-run/node";
 import { ErrorComponent } from '~/components/error-component/error-component';
-import { PayPalScriptProvider } from "@paypal/react-paypal-js"; // <-- Import the provider
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 
-const PAYPAL_CLIENT_ID = "";
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  const paypalClientID = process.env.PAYPAL_CLIENT_ID;
+
+  if (!paypalClientID) {
+      console.error("FATAL: PAYPAL_CLIENT_ID environment variable is not set on the server!");
+      return json({ ENV: { PAYPAL_CLIENT_ID: null } });
+  }
+
+  return json({ ENV: { PAYPAL_CLIENT_ID: paypalClientID } });
+};
+
 
 export function Layout({ children }: { children: React.ReactNode }) {
     return (
@@ -39,20 +51,39 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
+    const data = useLoaderData<{ ENV: { PAYPAL_CLIENT_ID: string | null } }>();
+    const paypalClientID = data?.ENV?.PAYPAL_CLIENT_ID;
+
+    const initialOptions = paypalClientID ? {
+        "client-id": paypalClientID,
+        currency: "USD",
+        intent: "capture",
+    } : null;
+
+
     return (
         <div id="root">
-            {/* Wrap the Outlet with the PayPalScriptProvider */}
-            <PayPalScriptProvider options={{ clientId: PAYPAL_CLIENT_ID, currency: "USD" /* Add other options if needed */ }}>
-                <Outlet />
-            </PayPalScriptProvider>
+            {initialOptions ? (
+                <PayPalScriptProvider options={initialOptions}>
+                    <Outlet />
+                </PayPalScriptProvider>
+            ) : (
+                <div>
+                    <p style={{ color: 'red', padding: '20px', textAlign: 'center' }}>
+                        Error: PayPal Payment System is not configured correctly. Missing Client ID.
+                    </p>
+                    <Outlet />
+                </div>
+            )}
         </div>
     );
 }
 
+
 export function ErrorBoundary() {
     const error = useRouteError();
     const { title, message } = getErrorDetails(error);
-
+    console.error("Root Error Boundary Caught:", error);
     return <ErrorComponent title={title} message={message} />;
 }
 
@@ -70,11 +101,9 @@ function getErrorDetails(error: unknown) {
         }
     } else {
         title = 'Unknown error ocurred';
-        // Optionally add more specific error checking here if needed
         if (error instanceof Error) {
-            message = error.message; // Display standard Error message
+            message = error.message;
         }
     }
-
     return { title, message };
 }
