@@ -2,6 +2,8 @@ import { Link } from '@remix-run/react';
 import styles from './aboutus.module.scss';
 import navbar from './navbarglobal.module.scss';
 import logoImage from '../../src/about_us_pictures/oakhillshdlogo.png';
+import Img2276Png from '../../src/assets/img_2276.png';
+import Pxl20250308161751449Jpg from '../../src/assets/pxl_20250308_161751449.jpg';
 
 const staffMembers = [
     {
@@ -45,7 +47,6 @@ export default function Aboutus() {
                     </div>
                 </div>
             </div>
-
 
             <div className={styles.contactSection}>
                 <div className={styles.contentWrapper}>
@@ -92,6 +93,7 @@ export default function Aboutus() {
                                         alt={`Photo of ${member.name}, ${member.title}`}
                                         className={styles.staffImageNew}
                                         loading="lazy"
+                                        src={Img2276Png}
                                     />
                                 </div>
                             </div>
@@ -101,8 +103,9 @@ export default function Aboutus() {
             </div>
 
             <div className={styles.contactSection}>
+                <img src={Pxl20250308161751449Jpg} alt="" className={styles.img1} />
                 <div className={styles.contentWrapper}>
-                    <h2 className={styles.subHeading}>Our Facility</h2>
+                    <h2 className={styles.subHeading}>Our Stable</h2>
                     <p className={styles.bodyText}>
                         Our ranch boasts exceptional amenities designed to support both horses and
                         riders. We offer five spacious stalls, a well-equipped tack room, and a
