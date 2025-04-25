@@ -3,7 +3,6 @@ import navbar from '../navbarglobal.module.scss';
 import classes from './route.module.scss';
 import OakfarmlogoTesterPng from '../../../src/assets/oakfarmlogo_tester.png';
 import classNames from 'classnames';
-import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg';
 
 export default function Home() {
     return (
@@ -27,28 +26,10 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className={navbar.footerSection}>
+            <div className={classNames(navbar.footerSection, classes.div2)}>
                 <h1 className={classNames('largeFont', classes.header2)}></h1>
-                <h1 className={classNames('largeFont', classes.header3)}>
-                    <span></span>
-                    <div className={navbar.videoWrapper}>
-                        <video
-                            className={classNames(navbar.videoBackground, classes.video1)}
-                            autoPlay
-                            muted
-                            loop
-                            playsInline
-                            src="https://video.wixstatic.com/video/604302_170103629c8347c8891c63ad35f4486f/480p/mp4/file.mp4"
-                        />
-                    </div>
-                </h1>
-                <div className={classes.heroImage}>
-                    <img
-                        src={Pxl20250308162929633Copy1Jpg}
-                        alt=""
-                        className={classes.heroImageImg}
-                    />
-                    <div className={classes.heroImageContentBox}>
+                <div className={classes.div3}>
+                    <h2 className={classes.header1}>
                         <h1 className={classes.heroImageTitle}>Oak Hill Stable</h1>
                         <p className={classes.heroImageDescription}>
                             Welcome to Oak Hill Farms, where the spirit of the countryside meets the
@@ -57,15 +38,22 @@ export default function Home() {
                             With acres of lush pastures, state-of-the-art facilities, and a team
                             dedicated to the care and training of our magnificent horses, Oak Hill
                             Farms is more than just a ranch—it’s a place where memories are made,
-                            and a love for horses is shared. Whether you're looking for a
-                            peaceful retreat, a place to learn the art of horsemanship, or a new
-                            equestrian companion, we invite you to experience the beauty and
-                            tranquility of Oak Hill Farms.
+                            and a love for horses is shared. Whether you're looking for a peaceful
+                            retreat, a place to learn the art of horsemanship, or a new equestrian
+                            companion, we invite you to experience the beauty and tranquility of Oak
+                            Hill Farms.
                         </p>
-                        <button className={classes.heroImageExploreButton}>
-                            View our horses here!
-                        </button>
-                    </div>
+                    </h2>
+                </div>
+                <div className={classes.div1}>
+                    <video
+                        className={classNames(navbar.videoBackground, classes.video1)}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        src="https://video.wixstatic.com/video/604302_170103629c8347c8891c63ad35f4486f/480p/mp4/file.mp4"
+                    />
                 </div>
                 <div className={classes.pricing}>
                     <h1 className={classes.pricingTitle}>Our Training Programs</h1>
@@ -86,7 +74,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Full payments              </p>
+                                    <p>Full payments </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -102,7 +90,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Waiver sign on site:       </p>
+                                    <p>Waiver sign on site: </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <p></p>
@@ -126,7 +114,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Trail rides         </p>
+                                    <p>Trail rides </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -142,7 +130,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Haunted Trail     </p>
+                                    <p>Haunted Trail </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -150,17 +138,17 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>More Events !   </p>
+                                    <p>More Events ! </p>
                                 </li>
                             </ul>
-                            <button className={classes.pricingButton}>
-                                View Upcoming Events!
-                            </button>
+                            <button className={classes.pricingButton}>View Upcoming Events!</button>
                         </div>
                         {/* Card 3: Private Riding Lessons */}
                         <div className={classes.pricingCard}>
                             <div className={classes.pricingPlanOverview}>
-                                <h2 className={classes.pricingHeaderTitle}>Private Riding Lessons</h2>
+                                <h2 className={classes.pricingHeaderTitle}>
+                                    Private Riding Lessons
+                                </h2>
                                 <h1 className={classes.pricingHeaderCost}>$50/hour</h1>
                                 <p className={classes.pricingHeaderDescription}></p>
                             </div>
@@ -171,7 +159,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Full Payments              </p>
+                                    <p>Full Payments </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <img
@@ -187,7 +175,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={classes.pricingImage}
                                     />
-                                    <p>Waiver sign at site!       </p>
+                                    <p>Waiver sign at site! </p>
                                 </li>
                                 <li className={classes.pricingFeature}>
                                     <p></p>
