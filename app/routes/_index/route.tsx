@@ -21,6 +21,20 @@ export default function Home() {
                 </p>
             </div>
             <div className={styles.pageWrapper}>
+                <p className={styles.p4}>
+                    At Oak Hill Stables, we believe that every rider’s journey is unique. That’s why
+                    we offer personalized training programs designed to meet you where you are,
+                    whether you’re saddling up for the first time or refining advanced skills. Our
+                    experienced team is here to guide you every step of the way, focusing on
+                    building confidence, fostering a deep bond between horse and rider, and making
+                    every ride a memorable one. Beyond the arena, our ranch offers endless
+                    opportunities to connect with nature. Explore scenic trails that wind through
+                    rolling hills, enjoy the peaceful rhythm of daily life on the ranch, or simply
+                    relax and take in the beauty around you. At Oak Hill Stables, it&apos;s not just
+                    about riding — it’s about creating lasting memories, embracing new adventures,
+                    and becoming part of a community that shares your love of horses and the great
+                    outdoors.
+                </p>
                 <div className={styles.pricing}>
                     <h1 className={styles.pricingTitle}>Our Training Programs</h1>
                     <div className={styles.pricingCards}>
