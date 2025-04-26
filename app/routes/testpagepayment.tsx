@@ -2,6 +2,16 @@ import React, { useState } from 'react';
 import PayPalButton from '../components/PayPalButton';
 
 export default function TestPaymentPage() {
+  // Prevent access in production
+  if (import.meta.env.PROD) {
+    return (
+      <div className="paymentContainer">
+        <h1>Page Not Available</h1>
+        <p>This page is only available in development environment.</p>
+      </div>
+    );
+  }
+
   const [paymentStatus, setPaymentStatus] = useState<string>('');
 
   const handlePaymentSuccess = (details: any) => {
@@ -16,10 +26,11 @@ export default function TestPaymentPage() {
 
   return (
     <div className="paymentContainer">
-      <h1>Test Payment Page</h1>
+      <h1>Test Payment Page (Development Only)</h1>
       <div className="paymentDetails">
         <h2>Payment Details</h2>
         <p>Amount: $10.00 USD</p>
+        <p className="environment-notice">Currently in: {import.meta.env.DEV ? 'Development' : 'Production'} mode</p>
       </div>
       <div className="paypalButtonContainerActual">
         <PayPalButton

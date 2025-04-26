@@ -40,6 +40,7 @@
     "@nivo/voronoi": "^0.88.0",
     "@nivo/waffle": "^0.88.0",
     "@octokit/rest": "^21.1.1",
+    "@paypal/checkout-server-sdk": "^1.0.3",
     "@paypal/react-paypal-js": "^8.8.3",
     "@remix-run/node": "^2.15.3",
     "@remix-run/react": "^2.15.3",

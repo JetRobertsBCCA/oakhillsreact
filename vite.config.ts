@@ -17,4 +17,8 @@ export default defineConfig({
             '@styles': path.resolve(__dirname, './src/styles/'),
         },
     },
+    define: {
+        'import.meta.env.PAYPAL_CLIENT_ID': JSON.stringify(process.env.PAYPAL_CLIENT_ID),
+        'import.meta.env.PAYPAL_ENV': JSON.stringify(process.env.PAYPAL_ENV)
+    }
 });

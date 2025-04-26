@@ -1,8 +1,11 @@
 import { Link } from '@remix-run/react';
 import { useState } from 'react';
-import logoImage from '../../public/images/oakhillshdlogo.png';
-import PayPalButton from '../components/PayPalButton';
 import styles from './lessons-info.module.scss';
+import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+
+interface PayPalData {
+  orderID: string;
+}
 
 export default function PrivateLessonsInfoPage() {
   const [firstName, setFirstName] = useState('');
@@ -10,19 +13,92 @@ export default function PrivateLessonsInfoPage() {
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [liabilityAgreed, setLiabilityAgreed] = useState(false);
+  const [showPayPalButtons, setShowPayPalButtons] = useState(false);
   const [paymentStatus, setPaymentStatus] = useState('');
+  const [{ isPending }] = usePayPalScriptReducer();
 
   const isFormValid = liabilityAgreed && !!firstName && !!lastName && !!email && !!phone;
 
-  const handlePaymentSuccess = (details: any) => {
-    console.log('Payment successful:', details);
-    setPaymentStatus('Payment Successful! Thank you for booking your lesson.');
+  const handleProceedToPayment = () => {
+    if (!isFormValid) {
+      alert('Please fill all required fields and agree to the liability waiver.');
+      return;
+    }
+    if (isPending) {
+        setPaymentStatus("Payment system loading, please wait...");
+        return;
+    }
+    setShowPayPalButtons(true);
+    setPaymentStatus('');
   };
 
-  const handlePaymentError = (error: any) => {
-    console.error('Payment error:', error);
-    setPaymentStatus('There was an error processing your payment. Please try again.');
+  const createPayPalOrder = async () => {
+    setPaymentStatus('Creating order...');
+    try {
+      const response = await fetch("/create_order", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+      }
+
+      const orderData = await response.json();
+      setPaymentStatus('');
+      console.log("Order ID created:", orderData.orderID);
+      if (!orderData.orderID) {
+          throw new Error("Order ID not received from server");
+      }
+      return orderData.orderID;
+    } catch (error: unknown) {
+      console.error("Failed to create PayPal order:", error);
+      const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+      setPaymentStatus(`Error creating order: ${errorMessage}`);
+      setShowPayPalButtons(false);
+      return null;
+    }
   };
+
+  const onPayPalApprove = async (data: PayPalData) => {
+      setPaymentStatus('Processing payment...');
+      try {
+          const response = await fetch("/paypal_server/capture_order", {
+              method: "POST",
+              headers: {
+                  "Content-Type": "application/json",
+              },
+              body: JSON.stringify({
+                  orderID: data.orderID
+              }),
+          });
+
+          if (!response.ok) {
+              const errorData = await response.json();
+              throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+          }
+
+          const captureData = await response.json();
+          console.log("Payment successful:", captureData);
+          setPaymentStatus('Payment Successful! Thank you.');
+          setShowPayPalButtons(false);
+
+      } catch (error: unknown) {
+          console.error("Failed to capture PayPal order:", error);
+          const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
+          setPaymentStatus(`Payment failed: ${errorMessage}`);
+      }
+  };
+
+    const onPayPalError = (err: unknown) => {
+        console.error("PayPal Button Error:", err);
+        const errorMessage = err instanceof Error ? err.message : 'Please try again.';
+        setPaymentStatus(`Payment error: ${errorMessage}`);
+        setShowPayPalButtons(false);
+    };
 
   return (
     <div className={styles.lessonsPage}>
@@ -112,13 +188,68 @@ export default function PrivateLessonsInfoPage() {
 
       <div className={styles.paymentSection}>
         {!paymentStatus.includes('Successful') && isFormValid && (
-          <PayPalButton
-            amount={50.00}
-            currency="USD"
-            onSuccess={handlePaymentSuccess}
-            onError={handlePaymentError}
-            disabled={false}
-          />
+          <div>
+            <h3>Choose Your Payment Method</h3>
+            <p>Pay with PayPal, Credit/Debit Card, Venmo, or Pay Later options</p>
+            <PayPalButtons
+              createOrder={createPayPalOrder}
+              onApprove={onPayPalApprove}
+              onError={onPayPalError}
+              onCancel={() => {
+                setShowPayPalButtons(false);
+                setPaymentStatus('Payment cancelled.');
+              }}
+              fundingSource="card"
+              style={{
+                layout: "vertical",
+                shape: "rect",
+                color: "black"
+              }}
+            />
+            <PayPalButtons
+              createOrder={createPayPalOrder}
+              onApprove={onPayPalApprove}
+              onError={onPayPalError}
+              onCancel={() => {
+                setShowPayPalButtons(false);
+                setPaymentStatus('Payment cancelled.');
+              }}
+              fundingSource="paypal"
+              style={{
+                layout: "vertical",
+                shape: "rect",
+                color: "gold"
+              }}
+            />
+            <PayPalButtons
+              createOrder={createPayPalOrder}
+              onApprove={onPayPalApprove}
+              onError={onPayPalError}
+              onCancel={() => {
+                setShowPayPalButtons(false);
+                setPaymentStatus('Payment cancelled.');
+              }}
+              fundingSource="venmo"
+              style={{
+                layout: "vertical",
+                shape: "rect"
+              }}
+            />
+            <PayPalButtons
+              createOrder={createPayPalOrder}
+              onApprove={onPayPalApprove}
+              onError={onPayPalError}
+              onCancel={() => {
+                setShowPayPalButtons(false);
+                setPaymentStatus('Payment cancelled.');
+              }}
+              fundingSource="paylater"
+              style={{
+                layout: "vertical",
+                shape: "rect"
+              }}
+            />
+          </div>
         )}
 
         {!paymentStatus.includes('Successful') && !isFormValid && (
@@ -135,7 +266,7 @@ export default function PrivateLessonsInfoPage() {
       </div>
 
       <div className={styles.footer}>
-        <img src={logoImage} alt="Oak Hill Farm Logo" className={styles.footerLogo} loading="lazy" />
+        <img src="/oakhillshdlogo.png" alt="Oak Hill Farm Logo" className={styles.footerLogo} loading="lazy" />
         <div className={styles.footerLinks}>
           <Link to="/terms" className={styles.footerLink}> Terms & Conditions </Link>
           <Link to="/refund-policy" className={styles.footerLink}> Refund Policy </Link>

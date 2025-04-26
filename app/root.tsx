@@ -7,17 +7,31 @@ import {
   Scripts,
   ScrollRestoration,
   json,
+  useLoaderData,
 } from "@remix-run/react";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import "./styles/global.scss";
 import GlobalNav from "./components/GlobalNav/GlobalNav";
 
 export const links: LinksFunction = () => [];
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
-  return json({});
+  return json({
+    PAYPAL_CLIENT_ID: process.env.PAYPAL_CLIENT_ID,
+  });
 };
 
 export default function App() {
+  const { PAYPAL_CLIENT_ID } = useLoaderData<typeof loader>();
+  
+  const paypalOptions = {
+    "client-id": PAYPAL_CLIENT_ID || "",
+    currency: "USD",
+    intent: "capture",
+    components: "buttons,marks,messages",
+    "enable-funding": "venmo,paylater,card",
+  };
+
   return (
     <html lang="en">
       <head>
@@ -29,7 +43,9 @@ export default function App() {
       <body>
         <GlobalNav />
         <main>
-          <Outlet />
+          <PayPalScriptProvider options={paypalOptions}>
+            <Outlet />
+          </PayPalScriptProvider>
         </main>
         <ScrollRestoration />
         <Scripts />
