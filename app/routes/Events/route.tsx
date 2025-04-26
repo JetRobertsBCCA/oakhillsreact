@@ -155,27 +155,6 @@ export default function Events() {
                     </div>
                 </div>
 
-                {/* Birthday parties Card - Now positioned after the events section */}
-                <div className={styles.eventContainer}>
-                    <img
-                        src="/images/birthday-party.jpg"
-                        alt="Birthday Party"
-                        style={{
-                            width: '100%',
-                            maxWidth: 120,
-                            margin: '0 auto 1rem',
-                            display: 'block',
-                        }}
-                    />
-                    <h3>Birthday parties</h3>
-                    <p>
-                        Reserve your special day at Oak Hill Farm! Includes 2 hours, up to 12
-                        people, and more.
-                    </p>
-                    <Link to="/party-info" className={styles.signupButton}>
-                        View & Book
-                    </Link>
-                </div>
 
                 {/* Map Section */}
                 <div className={styles.mapSection}>

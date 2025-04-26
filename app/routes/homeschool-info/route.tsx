@@ -69,7 +69,8 @@ export default function HomeschoolInfo() {
     const onPayPalApprove = async (data: PayPalData) => {
         setPaymentStatus('Processing payment...');
         try {
-            const response = await fetch("/paypal_server/capture_order", {
+            // First, capture the payment
+            const paymentResponse = await fetch("/paypal_server/capture_order", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -79,13 +80,35 @@ export default function HomeschoolInfo() {
                 }),
             });
 
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
+            if (!paymentResponse.ok) {
+                const errorData = await paymentResponse.json();
+                throw new Error(errorData.message || `HTTP error! status: ${paymentResponse.status}`);
             }
 
-            const captureData = await response.json();
-            setPaymentStatus('Payment Successful!');
+            const captureData = await paymentResponse.json();
+            
+            // If payment is successful, send the registration data
+            if (captureData.success) {
+                const registrationResponse = await fetch("/homeschool-registration", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        email,
+                        phone,
+                        orderID: data.orderID
+                    }),
+                });
+
+                if (!registrationResponse.ok) {
+                    throw new Error("Failed to process registration");
+                }
+            }
+
+            setPaymentStatus('Payment Successful! Thank you for registering for our homeschool program.');
             setShowPayPalButtons(false);
         } catch (error: unknown) {
             const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
