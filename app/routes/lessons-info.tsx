@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 import { useState } from 'react';
-import logoImage from '../../../public/images/oakhillshdlogo.png';
+import logoImage from '../../public/images/oakhillshdlogo.png';
 import PayPalButton from '../components/PayPalButton';
 import styles from './lessons-info.module.scss';
 
