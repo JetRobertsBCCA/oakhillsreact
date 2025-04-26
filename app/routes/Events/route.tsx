@@ -13,7 +13,7 @@ interface Event {
     title: string;
     description: string;
     date: string;
-    time: string;
+    name: string;
     location: string;
     price: string;
 }
@@ -121,7 +121,7 @@ export default function Events() {
                         {events.length > 0 ? (
                             events.map((event) => (
                                 <div key={event.id} className={styles.eventContainer}>
-                                    <h3>{event.title}</h3>
+                                    <h3>{event.name}</h3>
                                     <p>
                                         <strong>Date:</strong> {event.date}
                                     </p>
