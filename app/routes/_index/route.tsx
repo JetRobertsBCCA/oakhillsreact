@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from '@remix-run/react';
 import Footer from '../../components/Footer/Footer';
 import styles from './route.module.scss';
@@ -30,11 +31,8 @@ export default function Home() {
                     <div className={styles.pricingCards}>
                         <div className={styles.pricingCard}>
                             <div className={styles.pricingPlanOverview}>
-                                <h2 className={styles.pricingHeaderTitle}>
-                                    Horse Boarding Lessons
-                                </h2>
+                                <h2 className={styles.pricingHeaderTitle}>Homeschooling Program</h2>
                                 <h1 className={styles.pricingHeaderCost}>$300+</h1>
-                                <p className={styles.pricingHeaderDescription}></p>
                             </div>
                             <ul className={styles.pricingPlanFeatures}>
                                 <li className={styles.pricingFeature}>
@@ -43,7 +41,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Full payments </p>
+                                    <p>6-week program</p>
                                 </li>
                                 <li className={styles.pricingFeature}>
                                     <img
@@ -51,7 +49,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Deposit non refundable</p>
+                                    <p>Full payment required</p>
                                 </li>
                                 <li className={styles.pricingFeature}>
                                     <img
@@ -59,20 +57,25 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Waiver sign on site: </p>
+                                    <p>Non-refundable deposit</p>
                                 </li>
                                 <li className={styles.pricingFeature}>
-                                    <p></p>
+                                    <img
+                                        src="https://static.wixstatic.com/media/13128652dab8451db4ce3e8b1b00d5b0.png"
+                                        alt="V Logo on Dark Background"
+                                        className={styles.pricingImage}
+                                    />
+                                    <p>Sign waiver at site</p>
                                 </li>
                             </ul>
-                            <Link to="lessons-info" className={styles.pricingButton}>
-                                View All Schooling Here!
+                            <Link to="/homeschool-info" className={styles.pricingButton}>
+                                LEARN MORE
                             </Link>
                         </div>
                         <div className={styles.pricingCard}>
                             <div className={styles.pricingPlanOverview}>
-                                <h2 className={styles.pricingHeaderTitle}>Upcoming Events</h2>
-                                <h1 className={styles.pricingHeaderCost}>$200+</h1>
+                                <h2 className={styles.pricingHeaderTitle}>Private Birthday Parties</h2>
+                                <h1 className={styles.pricingHeaderCost}>$100+</h1>
                                 <p className={styles.pricingHeaderDescription}></p>
                             </div>
                             <ul className={styles.pricingPlanFeatures}>
@@ -109,7 +112,9 @@ export default function Home() {
                                     <p>More Events ! </p>
                                 </li>
                             </ul>
-                            <button className={styles.pricingButton}>View Upcoming Events!</button>
+                            <Link to="/party-info" className={styles.pricingButton}>
+                                BOOK A PARTY
+                            </Link>
                         </div>
                         <div className={styles.pricingCard}>
                             <div className={styles.pricingPlanOverview}>

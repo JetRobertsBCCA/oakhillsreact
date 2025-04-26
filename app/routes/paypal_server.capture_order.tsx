@@ -1,7 +1,7 @@
 import type { ActionFunctionArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import paypal from '@paypal/checkout-server-sdk';
-import { paypalClient } from "../paypal.server"; 
+import { paypalClient } from "./paypal.server"; 
 
 export const action = async ({ request }: ActionFunctionArgs) => {
   if (request.method !== "POST") {

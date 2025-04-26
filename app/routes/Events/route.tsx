@@ -9,6 +9,7 @@ import slide3 from '../../../src/assets/pxl_20250308_163137314.jpg';
 import slide4 from '../../../src/assets/pxl_20250308_163707963.jpg';
 import Footer from '../../components/Footer/Footer';
 import SignupModal from '../../components/SignupModal/SignupModal';
+import { Link } from 'react-router-dom';
 
 interface Event {
     name: string;
@@ -139,6 +140,14 @@ const Events = () => {
                             </button>
                         </div>
                     ))}
+                    {/* Static Birthday Parties Card */}
+                    <div className={styles.eventContainer}>
+                        <img src="/images/v-logo-dark.png" alt="V Logo on Dark Background" style={{ width: '100%', maxWidth: 120, margin: '0 auto 1rem', display: 'block' }} />
+                        <h3>Birthday Parties</h3>
+                        <p><strong>$200+</strong></p>
+                        <p>Reserve your special day at Oak Hill Farm! Includes 2 hours, up to 12 people, and more.</p>
+                        <Link to="/party-info" className={styles.signUpButton}>View & Book</Link>
+                    </div>
                 </div>
 
                 {/* Map Section */}
