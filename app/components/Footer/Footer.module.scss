@@ -1,5 +1,5 @@
 .footer {
-    background-color: #9d7e69;
+    background-color: rgba(97, 80, 71, 0.85);
     padding: var(--spacing-sm) var(--spacing-lg);
     margin-top: auto;
     display: flex;
@@ -28,13 +28,13 @@
     justify-content: center;
     gap: var(--spacing-sm) var(--spacing-md);
     margin-bottom: var(--spacing-xs);
-    color: #000000;
+    color: #ffffff;
     font-weight: 700;
     font-size: 20px;
 }
 
 .footerLink {
-    color: var(--color-text-secondary);
+    color: #ffffff;
     text-decoration: none;
     font-size: 0.9rem;
     display: block;
@@ -46,7 +46,7 @@
 }
 
 .copyright {
-    color: var(--color-primary-brown);
+    color: #ffffff;
     font-size: 0.85rem;
     opacity: 0.85;
     margin-top: var(--spacing-xs);
