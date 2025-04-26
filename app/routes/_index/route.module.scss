@@ -490,7 +490,30 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-repeat: no-repeat;
+    background-image: url('../../../src/assets/preview (3).webp');
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: transparent;
 }
 .p3 {
     color: #ffffff;
+    font-size: 32px;
+    font-weight: 600;
+    font-family: Georgia, serif;
+    text-align: center;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.59) 0%, rgba(77, 77, 77, 0.59) 100%);
+    background-color: transparent;
+    background-position: 0% 0%;
+    background-size: auto auto;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    border-radius: 25px;
+    box-shadow: 2.83px 2.83px 22px #ffffff;
+    width: 95%;
 }
