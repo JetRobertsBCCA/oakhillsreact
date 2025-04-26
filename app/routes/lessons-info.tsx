@@ -2,6 +2,7 @@ import { Link } from '@remix-run/react';
 import { useState } from 'react';
 import styles from './lessons-info.module.scss';
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
+import Footer from '../components/Footer/Footer';
 
 interface PayPalData {
   orderID: string;
@@ -253,9 +254,11 @@ export default function PrivateLessonsInfoPage() {
         )}
 
         {!paymentStatus.includes('Successful') && !isFormValid && (
-          <p className={styles.formMessage}>
-            Please fill out all form fields and agree to the liability waiver to proceed with payment.
-          </p>
+          <div className={styles.centeredContent}>
+            <p className={styles.formMessage}>
+              Please fill out all form fields and agree to the liability waiver to proceed with payment.
+            </p>
+          </div>
         )}
 
         {paymentStatus && (
@@ -265,14 +268,7 @@ export default function PrivateLessonsInfoPage() {
         )}
       </div>
 
-      <div className={styles.footer}>
-        <img src="/oakhillshdlogo.png" alt="Oak Hill Farm Logo" className={styles.footerLogo} loading="lazy" />
-        <div className={styles.footerLinks}>
-          <Link to="/terms" className={styles.footerLink}> Terms & Conditions </Link>
-          <Link to="/refund-policy" className={styles.footerLink}> Refund Policy </Link>
-        </div>
-        <div className={styles.copyright}>Copyright © 2025 Oak Hill Farm</div>
-      </div>
+      <Footer />
     </div>
   );
 }

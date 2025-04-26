@@ -1,3 +1,4 @@
+// app/routes/Events/route.tsx
 import React, { useEffect, useState } from 'react';
 import styles from './route.module.scss';
 import { db } from '../../firebaseConfig';
@@ -7,6 +8,7 @@ import slide2 from '../../../src/assets/pxl_20250308_163053898.jpg';
 import slide3 from '../../../src/assets/pxl_20250308_163137314.jpg';
 import slide4 from '../../../src/assets/pxl_20250308_163707963.jpg';
 import Footer from '../../components/Footer/Footer';
+import SignupModal from '../../components/SignupModal/SignupModal';
 
 interface Event {
     name: string;
@@ -19,6 +21,10 @@ interface Event {
 const Events = () => {
     const [events, setEvents] = useState<Event[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    
+    // Add these states for the modal
+    const [showSignupModal, setShowSignupModal] = useState(false);
+    const [currentEventName, setCurrentEventName] = useState('');
 
     const images = [slide1, slide2, slide3, slide4];
     const totalSlides = Math.ceil(images.length / 3);
@@ -33,6 +39,12 @@ const Events = () => {
 
     const goToSlide = (index: number) => {
         setCurrentIndex(index);
+    };
+    
+    // Add this function to handle opening the signup modal
+    const handleSignupClick = (eventName: string) => {
+        setCurrentEventName(eventName);
+        setShowSignupModal(true);
     };
 
     useEffect(() => {
@@ -119,7 +131,12 @@ const Events = () => {
                             <p><strong>Time:</strong> {event.time}</p>
                             <p><strong>Location:</strong> {event.location}</p>
                             <p><strong>Description:</strong> {event.description}</p>
-                            <button className={styles.signUpButton}>Sign Up</button>
+                            <button 
+                                className={styles.signUpButton}
+                                onClick={() => handleSignupClick(event.name)}
+                            >
+                                Sign Up
+                            </button>
                         </div>
                     ))}
                 </div>
@@ -137,6 +154,13 @@ const Events = () => {
                         loading="lazy"
                     ></iframe>
                 </div>
+                
+                {/* Add the SignupModal component */}
+                <SignupModal 
+                    eventName={currentEventName}
+                    isOpen={showSignupModal}
+                    onClose={() => setShowSignupModal(false)}
+                />
             </div>
             <Footer />
         </div>
