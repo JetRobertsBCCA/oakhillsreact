@@ -1,41 +1,33 @@
 import { Link } from '@remix-run/react';
-import Pxl20250308162929633Copy1Jpg from '../../../src/assets/pxl_20250308_162929633_copy1.jpg';
 import Footer from '../../components/Footer/Footer';
 import styles from './route.module.scss';
+import Shotcut000008100Png from '../../../src/assets/shotcut_00_00_08_100.png';
 
 export default function Home() {
     return (
         <div>
             <div className={styles.pageWrapper}>
                 <div className={styles.heroImage}>
-                    <img
-                        src={Pxl20250308162929633Copy1Jpg}
-                        alt=""
-                        className={styles.heroImageImg}
-                    />
+                    <img src={Shotcut000008100Png} alt="" className={styles.heroImageImg} />
                     <div className={styles.heroImageContentBox}>
                         <h1 className={styles.heroImageTitle}>Oak Hill Stable</h1>
                         <p className={styles.heroImageDescription}>
-                            Welcome to Oak Hill Farms, where the spirit of the countryside meets the
-                            beauty of nature. Nestled in the heart of rolling hills, our ranch
+                            Welcome to Oak Hill Stables, where the spirit of the countryside meets
+                            the beauty of nature. Nestled in the heart of rolling hills, our ranch
                             offers a serene haven for horse lovers and nature enthusiasts alike.
                             With acres of lush pastures, state-of-the-art facilities, and a team
                             dedicated to the care and training of our magnificent horses, Oak Hill
-                            Farms is more than just a ranch—it's a place where memories are made,
-                            and a love for horses is shared. Whether you're looking for a
-                            peaceful retreat, a place to learn the art of horsemanship, or a new
-                            equestrian companion, we invite you to experience the beauty and
-                            tranquility of Oak Hill Farms.
+                            Stables is more than just a ranch—it's a place where memories are made,
+                            and a love for horses is shared. Whether you're looking for a peaceful
+                            retreat, a place to learn the art of horsemanship, or a new equestrian
+                            companion, we invite you to experience the beauty and tranquility of Oak
+                            Hill Stables.
                         </p>
-                        <button className={styles.heroImageExploreButton}>
-                            View our horses here!
-                        </button>
                     </div>
                 </div>
                 <div className={styles.pricing}>
                     <h1 className={styles.pricingTitle}>Our Training Programs</h1>
                     <div className={styles.pricingCards}>
-                  
                         <div className={styles.pricingCard}>
                             <div className={styles.pricingPlanOverview}>
                                 <h2 className={styles.pricingHeaderTitle}>
@@ -51,7 +43,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Full payments              </p>
+                                    <p>Full payments </p>
                                 </li>
                                 <li className={styles.pricingFeature}>
                                     <img
@@ -67,7 +59,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Waiver sign on site:       </p>
+                                    <p>Waiver sign on site: </p>
                                 </li>
                                 <li className={styles.pricingFeature}>
                                     <p></p>
@@ -90,7 +82,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Trail rides         </p>
+                                    <p>Trail rides </p>
                                 </li>
                                 <li className={styles.pricingFeature}>
                                     <img
@@ -106,7 +98,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Haunted Trail     </p>
+                                    <p>Haunted Trail </p>
                                 </li>
                                 <li className={styles.pricingFeature}>
                                     <img
@@ -114,16 +106,16 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>More Events !   </p>
+                                    <p>More Events ! </p>
                                 </li>
                             </ul>
-                            <button className={styles.pricingButton}>
-                                View Upcoming Events!
-                            </button>
+                            <button className={styles.pricingButton}>View Upcoming Events!</button>
                         </div>
                         <div className={styles.pricingCard}>
                             <div className={styles.pricingPlanOverview}>
-                                <h2 className={styles.pricingHeaderTitle}>Private Riding Lessons</h2>
+                                <h2 className={styles.pricingHeaderTitle}>
+                                    Private Riding Lessons
+                                </h2>
                                 <h1 className={styles.pricingHeaderCost}>$50/hour</h1>
                                 <p className={styles.pricingHeaderDescription}></p>
                             </div>
@@ -134,7 +126,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Full Payments              </p>
+                                    <p>Full Payments </p>
                                 </li>
                                 <li className={styles.pricingFeature}>
                                     <img
@@ -150,7 +142,7 @@ export default function Home() {
                                         alt="V Logo on Dark Background"
                                         className={styles.pricingImage}
                                     />
-                                    <p>Waiver sign at site!       </p>
+                                    <p>Waiver sign at site! </p>
                                 </li>
                                 <li className={styles.pricingFeature}>
                                     <p></p>
