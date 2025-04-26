@@ -1,5 +1,5 @@
 import { Link } from '@remix-run/react';
-import logoImage from '../../../../public/images/oakhillshdlogo.png';
+import logoImage from '../../../public/images/oakhillshdlogo.png';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
