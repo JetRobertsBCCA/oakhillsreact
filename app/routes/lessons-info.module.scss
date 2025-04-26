@@ -1,0 +1,282 @@
+.lessonsPage {
+    background-color: #f8f4f0;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.heroSection {
+    text-align: center;
+    background-color: #f8f4f0;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #8b4513;
+    }
+
+    p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #333;
+    }
+}
+
+.infoSection {
+    margin: 3rem auto;
+    max-width: 800px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: #8b4513;
+        margin-bottom: 1.5rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+
+            &:before {
+                content: "•";
+                color: #8b4513;
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+}
+
+.bookingForm {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: #8b4513;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .formGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .formGroup {
+        &.fullWidth {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+
+            &:focus {
+                outline: none;
+                border-color: #8b4513;
+            }
+        }
+    }
+}
+
+.liabilitySection {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: #8b4513;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .waiverLink {
+        display: inline-block;
+        color: #8b4513;
+        text-decoration: none;
+        margin-bottom: 1.5rem;
+        font-weight: 500;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .checkboxGroup {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.5rem;
+
+        input[type="checkbox"] {
+            margin-top: 0.25rem;
+        }
+
+        label {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+    }
+}
+
+.mapSection {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    h2 {
+        color: #8b4513;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+    }
+
+    .mapDownloadButton {
+        display: inline-block;
+        background-color: #8b4513;
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 4px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: darken(#8b4513, 10%);
+        }
+    }
+}
+
+.paymentSection {
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    .formMessage {
+        color: #666;
+        font-style: italic;
+        margin: 1rem 0;
+    }
+
+    .successMessage {
+        color: #28a745;
+        font-weight: bold;
+        margin: 1rem 0;
+    }
+
+    .errorMessage {
+        color: #dc3545;
+        font-weight: bold;
+        margin: 1rem 0;
+    }
+}
+
+.footer {
+    margin-top: 120px;
+    padding: 40px 20px;
+    background-color: #d5d8d3;
+    text-align: center;
+
+    .footerLogo {
+        max-width: 80px;
+        height: auto;
+        margin-bottom: 0;
+    }
+
+    .footerLinks {
+        margin-bottom: 20px;
+        margin-top: 0;
+
+        .footerLink {
+            color: #475569;
+            text-decoration: none;
+            margin: 0;
+            display: block;
+
+            &:hover {
+                text-decoration: underline;
+                color: #000;
+            }
+        }
+    }
+
+    .copyright {
+        color: #615047;
+        font-size: 0.9rem;
+        opacity: 0.85;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroSection {
+        padding: 2rem 1rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    .infoSection,
+    .bookingForm,
+    .liabilitySection,
+    .mapSection,
+    .paymentSection {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .footer {
+        margin-top: 80px;
+        padding: 30px 15px;
+
+        .footerLogo {
+            max-width: 60px;
+        }
+    }
+} 

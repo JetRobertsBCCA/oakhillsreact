@@ -1,6 +1,6 @@
 // app/utils/auth.ts
 import { redirect } from '@remix-run/node';
-import { auth } from '../../oakhillsreact/app/firebaseConfig';
+import { auth } from '../app/firebaseConfig';
 
 export const requireAuth = async () => {
     const user = auth.currentUser;

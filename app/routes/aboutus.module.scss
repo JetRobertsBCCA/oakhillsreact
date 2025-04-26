@@ -1,118 +1,299 @@
-* {
-    box-sizing: border-box;
-}
-// i had to manually adjust ALOT of the padding here, unsure if it happend with codux but in my laptop the pages woult not wrap around the e
-//edges like it should properly ,i suspect it might not showed up on yalls screens since the laptop resoltuions
-//arent as high as mine but please let me know if it messed up anything else
-body {
+@use 'sass:color';
+
+.pageContainer {
+    max-width: 100%;
     margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #333;
-    background-color: #f0f0f0;
+    padding: 0;
 }
 
-.teamSectionWrapper {
-    background-color: #615047;
-    padding: 60px 0;
-    color: #f0f0f0;
+.contentWrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
 }
 
-.teamIntro {
-    margin-bottom: 50px;
+.heroSection {
+    position: relative;
+    height: 70vh;
+    min-height: 500px;
+    margin-bottom: var(--spacing-xl);
+    margin-top: 40px;
+    overflow: hidden;
+    border-radius: var(--border-radius-lg);
+
+    .heroImageContainer {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        .heroImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.infoSection {
+    margin: var(--spacing-xl) 0;
     text-align: center;
-    width: 100%;
-    box-sizing: border-box;
+    display: flex;
+    background-repeat: no-repeat;
+    background-image: url('../../src/assets/pxl_20250308_163707963.jpg');
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: transparent;
+
+    .infoContent {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: var(--spacing-lg);
+        background-image: radial-gradient(
+            circle at 50% 50%,
+            rgba(179, 179, 179, 0.79) 0%,
+            rgba(230, 230, 230, 0.79) 100%
+        );
+        background-color: transparent;
+        background-position: 0% 0%;
+        background-size: auto;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-origin: padding-box;
+        background-clip: border-box;
+        border-radius: 25px;
+        box-shadow: 2.41px 3.19px 29px 11px black;
+
+        h2 {
+            font-family: var(--font-secondary);
+            font-size: 35px;
+            margin-bottom: var(--spacing-md);
+            color: var(--color-primary-brown);
+        }
+
+        p {
+            font-family: var(--font-primary);
+            font-size: 20px;
+            line-height: 1.6;
+            color: #000000;
+            font-weight: 500;
+        }
+    }
 }
 
-.teamIntro h2 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 2.5rem;
-    color: #ffffff;
-    font-weight: normal;
-    align-content: end;
-    margin-bottom: 0px;
-    line-height: 40px;
-}
+.teamSection {
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
 
-.teamIntro p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #dfe4ea;
+    h2 {
+        text-align: center;
+        font-family: var(--font-secondary);
+        font-size: var(--font-size-xl);
+        margin-bottom: var(--spacing-md);
+        color: var(--color-primary-brown);
+    }
+
+    .teamIntro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto var(--spacing-xl);
+        font-family: var(--font-primary);
+        font-size: var(--font-size-md);
+        line-height: 1.6;
+        color: var(--color-text-secondary);
+    }
 }
 
 .staffList {
-    width: 100%;
-    box-sizing: border-box;
     display: grid;
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    padding: 0 var(--spacing-md);
 }
 
 .staffCard {
-    background-color: #ffffff;
-    color: #333;
-    border-radius: 15px;
+    background: white;
+    border-radius: var(--border-radius-md);
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .staffImageContainer {
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+
+        .staffImage {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .staffTextContent {
+        padding: var(--spacing-md);
+
+        h3 {
+            font-family: var(--font-secondary);
+            font-size: 1.6rem;
+            color: var(--color-primary-brown);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        h4 {
+            font-family: var(--font-secondary);
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        p {
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+    }
 }
 
-.staffBioLayout {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 30px;
-    padding: 30px;
-}
+.facilitySection {
+    margin: var(--spacing-xl) 0;
+    padding: var(--spacing-xl) 0;
+    background-color: var(--color-background-light);
 
-.layoutReverse {
-    flex-direction: row-reverse;
-}
+    h2 {
+        text-align: center;
+        font-family: var(--font-secondary);
+        font-size: 3rem;
+        color: var(--color-primary-brown);
+        margin-bottom: var(--spacing-lg);
+    }
 
-.staffTextContent {
-    flex: 3;
-    min-width: 280px;
-    text-align: left;
-}
+    .facilityContent {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-md);
 
-.staffTextContent h3 {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.8rem;
-    color: #615047;
-    margin-top: 0;
-    margin-bottom: 5px;
-}
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
 
-.staffTextContent h4 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.1rem;
-    color: #615047;
-    margin-bottom: 15px;
-    font-weight: bold;
-}
+    .facilityText {
+        p {
+            font-family: var(--font-primary);
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+    }
 
-.staffTextContent p {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1rem;
-    line-height: 1.7;
-    color: #333;
-    margin-bottom: 0;
-}
+    .facilityImages {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-md);
 
-.staffImageContainer {
-    flex: 2;
-    min-width: 250px;
-}
-
-.staffImageNew {
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    max-height: 450px;
-    border: 12px solid #615047;
-    border-radius: 25px;
+        .facilityImage {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: var(--border-radius-md);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+    }
 }
 
 @media (max-width: 768px) {
+    .heroSection {
+        height: 50vh;
+
+        .heroImageContainer {
+            .heroImage {
+                height: 250px;
+            }
+        }
+    }
+
+    .staffList {
+        grid-template-columns: 1fr;
+    }
+
+    .facilityImages {
+        grid-template-columns: 1fr;
+
+        .facilityImage {
+            height: 250px;
+        }
+    }
+}
+
+.contactSection {
+    padding: 40px 20px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.mainHeading {
+    font-family: var(--font-secondary);
+    font-size: 3rem;
+    color: var(--color-primary-brown);
+    margin: 0 0 10px 0;
+    text-align: center;
+}
+
+.subHeading {
+    font-family: var(--font-secondary);
+    font-size: 1.5rem;
+    color: var(--color-primary-brown);
+    margin: 0 0 15px 0;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.bodyText {
+    font-family: var(--font-primary);
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 750px;
+    margin: 0 auto 20px auto;
+    text-align: center;
+}
+
+@media (max-width: var(--breakpoint-md)) {
+    h2 {
+        font-size: 2.5rem;
+    }
+
+    .infoContent p,
+    .teamIntro,
+    .facilityText p {
+        font-size: 1rem;
+    }
+
+    .staffTextContent {
+        h3 {
+            font-size: 1.4rem;
+        }
+        h4 {
+            font-size: 1.1rem;
+        }
+        p {
+            font-size: 0.95rem;
+        }
+    }
+
     .staffBioLayout {
         flex-direction: column !important;
         gap: 20px;
@@ -129,269 +310,71 @@ body {
     .staffTextContent {
         text-align: center;
     }
-    .staffTextContent h3 {
-        font-size: 1.6rem;
-    }
-    .staffTextContent h4 {
-        font-size: 1rem;
-    }
-    .staffTextContent p {
-        font-size: 0.95rem;
-    }
-
     .teamIntro h2 {
         font-size: 2rem;
-        left: 0;
-        position: static;
-        text-align: center;
     }
     .teamIntro p {
         font-size: 1rem;
     }
 
     .teamSectionWrapper {
-        padding: 40px 0;
-    }
-    .staffCard {
-        margin: 0 10px;
-    }
-}
-
-.pageContainer {
-    background-color: #d4d6d1;
-    color: #475569;
-    min-width: 100vw;
-    min-height: 100vh;
-    width: 100%;
-}
-
-.headerBar {
-    position: sticky;
-    background-color: rgba(97, 80, 71, 0.95);
-    backdrop-filter: blur(8px);
-    box-shadow: 0 2px 7px rgb(0, 0, 0);
-    border-radius: 10px;
-    text-align: center;
-    display: flex;
-    bottom: auto;
-    margin-bottom: 0;
-    object-fit: fill;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: nowrap;
-    max-width: none;
-    right: auto;
-    justify-items: center;
-    left: auto;
-    margin-top: 15px;
-    color: var(--white);
-    z-index: 999;
-    top: 0px;
-    min-width: 0%;
-    width: 100%;
-    padding: 1rem;
-    justify-content: center;
-}
-
-.headerContent {
-    display: flex;
-    justify-content: space-between;
-    align-items: end;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    position: static;
-    width: 95vw;
-    align-content: center;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: auto;
-    margin-right: 50px;
-    color: var(--white);
-    padding: 1px;
-}
-
-.navRight {
-    display: flex;
-    flex: 0 1 auto;
-    padding-left: 10px;
-    padding-right: 10px;
-    gap: 5px;
-    text-align: start;
-}
-
-.navLinkRight {
-    color: var(--white);
-    background-color: rgba(97, 80, 71, 0.03);
-    border-radius: 5px;
-    text-decoration: none;
-    font-size: 1rem;
-    font-family: Georgia, serif;
-    text-align: center;
-    transition: background-color 0.2s ease;
-    display: inline-block;
-    vertical-align: top;
-    padding-right: 8px;
-    padding-top: 0.5px;
-    padding-bottom: 0.5px;
-    padding-left: 1px;
-    line-height: 24px;
-}
-
-.navLinkRight:hover {
-    background-color: rgba(97, 80, 71, 0.1);
-}
-
-.contactSection {
-    background-color: #d3d6d1;
-    padding: 80px 0;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-}
-
-.contentWrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 10px;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.mainHeading {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 3rem;
-    color: #615047;
-    margin: 0;
-    text-align: center;
-}
-
-.subHeading {
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #615047;
-    margin: 0;
-    padding: 10px;
-    max-width: 500px;
-    margin-bottom: 15px;
-    text-align: center;
-    line-height: 30px;
-    font-size: 4rem;
-}
-
-.bodyText1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2 rem;
-    color: #615047;
-    line-height: 1.7;
-    max-width: 750px;
-    margin: 0 auto 20px auto;
-    padding: 10px;
-    text-align: center;
-    font-size: 3rem;
-}
-
-.footerSection {
-    background-color: #615047;
-    padding: 80px 0 80px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.footerLinks {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    flex: 0 1 auto;
-}
-
-.footerLink {
-    color: var(--white);
-    text-decoration: none;
-    display: block;
-    font-size: 3rem;
-}
-
-.footerLink:hover {
-    text-decoration: underline;
-    color: #000;
-}
-
-.footerLogo {
-    display: block;
-    max-width: 150px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.copyright {
-    color: #615047;
-    font-size: 0.8rem;
-    opacity: 0.75;
-    text-align: center;
-    padding: 10px;
-    margin-top: 20px;
-}
-
-@media (max-width: 768px) {
-    .headerContent {
-        justify-content: center;
-        margin: 0 auto;
-        width: 100%;
-        padding: 0 10px;
-        align-items: center;
+        padding: 40px 15px;
     }
 
-    .teamSectionWrapper {
-        padding: 40px 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .navRight {
-        min-width: 0px;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 5px;
-    }
-    .headerBar {
-        margin-left: 0;
-        margin-right: 0;
-        padding-left: 0;
-        padding-right: 0;
-    }
     .mainHeading {
-        font-size: 2rem;
+        font-size: 2.5rem;
     }
     .subHeading {
-        font-size: 1rem;
+        font-size: 1.3rem;
     }
     .bodyText {
         font-size: 1rem;
     }
-    .footerLinks {
-        gap: 10px 20px;
+}
+
+@media (max-width: var(--breakpoint-sm)) {
+    h2 {
+        font-size: 2rem;
     }
-    .contactSection,
-    .footerSection {
-        padding: 60px 0;
+    .teamIntro h2 {
+        font-size: 1.8rem;
     }
-    .teamIntro p,
+    .teamIntro p {
+        font-size: 0.95rem;
+    }
+    .staffList {
+        gap: 30px;
+        padding: 0 10px;
+    }
+    .staffTextContent h3 {
+        font-size: 1.5rem;
+    }
+    .staffTextContent h4 {
+        font-size: 0.95rem;
+    }
     .staffTextContent p {
         font-size: 0.9rem;
         line-height: 1.6;
     }
-}
-.img1 {
-    max-width: 1000px;
+    .staffBioLayout {
+        padding: 20px;
+    }
+
+    .mainHeading {
+        font-size: 2rem;
+    }
+    .subHeading {
+        font-size: 1.2rem;
+    }
+    .bodyText {
+        font-size: 0.95rem;
+    }
+    .contactSection {
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }

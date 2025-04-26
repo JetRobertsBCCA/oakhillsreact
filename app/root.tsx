@@ -1,80 +1,40 @@
-
-import '~/styles/reset.scss';
-import '~/styles/colors.scss';
-import '~/styles/typography.scss';
-import '~/styles/global.scss';
-import '~/styles/utils.scss';
-
+import type { LinksFunction, LoaderFunctionArgs } from "@remix-run/node";
 import {
-    Links,
-    Meta,
-    Outlet,
-    Scripts,
-    ScrollRestoration,
-    isRouteErrorResponse,
-    useRouteError,
-} from '@remix-run/react';
-import { ErrorComponent } from '~/components/error-component/error-component';
-import { PayPalScriptProvider } from "@paypal/react-paypal-js"; // <-- Import the provider
+  Links,
+  LiveReload,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  json,
+} from "@remix-run/react";
+import "./styles/global.scss";
+import GlobalNav from "./components/GlobalNav/GlobalNav";
 
+export const links: LinksFunction = () => [];
 
-const PAYPAL_CLIENT_ID = "";
-
-export function Layout({ children }: { children: React.ReactNode }) {
-    return (
-        <html lang="en">
-            <head>
-                <meta charSet="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1" />
-                <Meta />
-                <Links />
-            </head>
-            <body>
-                {children}
-                <ScrollRestoration />
-                <Scripts />
-            </body>
-        </html>
-    );
-}
+export const loader = async ({ request }: LoaderFunctionArgs) => {
+  return json({});
+};
 
 export default function App() {
-    return (
-        <div id="root">
-            {/* Wrap the Outlet with the PayPalScriptProvider */}
-            <PayPalScriptProvider options={{ clientId: PAYPAL_CLIENT_ID, currency: "USD" /* Add other options if needed */ }}>
-                <Outlet />
-            </PayPalScriptProvider>
-        </div>
-    );
-}
-
-export function ErrorBoundary() {
-    const error = useRouteError();
-    const { title, message } = getErrorDetails(error);
-
-    return <ErrorComponent title={title} message={message} />;
-}
-
-function getErrorDetails(error: unknown) {
-    let title: string;
-    let message: string | undefined;
-
-    if (isRouteErrorResponse(error)) {
-        if (error.status === 404) {
-            title = 'Page Not Found';
-            message = "Looks like the page you're trying to visit doesn't exist";
-        } else {
-            title = `${error.status} - ${error.statusText}`;
-            message = error.data?.message ?? '';
-        }
-    } else {
-        title = 'Unknown error ocurred';
-        // Optionally add more specific error checking here if needed
-        if (error instanceof Error) {
-            message = error.message; // Display standard Error message
-        }
-    }
-
-    return { title, message };
+  return (
+    <html lang="en">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <GlobalNav />
+        <main>
+          <Outlet />
+        </main>
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
+  );
 }
