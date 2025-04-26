@@ -5,11 +5,8 @@ import { db } from '../../firebaseConfig';
 import { collection, getDocs } from 'firebase/firestore';
 import Footer from '../../components/Footer/Footer';
 import SignupModal from '../../components/SignupModal/SignupModal';
-<<<<<<< HEAD
-import { Link } from 'react-router-dom';
-=======
+import { Link } from '@remix-run/react';
 import classNames from 'classnames';
->>>>>>> d46b525e75644b3dc93946c4aaf736b3f2a01877
 
 // Interface for Event type
 interface Event {
@@ -19,6 +16,7 @@ interface Event {
     date: string;
     name: string;
     location: string;
+    time: string;
     price: string;
 }
 
@@ -28,7 +26,34 @@ export default function Events() {
     const [showSignupModal, setShowSignupModal] = useState(false);
     const [currentEventName, setCurrentEventName] = useState('');
 
-    // Define images in the public folder
+    // Fetch events from Firestore
+    useEffect(() => {
+        const fetchEvents = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, 'events'));
+                const eventsData = querySnapshot.docs.map(doc => ({
+                    id: doc.id,
+                    ...doc.data()
+                })) as Event[];
+                setEvents(eventsData);
+            } catch (error) {
+                console.error("Error fetching events:", error);
+            }
+        };
+
+        fetchEvents();
+    }, []);
+
+    const openModal = (eventName: string) => {
+        setCurrentEventName(eventName);
+        setShowSignupModal(true);
+    };
+
+    const closeModal = () => {
+        setShowSignupModal(false);
+    };
+
+    // Sample images for slideshow
     const images = [
         '/images/slide1.PNG',
         '/images/slide2.PNG',
@@ -39,6 +64,7 @@ export default function Events() {
         '/images/slide7.PNG',
         '/images/slide8.PNG',
         '/images/slide9.PNG',
+        // Add more images as needed
     ];
 
     const totalSlides = Math.ceil(images.length / 3);
@@ -50,37 +76,6 @@ export default function Events() {
     const prevSlide = () => {
         setCurrentIndex((prevIndex) => (prevIndex - 1 + totalSlides) % totalSlides);
     };
-
-    const openModal = (eventName: string) => {
-        setCurrentEventName(eventName);
-        setShowSignupModal(true);
-    };
-
-    const closeModal = () => {
-        setShowSignupModal(false);
-    };
-
-    useEffect(() => {
-        const loadEvents = async () => {
-            try {
-                const eventsCollection = collection(db, 'events');
-                const eventsSnapshot = await getDocs(eventsCollection);
-                const eventsList = eventsSnapshot.docs.map((doc) => ({
-                    id: doc.id,
-                    ...doc.data(),
-                })) as Event[];
-                setEvents(eventsList);
-            } catch (error) {
-                console.error('Error loading events:', error);
-            }
-        };
-
-        loadEvents();
-
-        // Set up the slideshow interval
-        const interval = setInterval(nextSlide, 5000);
-        return () => clearInterval(interval);
-    }, []);
 
     // Calculate which images to show based on current index
     const visibleImages = [];
@@ -100,50 +95,27 @@ export default function Events() {
 
                 {/* Slideshow Section */}
                 <div className={styles.slideshowsection}>
+                    <h2>Oak Hill Memories</h2>
+                    <div className={styles.slideshowControls}>
+                        <button onClick={prevSlide} className={styles.slideshowButton}>❮</button>
+                        <button onClick={nextSlide} className={styles.slideshowButton}>❯</button>
+                    </div>
                     <div className={styles.slideshowWrapper}>
-                        {images
-                            .slice(currentIndex * 3, currentIndex * 3 + 3)
-                            .map((image, index) => (
-                                <img
-                                    key={`slide-${currentIndex}-${index}`}
-                                    src={image}
-                                    alt={`Oak Hill Farm slide ${currentIndex * 3 + index + 1}`}
-                                    className={styles.slideImage}
-                                    onError={(e) => {
-                                        console.error(`Failed to load image: ${image}`);
-                                        e.currentTarget.src = '/images/placeholder.png'; // Fallback image
-                                    }}
-                                />
-                            ))}
+                        {visibleImages.map((image, index) => (
+                            <img
+                                key={`slide-${currentIndex}-${index}`}
+                                src={image}
+                                alt={`Oak Hill Farm slide ${currentIndex * 3 + index + 1}`}
+                                className={styles.slideImage}
+                                onError={(e) => {
+                                    console.error(`Failed to load image: ${image}`);
+                                    e.currentTarget.src = '/images/placeholder.png';
+                                }}
+                            />
+                        ))}
                     </div>
                 </div>
 
-<<<<<<< HEAD
-                {/* Event Posters Grid */}
-                <div className={styles.eventsGrid}>
-                    {events.map((event, index) => (
-                        <div key={index} className={styles.eventContainer}>
-                            <h3>{event.name}</h3>
-                            <p><strong>Date:</strong> {event.date}</p>
-                            <p><strong>Time:</strong> {event.time}</p>
-                            <p><strong>Location:</strong> {event.location}</p>
-                            <p><strong>Description:</strong> {event.description}</p>
-                            <button 
-                                className={styles.signUpButton}
-                                onClick={() => handleSignupClick(event.name)}
-                            >
-                                Sign Up
-                            </button>
-                        </div>
-                    ))}
-                    {/* Static Birthday Parties Card */}
-                    <div className={styles.eventContainer}>
-                        <img src="/images/v-logo-dark.png" alt="V Logo on Dark Background" style={{ width: '100%', maxWidth: 120, margin: '0 auto 1rem', display: 'block' }} />
-                        <h3>Birthday Parties</h3>
-                        <p><strong>$200+</strong></p>
-                        <p>Reserve your special day at Oak Hill Farm! Includes 2 hours, up to 12 people, and more.</p>
-                        <Link to="/party-info" className={styles.signUpButton}>View & Book</Link>
-=======
                 {/* Events Section */}
                 <div className={styles.eventsSection}>
                     <h2>Upcoming Events</h2>
@@ -151,7 +123,7 @@ export default function Events() {
                         {events.length > 0 ? (
                             events.map((event) => (
                                 <div key={event.id} className={styles.eventContainer}>
-                                    <h3>{event.name}</h3>
+                                    <h3>{event.name || event.title}</h3>
                                     <p>
                                         <strong>Date:</strong> {event.date}
                                     </p>
@@ -166,8 +138,8 @@ export default function Events() {
                                     </p>
                                     <p>{event.description}</p>
                                     <button
-                                        onClick={() => openModal(event.title)}
-                                        className={classNames(styles.signupButton, styles.button1)}
+                                        onClick={() => openModal(event.name || event.title)}
+                                        className={classNames(styles.signupButton)}
                                     >
                                         Sign Up
                                     </button>
@@ -176,12 +148,44 @@ export default function Events() {
                         ) : (
                             <p>No upcoming events at the moment. Check back soon!</p>
                         )}
->>>>>>> d46b525e75644b3dc93946c4aaf736b3f2a01877
+                    </div>
+                </div>
+
+                {/* Birthday parties Card - Now positioned after the events section */}
+                <div className={styles.eventContainer}>
+                    <img src="/images/birthday-party.jpg" alt="Birthday Party" style={{ width: '100%', maxWidth: 120, margin: '0 auto 1rem', display: 'block' }} />
+                    <h3>Birthday parties</h3>
+                    <p>Reserve your special day at Oak Hill Farm! Includes 2 hours, up to 12 people, and more.</p>
+                    <Link to="/party-info" className={styles.signupButton}>View & Book</Link>
+                </div>
+
+                {/* Map Section */}
+                <div className={styles.mapSection}>
+                    <h2>Find Us</h2>
+                    <p>Oak Hill Farm is located in Beautiful Mississippi Countryside</p>
+                    <div className={styles.mapContainer}>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3345.6505746948324!2d-89.60435812393871!3d33.00972337335359!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888135bea8a09d3f%3A0x7d00b2a491de3741!2sOak%20Hill%20Farm!5e0!3m2!1sen!2sus!4v1698086622614!5m2!1sen!2sus"
+                            width="600"
+                            height="450"
+                            style={{ border: 0 }}
+                            allowFullScreen
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                        ></iframe>
                     </div>
                 </div>
             </div>
+            
+            {/* Signup Modal */}
+            {showSignupModal && (
+                <SignupModal
+                    eventName={currentEventName}
+                    onClose={closeModal}
+                />
+            )}
+            
             <Footer />
-            {showSignupModal && <SignupModal eventName={currentEventName} onClose={closeModal} />}
         </div>
     );
 }
