@@ -16,6 +16,7 @@ interface Event {
     time: string;
     location: string;
     description: string;
+    price?: string;
 }
 
 const Events = () => {
@@ -130,6 +131,7 @@ const Events = () => {
                             <p><strong>Date:</strong> {event.date}</p>
                             <p><strong>Time:</strong> {event.time}</p>
                             <p><strong>Location:</strong> {event.location}</p>
+                            <p><strong>Price:</strong> {event.price || 'Free'}</p>
                             <p><strong>Description:</strong> {event.description}</p>
                             <button 
                                 className={styles.signUpButton}

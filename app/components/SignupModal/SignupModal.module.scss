@@ -1,4 +1,4 @@
-// app/components/SignupModal/SignupModal.module.scss
+
 .modalOverlay {
   position: fixed;
   top: 0;
@@ -34,7 +34,7 @@
   border: none;
   font-size: 24px;
   cursor: pointer;
-  color: #8B4513;
+  color: #000000;
 }
 
 .formGroup {
@@ -74,7 +74,7 @@
   width: 100%;
   
   &:hover {
-    background-color: #6b3413; /* Manually darkened version of #8B4513 */
+    background-color: #6b3413; 
   }
   
   &:disabled {
@@ -87,5 +87,5 @@
   text-align: center;
   padding: 2rem 0;
   font-size: 1.2rem;
-  color: #8B4513;
+  color: #ffffff;
 }
