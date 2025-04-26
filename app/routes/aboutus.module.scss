@@ -1,4 +1,4 @@
-@use "sass:color";
+@use 'sass:color';
 
 .pageContainer {
     max-width: 100%;
@@ -37,24 +37,48 @@
 .infoSection {
     margin: var(--spacing-xl) 0;
     text-align: center;
+    display: flex;
+    background-repeat: no-repeat;
+    background-image: url('../../src/assets/pxl_20250308_163707963.jpg');
+    background-position: 50%;
+    background-size: cover;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-color: transparent;
 
     .infoContent {
         max-width: 800px;
         margin: 0 auto;
         padding: var(--spacing-lg);
+        background-image: radial-gradient(
+            circle at 50% 50%,
+            rgba(179, 179, 179, 0.79) 0%,
+            rgba(230, 230, 230, 0.79) 100%
+        );
+        background-color: transparent;
+        background-position: 0% 0%;
+        background-size: auto;
+        background-repeat: repeat;
+        background-attachment: scroll;
+        background-origin: padding-box;
+        background-clip: border-box;
+        border-radius: 25px;
+        box-shadow: 2.41px 3.19px 29px 11px black;
 
         h2 {
             font-family: var(--font-secondary);
-            font-size: var(--font-size-xl);
+            font-size: 35px;
             margin-bottom: var(--spacing-md);
             color: var(--color-primary-brown);
         }
 
         p {
             font-family: var(--font-primary);
-            font-size: var(--font-size-md);
+            font-size: 20px;
             line-height: 1.6;
-            color: var(--color-text-secondary);
+            color: #000000;
+            font-weight: 500;
         }
     }
 }
@@ -206,7 +230,7 @@
 
     .facilityImages {
         grid-template-columns: 1fr;
-        
+
         .facilityImage {
             height: 250px;
         }
@@ -251,7 +275,7 @@
     h2 {
         font-size: 2.5rem;
     }
-    
+
     .infoContent p,
     .teamIntro,
     .facilityText p {
