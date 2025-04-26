@@ -31,13 +31,13 @@ export default function Events() {
         const fetchEvents = async () => {
             try {
                 const querySnapshot = await getDocs(collection(db, 'events'));
-                const eventsData = querySnapshot.docs.map(doc => ({
+                const eventsData = querySnapshot.docs.map((doc) => ({
                     id: doc.id,
-                    ...doc.data()
+                    ...doc.data(),
                 })) as Event[];
                 setEvents(eventsData);
             } catch (error) {
-                console.error("Error fetching events:", error);
+                console.error('Error fetching events:', error);
             }
         };
 
@@ -97,8 +97,12 @@ export default function Events() {
                 <div className={styles.slideshowsection}>
                     <h2>Oak Hill Memories</h2>
                     <div className={styles.slideshowControls}>
-                        <button onClick={prevSlide} className={styles.slideshowButton}>❮</button>
-                        <button onClick={nextSlide} className={styles.slideshowButton}>❯</button>
+                        <button onClick={prevSlide} className={styles.slideshowButton}>
+                            ❮
+                        </button>
+                        <button onClick={nextSlide} className={styles.slideshowButton}>
+                            ❯
+                        </button>
                     </div>
                     <div className={styles.slideshowWrapper}>
                         {visibleImages.map((image, index) => (
@@ -139,7 +143,7 @@ export default function Events() {
                                     <p>{event.description}</p>
                                     <button
                                         onClick={() => openModal(event.name || event.title)}
-                                        className={classNames(styles.signupButton)}
+                                        className={classNames(styles.signupButton, styles.button2)}
                                     >
                                         Sign Up
                                     </button>
@@ -153,10 +157,24 @@ export default function Events() {
 
                 {/* Birthday parties Card - Now positioned after the events section */}
                 <div className={styles.eventContainer}>
-                    <img src="/images/birthday-party.jpg" alt="Birthday Party" style={{ width: '100%', maxWidth: 120, margin: '0 auto 1rem', display: 'block' }} />
+                    <img
+                        src="/images/birthday-party.jpg"
+                        alt="Birthday Party"
+                        style={{
+                            width: '100%',
+                            maxWidth: 120,
+                            margin: '0 auto 1rem',
+                            display: 'block',
+                        }}
+                    />
                     <h3>Birthday parties</h3>
-                    <p>Reserve your special day at Oak Hill Farm! Includes 2 hours, up to 12 people, and more.</p>
-                    <Link to="/party-info" className={styles.signupButton}>View & Book</Link>
+                    <p>
+                        Reserve your special day at Oak Hill Farm! Includes 2 hours, up to 12
+                        people, and more.
+                    </p>
+                    <Link to="/party-info" className={styles.signupButton}>
+                        View & Book
+                    </Link>
                 </div>
 
                 {/* Map Section */}
@@ -176,15 +194,16 @@ export default function Events() {
                     </div>
                 </div>
             </div>
-            
+
             {/* Signup Modal */}
             {showSignupModal && (
                 <SignupModal
                     eventName={currentEventName}
+                    isOpen={showSignupModal}
                     onClose={closeModal}
                 />
             )}
-            
+
             <Footer />
         </div>
     );
