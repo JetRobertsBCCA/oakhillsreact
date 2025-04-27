@@ -1,11 +1,13 @@
 .div1 {
     background-color: var(--color-off-white-bg);
     min-height: 100vh;
-    font-family: var(--font-secondary);
+    font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     background-image: url('/images/wood-texture.jpg');
     background-size: cover;
     background-position: center;
+    text-shadow: -1.09px -1.68px 2px #ffffff;
+    text-decoration-style: solid;
 }
 
 .contentWrapper {
@@ -138,6 +140,16 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    background-repeat: no-repeat;
+    background-image: url(../../../src/assets/old-paper-background-texture-in-brown-free-photo.jpg);
+    background-position: 53% 100%;
+    background-size: 300%;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
+    color: #000000;
+    font-size: 18px;
+    font-family: Tahoma, sans-serif;
 
     &:hover {
         transform: rotate(1deg) scale(1.02);
@@ -145,15 +157,20 @@ h1 {
     }
 
     h3 {
-        color: var(--color-primary-brown);
-        font-size: 1.5rem;
+        color: #000000;
+        font-size: 1.9rem;
         margin-bottom: var(--spacing-xs);
         text-align: center;
+        box-shadow: -2.93px -2.73px 2px rgba(250, 250, 250, 0);
+        font-weight: bolder;
+        font-family: American Typewriter, serif;
     }
 
     p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         margin: calc(var(--spacing-xs) / 2) 0;
+        color: #000000;
+        font-weight: 600;
     }
 
     strong {
@@ -344,7 +361,18 @@ h1 {
 .button2 {
     font-size: 30px;
     font-weight: 600;
-    background-color: #c0c0c0;
+    background-color: transparent;
     border-radius: 25px;
     border: 2px solid black;
+    background-image: radial-gradient(
+        circle at 50% 50%,
+        rgba(239, 231, 5, 0.76) 30%,
+        rgba(255, 0, 0, 0.76) 100%
+    );
+    background-position: 50% 97%;
+    background-size: 121% 121%;
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-origin: padding-box;
+    background-clip: border-box;
 }

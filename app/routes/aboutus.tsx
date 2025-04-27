@@ -4,6 +4,8 @@ import Footer from '../components/Footer/Footer';
 import Pxl20250308162929633Copy1Jpg from '../../src/assets/pxl_20250308_162929633_copy1.jpg';
 import Pxl20250308162929633Jpg from '../../src/assets/pxl_20250308_162929633.jpg';
 import Pxl20250308163053898Jpg from '../../src/assets/pxl_20250308_163053898.jpg';
+import Logo1Png from '../../src/assets/logo1.png';
+import Img2274Png from '../../src/assets/img_2274.png';
 
 interface StaffMember {
     id: number;
@@ -65,13 +67,6 @@ export default function Aboutus() {
                     <div className={styles.staffList}>
                         {staffMembers.map((member) => (
                             <div key={member.id} className={styles.staffCard}>
-                                <div className={styles.staffImageContainer}>
-                                    <img
-                                        src={member.image}
-                                        alt={`${member.name}, ${member.title}`}
-                                        className={styles.staffImage}
-                                    />
-                                </div>
                                 <div className={styles.staffTextContent}>
                                     <h3>{member.name}</h3>
                                     <h4>{member.title}</h4>
@@ -96,12 +91,12 @@ export default function Aboutus() {
                         </div>
                         <div className={styles.facilityImages}>
                             <img
-                                src={Pxl20250308162929633Copy1Jpg}
+                                src={Logo1Png}
                                 alt="Oak Hill Farm facility"
                                 className={styles.facilityImage}
                             />
                             <img
-                                src={Pxl20250308162929633Jpg}
+                                src={Img2274Png}
                                 alt="Oak Hill Farm arena"
                                 className={styles.facilityImage}
                             />
