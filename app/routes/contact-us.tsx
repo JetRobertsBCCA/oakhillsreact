@@ -49,37 +49,6 @@ export default function ContactUs() {
                             <li>Monday - Wednesday: Closed</li>
                             <li>Thursday - Sunday: 9:00 AM – 5:00 PM</li>
                         </ul>
-                        <h3>Follow Us</h3>
-                        <ul className={styles.socialLinks}>
-                            <li>
-                                <a
-                                    href="https://facebook.com/oakhillfarms"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Facebook mental note we need to verify we are linking ther right
-                                    social media pages!
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://instagram.com/oakhillfarms"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Instagram
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://twitter.com/oakhillfarms"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Twitter
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
