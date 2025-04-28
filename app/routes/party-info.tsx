@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 import { useState } from 'react';
-import styles from './party-info.module.scss';
+import styles from '../styles/party-info.module.scss';
 import { PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import Footer from '../components/Footer/Footer';
 

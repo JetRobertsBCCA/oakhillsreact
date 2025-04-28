@@ -7,7 +7,26 @@ import { netlifyPlugin } from '@netlify/remix-adapter/plugin';
 export default defineConfig({
     plugins: [
         remix({
-            ignoredRouteFiles: ['**/*.module.scss'],
+            // Add these configuration options
+            serverModuleFormat: 'esm',
+            serverPlatform: 'browser',
+            serverBuildTarget: 'browser',
+            serverDependenciesToBundle: [
+                // Add PayPal-related packages
+                '@paypal/checkout-server-sdk',
+                '@paypal/react-paypal-js'
+            ],
+            // Exclude server-only files from client bundle
+            ignoredRouteFiles: ['**/*.server.ts', '**/*.server.js'],
+            
+            // Optional: Add Remix future flags for newer routing behaviors
+            future: {
+                v3_fetcherPersist: true,
+                v3_lazyRouteDiscovery: true,
+                v3_relativeSplatPath: true,
+                v3_singleFetch: true,
+                v3_throwAbortReason: true,
+            }
         }),
         tsconfigPaths(),
         netlifyPlugin(),

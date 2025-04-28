@@ -1,6 +1,6 @@
 import { Link } from '@remix-run/react';
 import logoImage from '../../../public/images/oakhillshdlogo.png';
-import styles from './FAQ.module.scss';
+import styles from '../styles/FAQ.module.scss';
 import global from '../styles/global.module.scss';
 import Footer from '../components/Footer/Footer';
 

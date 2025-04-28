@@ -8,10 +8,10 @@
     padding: 2rem;
     margin: 0 auto;
     align-self: center;
-    display: flex;
+    display: inline-block;
     flex-direction: column;
     align-items: center;
-    width: 100%;
+    width: 90%;
 
     @media (max-width: 768px) {
         .pageWrapper {
@@ -262,7 +262,7 @@
         padding: 4rem 2rem;
         background-color: #f8f4f0;
         align-self: center;
-        width: 95vw;
+        width: auto;
     }
 
     .pricingTitle {
@@ -429,8 +429,8 @@
 .div2 {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    align-content: center;
+    width: auto;
+    align-items: center;
 }
 .img2 {
     align-content: center;
@@ -496,7 +496,6 @@
     align-self: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
     background-repeat: no-repeat;
     background-image: url('../../../src/assets/preview (3).webp');
     background-position: 50%;
@@ -505,6 +504,16 @@
     background-origin: padding-box;
     background-clip: border-box;
     background-color: transparent;
+    object-fit: fill;
+    width: 75vw;
+    align-content: center;
+    text-align: start;
+    position: static;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    box-shadow: 2.12px 2.12px 29px black;
+    margin-top: 25px;
 }
 .p3 {
     color: #ffffff;
@@ -528,7 +537,7 @@
     text-align: center;
     font-family: Georgia, serif;
     border: 2px dashed black;
-    width: 95vw;
+    width: auto;
     display: flex;
     flex-direction: column;
     align-items: center;

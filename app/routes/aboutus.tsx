@@ -1,5 +1,5 @@
 import { Link } from '@remix-run/react';
-import styles from './aboutus.module.scss';
+import styles from '../styles/aboutus.module.scss';
 import Footer from '../components/Footer/Footer';
 import Pxl20250308162929633Copy1Jpg from '../../src/assets/pxl_20250308_162929633_copy1.jpg';
 import Pxl20250308162929633Jpg from '../../src/assets/pxl_20250308_162929633.jpg';

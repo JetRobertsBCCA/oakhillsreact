@@ -21,3 +21,6 @@ const client = new paypal.core.PayPalHttpClient(environment);
 export function paypalClient() {
   return client;
 } 
+export function isServerModule() {
+  return true;
+}
