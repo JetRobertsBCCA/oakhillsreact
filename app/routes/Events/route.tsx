@@ -7,6 +7,7 @@ import Footer from '../../components/Footer/Footer';
 import SignupModal from '../../components/SignupModal/SignupModal';
 import { Link } from '@remix-run/react';
 import classNames from 'classnames';
+import PriceHandler from '../../components/PriceHandler/PriceHandler';
 
 // Interface for Event type
 interface Event {
@@ -25,6 +26,8 @@ export default function Events() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showSignupModal, setShowSignupModal] = useState(false);
     const [currentEventName, setCurrentEventName] = useState('');
+    const [currentEventPrice, setCurrentEventPrice] = useState('');
+    const [registrationComplete, setRegistrationComplete] = useState(false);
 
     // Fetch events from Firestore
     useEffect(() => {
@@ -44,13 +47,25 @@ export default function Events() {
         fetchEvents();
     }, []);
 
-    const openModal = (eventName: string) => {
+    const openModal = (eventName: string, eventPrice: string) => {
         setCurrentEventName(eventName);
+        setCurrentEventPrice(eventPrice);
         setShowSignupModal(true);
+        setRegistrationComplete(false);
     };
 
     const closeModal = () => {
         setShowSignupModal(false);
+        setRegistrationComplete(false);
+    };
+
+    const handleSuccessfulRegistration = (paymentInfo?: any) => {
+        // If payment info is provided, registration included payment
+        if (paymentInfo) {
+            console.log('Payment info received:', paymentInfo);
+        }
+        setRegistrationComplete(true);
+        // You could add analytics tracking here
     };
 
     // Sample images for slideshow
@@ -142,7 +157,7 @@ export default function Events() {
                                     </p>
                                     <p>{event.description}</p>
                                     <button
-                                        onClick={() => openModal(event.name || event.title)}
+                                        onClick={() => openModal(event.name || event.title, event.price)}
                                         className={classNames(styles.signupButton, styles.button2)}
                                     >
                                         Sign Up
@@ -154,7 +169,6 @@ export default function Events() {
                         )}
                     </div>
                 </div>
-
 
                 {/* Map Section */}
                 <div className={styles.mapSection}>
@@ -178,8 +192,11 @@ export default function Events() {
             {showSignupModal && (
                 <SignupModal
                     eventName={currentEventName}
+                    eventPrice={currentEventPrice}
                     isOpen={showSignupModal}
                     onClose={closeModal}
+                    onSuccessfulRegistration={handleSuccessfulRegistration}
+                    registrationComplete={registrationComplete}
                 />
             )}
 
