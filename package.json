@@ -13,6 +13,8 @@
   "dependencies": {
     "@blueprintjs/core": "^5.16.2",
     "@blueprintjs/icons": "^5.16.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
     "@netlify/remix-adapter": "^2.6.0",
     "@nivo/bar": "^0.88.0",
     "@nivo/boxplot": "^0.88.0",
