@@ -1,13 +1,16 @@
+.pageWrapper {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
 .partyPage {
-    background-color: #f8f4f0;
     font-family: Arial, sans-serif;
     min-height: 100vh;
-    padding: 2rem;
 }
 
 .heroSection {
     text-align: center;
-    background-color: #f8f4f0;
     padding: 4rem 2rem;
     margin-bottom: 2rem;
 

@@ -1,12 +1,12 @@
 import { Link } from '@remix-run/react';
-import logoImage from '../../../public/images/oakhillshdlogo.png';
+import Logo1Png from '../../../src/assets/logo1.png';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerLogoContainer}>
-        <img src={logoImage} alt="Oak Hill Farm Logo" className={styles.footerLogo} />
+        <img src={Logo1Png} alt="Oak Hill Farm Logo" className={styles.footerLogo} />
       </div>
       <div className={styles.footerLinks}>
         <Link to="/terms" className={styles.footerLink}>
