@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from './contact-us.module.scss';
+import styles from '../styles/contact-us.module.scss';
 import Footer from '../components/Footer/Footer';
 import fbLogo from '../../src/fb_logo.png';
 

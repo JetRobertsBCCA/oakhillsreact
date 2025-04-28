@@ -1,4 +1,4 @@
-import styles from './contactUs.module.scss';
+import styles from '../styles/terms.module.scss';
 import Footer from '../components/Footer/Footer';
 
 export default function Terms() {
