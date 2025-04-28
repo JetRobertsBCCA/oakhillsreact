@@ -41,6 +41,10 @@ export default function PrivateLessonsInfoPage() {
         headers: {
           "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          amount: 50,
+          type: 'lesson'
+        })
       });
 
       if (!response.ok) {
@@ -191,66 +195,27 @@ export default function PrivateLessonsInfoPage() {
         <div className={styles.paymentSection}>
           {!paymentStatus.includes('Successful') && isFormValid && (
             <div>
-              <h3>Choose Your Payment Option</h3>
-              <div className={styles.paymentOptions}>
-                <div className={styles.paymentOption}>
-                  <h4>Private Lesson</h4>
-                  <p>$50 per hour</p>
-                  <PayPalButtons
-                    createOrder={createPayPalOrder}
-                    onApprove={onPayPalApprove}
-                    onError={onPayPalError}
-                    onCancel={() => {
-                      setShowPayPalButtons(false);
-                      setPaymentStatus('Payment cancelled.');
-                    }}
-                    fundingSource="paypal"
-                    style={{
-                      layout: "vertical",
-                      shape: "rect",
-                      color: "gold"
-                    }}
-                  />
-                </div>
-
-                <div className={styles.paymentOption}>
-                  <h4>Party Deposit</h4>
-                  <p>$100 Non-Refundable Deposit</p>
-                  <p className={styles.smallText}>Required to Reserve Party Date & Time</p>
-                  <p className={styles.smallText}>Full Party: $300 (Up to 12 People for 2 hours)</p>
-                  <p className={styles.smallText}>$15 Per Person After First 10</p>
-                  <PayPalButtons
-                    createOrder={createPayPalOrder}
-                    onApprove={onPayPalApprove}
-                    onError={onPayPalError}
-                    onCancel={() => {
-                      setShowPayPalButtons(false);
-                      setPaymentStatus('Payment cancelled.');
-                    }}
-                    fundingSource="paypal"
-                    style={{
-                      layout: "vertical",
-                      shape: "rect",
-                      color: "gold"
-                    }}
-                  />
-                </div>
-              </div>
+              <h3>Secure Your Lesson</h3>
+              <p>$50 per hour</p>
+              <p className={styles.smallText}>Full payment required at time of booking</p>
+              <PayPalButtons
+                createOrder={createPayPalOrder}
+                onApprove={onPayPalApprove}
+                onError={onPayPalError}
+                onCancel={() => {
+                  setShowPayPalButtons(false);
+                  setPaymentStatus('Payment cancelled.');
+                }}
+                style={{
+                  layout: "vertical",
+                  shape: "rect",
+                  color: "gold"
+                }}
+              />
             </div>
           )}
-
-          {!paymentStatus.includes('Successful') && !isFormValid && (
-            <div className={styles.centeredContent}>
-              <p className={styles.formMessage}>
-                Please fill out all form fields and agree to the liability waiver to proceed with payment.
-              </p>
-            </div>
-          )}
-
-          {paymentStatus && (
-            <p className={paymentStatus.includes('Successful') ? styles.successMessage : styles.errorMessage}>
-              {paymentStatus}
-            </p>
+          {paymentStatus && !paymentStatus.includes('Successful') && (
+            <p className={styles.paymentStatus}>{paymentStatus}</p>
           )}
         </div>
       </div>
