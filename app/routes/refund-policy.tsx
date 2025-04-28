@@ -1,4 +1,4 @@
-import styles from './contactUs.module.scss';
+import styles from '../styles/contact-us.module.scss';
 import Footer from '../components/Footer/Footer';
 
 export default function RefundPolicy() {
