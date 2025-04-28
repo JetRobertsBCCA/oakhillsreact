@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styles from './contactUs.module.scss';
 import Footer from '../components/Footer/Footer';
+import fbLogo from '../../src/fb_logo.png';
 
 export default function ContactUs() {
     const [name, setName] = useState('');
@@ -36,19 +37,41 @@ export default function ContactUs() {
                     </div>
 
                     <div className={styles.contactInfo}>
-                        <h2 className={styles.subHeading}>Contact Details</h2>
-                        <p>
-                            <strong>Phone:</strong> (662) 202-8899
-                        </p>
-                        <p>
-                            <strong>Email:</strong>{' '}
-                            <a href="mailto:robinson.llinda@yahoo.com">robinson.llinda@yahoo.com</a>
-                        </p>
-                        <h3>Business Hours</h3>
-                        <ul>
-                            <li>Monday - Wednesday: Closed</li>
-                            <li>Thursday - Sunday: 9:00 AM – 5:00 PM</li>
-                        </ul>
+                        <div className={styles.contactInfoCard}>
+                            <h2 className={styles.sectionHeading}>Contact Details</h2>
+                            <div className={styles.infoRow}>
+                                <span className={styles.infoLabel}>Phone:</span> (662) 202-8899
+                            </div>
+                            <div className={styles.infoRow}>
+                                <span className={styles.infoLabel}>Email:</span>
+                                <a href="mailto:robinson.llinda@yahoo.com">robinson.llinda@yahoo.com</a>
+                            </div>
+                            <div className={styles.infoRow}>
+                                <span className={styles.infoLabel}>Address:</span>
+                                7030 County Road 224, Water Valley, MS 38965, United States
+                            </div>
+
+                            <h2 className={styles.sectionHeading}>Business Hours</h2>
+                            <div className={styles.infoRow}>Monday - Wednesday: Closed</div>
+                            <div className={styles.infoRow}>Thursday - Sunday: 9:00 AM – 5:00 PM</div>
+
+                            <h2 className={styles.sectionHeading}>Follow Us On</h2>
+                            <div className={styles.socialSection}>
+                                <a 
+                                    href="https://www.facebook.com/oakhillfarm7030/" 
+                                    className={styles.socialLink} 
+                                    target="_blank" 
+                                    rel="noopener noreferrer"
+                                >
+                                    <img 
+                                        src={fbLogo} 
+                                        alt="Facebook" 
+                                        className={styles.socialIcon} 
+                                    />
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
