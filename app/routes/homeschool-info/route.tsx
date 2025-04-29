@@ -42,7 +42,7 @@ export default function HomeschoolInfo() {
                     "Content-Type": "application/json",
                 },
                 body: JSON.stringify({
-                    amount: 100,
+                    amount: 300,
                     type: 'homeschool'
                 })
             });
@@ -54,11 +54,13 @@ export default function HomeschoolInfo() {
 
             const orderData = await response.json();
             setPaymentStatus('');
+            console.log("Order ID created:", orderData.orderID);
             if (!orderData.orderID) {
                 throw new Error("Order ID not received from server");
             }
             return orderData.orderID;
         } catch (error: unknown) {
+            console.error("Failed to create PayPal order:", error);
             const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
             setPaymentStatus(`Error creating order: ${errorMessage}`);
             setShowPayPalButtons(false);
@@ -69,8 +71,7 @@ export default function HomeschoolInfo() {
     const onPayPalApprove = async (data: PayPalData) => {
         setPaymentStatus('Processing payment...');
         try {
-            // First, capture the payment
-            const paymentResponse = await fetch("/paypal_server/capture_order", {
+            const response = await fetch("/paypal_server/capture_order", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -80,43 +81,25 @@ export default function HomeschoolInfo() {
                 }),
             });
 
-            if (!paymentResponse.ok) {
-                const errorData = await paymentResponse.json();
-                throw new Error(errorData.message || `HTTP error! status: ${paymentResponse.status}`);
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || `HTTP error! status: ${response.status}`);
             }
 
-            const captureData = await paymentResponse.json();
-            
-            // If payment is successful, send the registration data
-            if (captureData.success) {
-                const registrationResponse = await fetch("/homeschool-registration", {
-                    method: "POST",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        firstName,
-                        lastName,
-                        email,
-                        phone,
-                        orderID: data.orderID
-                    }),
-                });
-
-                if (!registrationResponse.ok) {
-                    throw new Error("Failed to process registration");
-                }
-            }
-
+            const captureData = await response.json();
+            console.log("Payment successful:", captureData);
             setPaymentStatus('Payment Successful! Thank you for registering for our homeschool program.');
             setShowPayPalButtons(false);
+
         } catch (error: unknown) {
+            console.error("Failed to capture PayPal order:", error);
             const errorMessage = error instanceof Error ? error.message : 'An unknown error occurred';
             setPaymentStatus(`Payment failed: ${errorMessage}`);
         }
     };
 
     const onPayPalError = (err: unknown) => {
+        console.error("PayPal Button Error:", err);
         const errorMessage = err instanceof Error ? err.message : 'Please try again.';
         setPaymentStatus(`Payment error: ${errorMessage}`);
         setShowPayPalButtons(false);
@@ -226,10 +209,9 @@ export default function HomeschoolInfo() {
                 <div className={styles.paymentSection}>
                     {!paymentStatus.includes('Successful') && isFormValid && (
                         <div>
-                            <h3>Secure Your Spot</h3>
-                            <p>$100 Non-Refundable Deposit</p>
-                            <p className={styles.smallText}>Required to Reserve Your Spot in the Homeschool Program</p>
-                            <p className={styles.smallText}>Balance of $200 (or more for additional fees) due on first day</p>
+                            <h3>Secure Your Homeschool Program</h3>
+                            <p>$300 for 6-week program</p>
+                            <p className={styles.smallText}>Full payment required at time of registration</p>
                             <PayPalButtons
                                 createOrder={createPayPalOrder}
                                 onApprove={onPayPalApprove}
@@ -246,19 +228,8 @@ export default function HomeschoolInfo() {
                             />
                         </div>
                     )}
-
-                    {!paymentStatus.includes('Successful') && !isFormValid && (
-                        <div className={styles.centeredContent}>
-                            <p className={styles.formMessage}>
-                                Please fill out all form fields and agree to the liability waiver to proceed with payment.
-                            </p>
-                        </div>
-                    )}
-
-                    {paymentStatus && (
-                        <p className={paymentStatus.includes('Successful') ? styles.successMessage : styles.errorMessage}>
-                            {paymentStatus}
-                        </p>
+                    {paymentStatus && !paymentStatus.includes('Successful') && (
+                        <p className={styles.paymentStatus}>{paymentStatus}</p>
                     )}
                 </div>
             </div>
