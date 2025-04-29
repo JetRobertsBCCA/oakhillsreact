@@ -37,7 +37,7 @@ export default function ContactUs() {
                     </div>
 
                     <div className={styles.contactInfo}>
-                        <div className={styles.contactInfoCard}>
+                        <div className={styles.contactUsInfoCard}>
                             <h2 className={styles.sectionHeading}>Contact Details</h2>
                             <div className={styles.infoRow}>
                                 <span className={styles.infoLabel}>Phone:</span> (662) 202-8899
