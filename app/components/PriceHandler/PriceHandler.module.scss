@@ -1,0 +1,37 @@
+// app/components/PriceHandler/PriceHandler.module.scss
+.priceHandlerContainer {
+    margin-top: 15px;
+  
+    .priceInfo {
+      margin-bottom: 10px;
+  
+      .statusMessage {
+        margin: 10px 0;
+        font-weight: 600;
+      }
+  
+      .paymentButtons {
+        .registerButton,
+        .paymentButton {
+          cursor: pointer;
+          padding: 10px 15px;
+          margin-top: 10px;
+          border-radius: 4px;
+          font-weight: 600;
+          transition: all 0.2s ease;
+          background-color: #4d7c0f;
+          color: white;
+          border: none;
+          
+          &:hover {
+            background-color: #3f6212;
+          }
+        }
+        
+        .paypalButtonsContainer {
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  
