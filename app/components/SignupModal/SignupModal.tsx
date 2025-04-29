@@ -1,127 +1,158 @@
 // app/components/SignupModal/SignupModal.tsx
 import React, { useState } from 'react';
-import { collection, addDoc } from 'firebase/firestore';
-import { db } from '../../firebaseConfig';
 import styles from './SignupModal.module.scss';
+import { PayPalScriptProvider } from '@paypal/react-paypal-js';
+import PriceHandler from '../PriceHandler/PriceHandler';
+import classNames from 'classnames';
 
 interface SignupModalProps {
-  eventName: string;
-  isOpen: boolean;
-  onClose: () => void;
+    eventName: string;
+    eventPrice: string;
+    isOpen: boolean;
+    onClose: () => void;
+    onSuccessfulRegistration?: (paymentInfo?: any) => void;
+    registrationComplete?: boolean;
 }
 
-const SignupModal = ({ eventName, isOpen, onClose }: SignupModalProps) => {
-  const [signupData, setSignupData] = useState({
-    name: '',
-    email: '',
-    phone: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitMessage, setSubmitMessage] = useState('');
+const SignupModal: React.FC<SignupModalProps> = ({
+    eventName,
+    eventPrice,
+    isOpen,
+    onClose,
+    onSuccessfulRegistration = () => {},
+    registrationComplete = false,
+}) => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [formSubmitted, setFormSubmitted] = useState(false);
+    const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  // Handle input change in signup form
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = e.target;
-    setSignupData({...signupData, [name]: value});
-  };
+    if (!isOpen) return null;
 
-  // Handle form submission
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setSubmitMessage('');
-    
-    try {
-      // Add the signup data to Firestore
-      await addDoc(collection(db, 'signUps'), {
-        ...signupData,
-        eventName,
-        timestamp: new Date()
-      });
-      
-      // Reset form and show success message
-      setSignupData({
-        name: '',
-        email: '',
-        phone: ''
-      });
-      setSubmitMessage('Thank you for signing up!');
-      
-      // Close the modal after 2 seconds
-      setTimeout(() => {
-        onClose();
-        setSubmitMessage('');
-      }, 2000);
-    } catch (error) {
-      console.error('Error submitting signup:', error);
-      setSubmitMessage('An error occurred. Please try again.');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    const validateForm = () => {
+        const newErrors: { [key: string]: string } = {};
 
-  if (!isOpen) return null;
+        if (!name.trim()) newErrors.name = 'Name is required';
+        if (!email.trim()) newErrors.email = 'Email is required';
+        else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email is invalid';
+        if (!phone.trim()) newErrors.phone = 'Phone number is required';
 
-  return (
-    <div className={styles.modalOverlay}>
-      <div className={styles.glassmorphicCard}>
-        <button 
-          className={styles.closeButton}
-          onClick={onClose}
-        >
-          ×
-        </button>
-        <h3>Sign Up for {eventName}</h3>
-        
-        {submitMessage ? (
-          <div className={styles.successMessage}>{submitMessage}</div>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <div className={styles.formGroup}>
-              <label htmlFor="name">Full Name</label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                value={signupData.name}
-                onChange={handleInputChange}
-                required
-              />
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+
+        if (!validateForm()) return;
+
+        setFormSubmitted(true);
+
+        // If the event is free, complete registration immediately
+        if (eventPrice.toLowerCase().includes('free')) {
+            onSuccessfulRegistration();
+        }
+        // For paid events, the PriceHandler component will handle the payment flow
+    };
+
+    const handlePaymentSuccess = (paymentInfo?: any) => {
+        // Pass payment info up to parent component
+        onSuccessfulRegistration(paymentInfo);
+    };
+
+    return (
+        <div className={styles.modalOverlay}>
+            <div className={styles.glassmorphicCard}>
+                <button className={styles.closeButton} onClick={onClose}>
+                    ×
+                </button>
+                <h3 className={styles.header1}>Sign Up for {eventName}</h3>
+
+                {registrationComplete ? (
+                    <div className={styles.successMessage}>
+                        <h4>Thank you for registering!</h4>
+                        <p>We've sent confirmation details to your email.</p>
+                        <button onClick={onClose} className={styles.closeBtn}>
+                            Close
+                        </button>
+                    </div>
+                ) : formSubmitted ? (
+                    <PayPalScriptProvider
+                        options={{
+                            'client-id': process.env.PAYPAL_CLIENT_ID || 'test',
+                            currency: 'USD',
+                            intent: 'capture',
+                        }}
+                    >
+                        <div className={styles.paymentSection}>
+                            <h4>Complete Your Registration</h4>
+                            <PriceHandler
+                                priceText={eventPrice}
+                                onSuccessfulRegistration={handlePaymentSuccess}
+                                itemDescription={`Registration for ${eventName}`}
+                            />
+                        </div>
+                    </PayPalScriptProvider>
+                ) : (
+                    <form
+                        onSubmit={handleSubmit}
+                        className={classNames(styles.signupForm, styles.form1)}
+                    >
+                        <div className={styles.formGroup}>
+                            <label htmlFor="name">Name</label>
+                            <input
+                                id="name"
+                                type="text"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                className={errors.name ? styles.inputError : ''}
+                            />
+                            {errors.name && <span className={styles.errorText}>{errors.name}</span>}
+                        </div>
+
+                        <div className={styles.formGroup}>
+                            <label htmlFor="email">Email</label>
+                            <input
+                                id="email"
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className={errors.email ? styles.inputError : ''}
+                            />
+                            {errors.email && (
+                                <span className={styles.errorText}>{errors.email}</span>
+                            )}
+                        </div>
+
+                        <div className={styles.formGroup}>
+                            <label htmlFor="phone">Phone</label>
+                            <input
+                                id="phone"
+                                type="tel"
+                                value={phone}
+                                onChange={(e) => setPhone(e.target.value)}
+                                className={errors.phone ? styles.inputError : ''}
+                            />
+                            {errors.phone && (
+                                <span className={styles.errorText}>{errors.phone}</span>
+                            )}
+                        </div>
+
+                        <div className={styles.priceInfo}>
+                            <p className={styles.p1}>
+                                <strong>Price:</strong> {eventPrice}
+                            </p>
+                        </div>
+
+                        <button type="submit" className={styles.submitButton}>
+                            Continue
+                        </button>
+                    </form>
+                )}
             </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="email">Email Address</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={signupData.email}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <div className={styles.formGroup}>
-              <label htmlFor="phone">Phone Number</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                value={signupData.phone}
-                onChange={handleInputChange}
-                required
-              />
-            </div>
-            <button 
-              type="submit" 
-              className={styles.submitButton}
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Submitting...' : 'Sign Up'}
-            </button>
-          </form>
-        )}
-      </div>
-    </div>
-  );
+        </div>
+    );
 };
 
 export default SignupModal;
