@@ -378,3 +378,14 @@
         box-sizing: border-box;
     }
 }
+.div1 {
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-position: 76% 50%;
+    background-size: 172%;
+    background-attachment: scroll;
+    background-image: url(http://127.0.0.1:55671/_codux_project_/src/assets/pxl_20250308_163707963.jpg);
+    border-radius: 20px;
+}
