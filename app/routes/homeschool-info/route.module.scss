@@ -1,0 +1,255 @@
+@use 'sass:color';
+.pageWrapper {
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.homeschoolPage {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+}
+
+.heroSection {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #8b4513;
+    }
+
+    p {
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin: 0 auto;
+        color: #333;
+    }
+}
+
+.infoSection {
+    margin: 3rem auto;
+    max-width: 800px;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: #8b4513;
+        margin-bottom: 1.5rem;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+
+        li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+
+            &:before {
+                content: "•";
+                color: #8b4513;
+                position: absolute;
+                left: 0;
+            }
+
+            ul {
+                margin: 0.5rem 0 0 1rem;
+
+                li {
+                    margin-bottom: 0.5rem;
+
+                    &:before {
+                        content: "◦";
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bookingForm {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: #8b4513;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .formGrid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+
+        @media (max-width: 768px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .formGroup {
+        &.fullWidth {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #333;
+            font-weight: 500;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+
+            &:focus {
+                outline: none;
+                border-color: #8b4513;
+            }
+        }
+    }
+}
+
+.liabilitySection {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: #8b4513;
+        margin-bottom: 1.5rem;
+    }
+
+    .checkboxGroup {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        input[type="checkbox"] {
+            margin-top: 0.25rem;
+        }
+    }
+}
+
+.mapSection {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        color: #8b4513;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.paymentSection {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    h2, h3 {
+        color: #8b4513;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .paymentOptions {
+        display: grid;
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+.successMessage {
+    color: #2e7d32;
+    text-align: center;
+    padding: 1rem;
+    background-color: #e8f5e9;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.errorMessage {
+    color: #d32f2f;
+    text-align: center;
+    padding: 1rem;
+    background-color: #ffebee;
+    border-radius: 4px;
+    margin: 1rem 0;
+}
+
+.waiverLink {
+    display: inline-block;
+    color: #8b4513;
+    text-decoration: none;
+    margin: 1rem 0;
+    padding: 0.5rem 1rem;
+    border: 1px solid #8b4513;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: #8b4513;
+        color: white;
+    }
+}
+
+.mapDownloadButton {
+    display: inline-block;
+    background-color: #8b4513;
+    color: white;
+    text-decoration: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    margin-top: 1rem;
+
+    &:hover {
+        background-color: color.adjust(#8b4513, $lightness: -10%);
+    }
+}
+
+@media (max-width: 768px) {
+    .homeschoolPage {
+        padding: 1rem;
+    }
+
+    .heroSection {
+        padding: 2rem 1rem;
+
+        h1 {
+            font-size: 2rem;
+        }
+    }
+
+    .infoSection,
+    .bookingForm,
+    .liabilitySection,
+    .mapSection,
+    .paymentSection {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+} 

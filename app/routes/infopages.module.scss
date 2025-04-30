@@ -1,0 +1,447 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #333;
+  background-color: #f0f0f0;
+}
+
+.pageContainer {
+  background-color: #d4d6d1;
+  color: #475569;
+  min-width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.headerBar {
+  position: sticky;
+  top: 0;
+  background-color: rgba(97, 80, 71, 0.95);
+  backdrop-filter: blur(8px);
+  z-index: 999;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: top 0.3s ease-in-out;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.headerContent {
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.navRight {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.navLinkRight {
+  color: white;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.navLinkRight:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.contactSection {
+  background-color: transparent;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contentWrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+.mainHeading {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 2.5rem;
+  color: #615047;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 15px;
+}
+
+.paymentSection {
+  text-align: center;
+  padding: 20px 0 40px 0;
+}
+
+.paypalButtonContainerActual {
+  display: inline-block;
+  margin-top: 15px;
+  width: 100%;
+  
+  max-width: 600px;  
+}
+
+.paymentButton {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-family: Georgia, serif;
+  font-weight: bold;
+  background-color: #615047;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.paymentButton:hover {
+    background-color: #4e4039;
+}
+
+.paymentButton:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.subHeading {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.6rem;
+  color: #615047;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #eee;
+  font-weight: bold;
+  text-align: left;
+}
+
+.formSection {
+  h2.subHeading {
+    text-align: center;
+    margin-bottom: 25px;
+  }
+}
+
+.formGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 30px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.formGroup.fullWidth {
+  grid-column: 1 / -1;
+}
+
+.formGroup label {
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup input[type="tel"] {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.liabilitySection {
+  text-align: center;
+  h2.subHeading {
+     text-align: center;
+     margin-bottom: 15px;
+  }
+  p.bodyText {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}
+
+.faqListContainer {
+ width: 100%;
+ padding: 1rem 20px;
+ background-color: #ffffff;
+ border-radius: 8px;
+ box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+ box-sizing: border-box;
+}
+
+.faqEntry {
+ margin-bottom: 2rem;
+ padding-bottom: 2rem;
+ border-bottom: 1px dashed #d4d6d1;
+
+ &:last-child {
+   margin-bottom: 0;
+   padding-bottom: 0;
+   border-bottom: none;
+ }
+}
+
+.faqQuestion {
+ font-family: Georgia, serif;
+ font-size: 1.5rem;
+ color: #615047;
+ margin-bottom: 0.75rem;
+ font-weight: bold;
+ line-height: 1.4;
+}
+
+.faqAnswer {
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 1rem;
+ color: #333;
+ line-height: 1.7;
+ margin: 0;
+
+ p {
+   margin-bottom: 1em;
+   &:last-child {
+     margin-bottom: 0;
+   }
+ }
+}
+
+
+.waiverLink {
+  display: inline-block;
+  margin: 15px 0;
+  padding: 10px 20px;
+  background-color: #615047;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #4e4039;
+  }
+}
+
+.checkboxGroup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 10px;
+  text-align: left;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.checkboxGroup input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #615047;
+  margin-top: -2px;
+  flex-shrink: 0;
+}
+
+.checkboxGroup label {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.bodyText strong {
+  font-weight: bold;
+  color: #111;
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .formGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+.contentWrapper > h2:first-of-type {
+   margin-top: 0;
+}
+
+.bodyText {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.7;
+  text-align: left;
+  margin-bottom: 1.5em;
+}
+
+.bodyText strong {
+  font-weight: bold;
+  color: #111;
+  white-space: nowrap;
+}
+
+.footerLogoContainer {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footerLogo {
+  display: inline-block;
+  max-width: 180px;
+  height: auto;
+}
+
+.footerSection {
+  background-color: #d5d8d3;
+  padding: 40px 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 40px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 20px;
+  flex: 0 1 auto;
+}
+
+.footerLink {
+  color: #475569;
+  text-decoration: none;
+  font-size: 0.95rem;
+  display: block;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
+  color: #000;
+}
+
+.copyright {
+  color: #615047;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  text-align: center;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+     padding: 25px 30px;
+  }
+   .mainHeading {
+     font-size: 2rem;
+  }
+   .subHeading {
+     font-size: 1.4rem;
+  }
+   .bodyText {
+     font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navRight {
+     gap: 1rem;
+  }
+   .headerBar {
+     padding: 0.8rem 0;
+   }
+   .contentWrapper {
+     padding: 20px 20px;
+   }
+   .mainHeading {
+     font-size: 1.8rem;
+  }
+   .subHeading {
+     font-size: 1.2rem;
+  }
+   .bodyText {
+     font-size: 0.9rem;
+  }
+   .footerLinks {
+     gap: 10px 20px;
+  }
+   .contactSection,
+   .footerSection {
+     padding: 30px 0;
+  }
+}
+
+/* Added styles for map download section */
+.mapDownloadSection {
+  text-align: center;
+  margin-top: 20px; /* Add some space above */
+}
+
+.mapDownloadText {
+  margin-bottom: 15px !important; /* Override default margin */
+  text-align: center;
+}
+
+.mapDownloadButton {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #615047; /* Match waiver button */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: #4e4039; /* Match waiver button hover */
+  }
+}
