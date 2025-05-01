@@ -1,5 +1,7 @@
 // app/components/SignupModal/SignupModal.tsx
 import React, { useState } from 'react';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../firebaseConfig';
 import styles from './SignupModal.module.scss';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 import PriceHandler from '../PriceHandler/PriceHandler';
@@ -22,9 +24,13 @@ const SignupModal: React.FC<SignupModalProps> = ({
     onSuccessfulRegistration = () => {},
     registrationComplete = false,
 }) => {
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [phone, setPhone] = useState('');
+    const [signupData, setSignupData] = useState({
+        name: '',
+        email: '',
+        phone: ''
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [submitMessage, setSubmitMessage] = useState('');
     const [formSubmitted, setFormSubmitted] = useState(false);
     const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
@@ -33,27 +39,56 @@ const SignupModal: React.FC<SignupModalProps> = ({
     const validateForm = () => {
         const newErrors: { [key: string]: string } = {};
 
-        if (!name.trim()) newErrors.name = 'Name is required';
-        if (!email.trim()) newErrors.email = 'Email is required';
-        else if (!/\S+@\S+\.\S+/.test(email)) newErrors.email = 'Email is invalid';
-        if (!phone.trim()) newErrors.phone = 'Phone number is required';
+        if (!signupData.name.trim()) newErrors.name = 'Name is required';
+        if (!signupData.email.trim()) newErrors.email = 'Email is required';
+        else if (!/\S+@\S+\.\S+/.test(signupData.email)) newErrors.email = 'Email is invalid';
+        if (!signupData.phone.trim()) newErrors.phone = 'Phone number is required';
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const { name, value } = e.target;
+        setSignupData({ ...signupData, [name]: value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!validateForm()) return;
 
-        setFormSubmitted(true);
+        setIsSubmitting(true);
+        setSubmitMessage('');
 
-        // If the event is free, complete registration immediately
-        if (eventPrice.toLowerCase().includes('free')) {
-            onSuccessfulRegistration();
+        try {
+            // Add the signup data to Firestore
+            await addDoc(collection(db, 'signUps'), {
+                ...signupData,
+                eventName,
+                timestamp: new Date()
+            });
+
+            // Reset form and show success message
+            setSignupData({
+                name: '',
+                email: '',
+                phone: ''
+            });
+            setSubmitMessage('Thank you for signing up!');
+            setFormSubmitted(true);
+
+            // If the event is free, complete registration immediately
+            if (eventPrice.toLowerCase().includes('free')) {
+                onSuccessfulRegistration();
+            }
+            // For paid events, the PriceHandler component will handle the payment flow
+        } catch (error) {
+            console.error('Error submitting signup:', error);
+            setSubmitMessage('An error occurred. Please try again.');
+        } finally {
+            setIsSubmitting(false);
         }
-        // For paid events, the PriceHandler component will handle the payment flow
     };
 
     const handlePaymentSuccess = (paymentInfo?: any) => {
@@ -104,9 +139,11 @@ const SignupModal: React.FC<SignupModalProps> = ({
                             <input
                                 id="name"
                                 type="text"
-                                value={name}
-                                onChange={(e) => setName(e.target.value)}
+                                name="name"
+                                value={signupData.name}
+                                onChange={handleInputChange}
                                 className={errors.name ? styles.inputError : ''}
+                                required
                             />
                             {errors.name && <span className={styles.errorText}>{errors.name}</span>}
                         </div>
@@ -116,9 +153,11 @@ const SignupModal: React.FC<SignupModalProps> = ({
                             <input
                                 id="email"
                                 type="email"
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
+                                name="email"
+                                value={signupData.email}
+                                onChange={handleInputChange}
                                 className={errors.email ? styles.inputError : ''}
+                                required
                             />
                             {errors.email && (
                                 <span className={styles.errorText}>{errors.email}</span>
@@ -130,9 +169,11 @@ const SignupModal: React.FC<SignupModalProps> = ({
                             <input
                                 id="phone"
                                 type="tel"
-                                value={phone}
-                                onChange={(e) => setPhone(e.target.value)}
+                                name="phone"
+                                value={signupData.phone}
+                                onChange={handleInputChange}
                                 className={errors.phone ? styles.inputError : ''}
+                                required
                             />
                             {errors.phone && (
                                 <span className={styles.errorText}>{errors.phone}</span>
@@ -145,8 +186,8 @@ const SignupModal: React.FC<SignupModalProps> = ({
                             </p>
                         </div>
 
-                        <button type="submit" className={styles.submitButton}>
-                            Continue
+                        <button type="submit" className={styles.submitButton} disabled={isSubmitting}>
+                            {isSubmitting ? 'Submitting...' : 'Continue'}
                         </button>
                     </form>
                 )}
