@@ -6,6 +6,7 @@ import Pxl20250308162929633Jpg from '../../src/assets/pxl_20250308_162929633.jpg
 import Pxl20250308163053898Jpg from '../../src/assets/pxl_20250308_163053898.jpg';
 import Logo1Png from '../../src/assets/logo1.png';
 import Img2274Png from '../../src/assets/img_2274.png';
+import classNames from 'classnames';
 
 interface StaffMember {
     id: number;
@@ -43,7 +44,7 @@ export default function Aboutus() {
     return (
         <div className={styles.pageContainer}>
             <div className={styles.contentWrapper}>
-                <div className={styles.infoSection}>
+                <div className={classNames(styles.infoSection, styles.div1)}>
                     <div className={styles.infoContent}>
                         <h2>Our Story</h2>
                         <p>

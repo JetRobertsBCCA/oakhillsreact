@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styles from '../styles/contact-us.module.scss';
 import Footer from '../components/Footer/Footer';
 import fbLogo from '../../src/fb_logo.png';
+import classNames from 'classnames';
 
 export default function ContactUs() {
     const [name, setName] = useState('');
@@ -18,8 +19,8 @@ export default function ContactUs() {
     return (
         <div>
             <div className={styles.pageWrapper}>
-                <div className={styles.heroSection}>
-                    <h1>Get in Touch with Oak Hill Stable</h1>
+                <div className={classNames(styles.heroSection, styles.div2)}>
+                    <h1 className={styles.header1}>Get in Touch with Oak Hill Stable</h1>
                     <p>We're here to answer any questions and welcome you to our beautiful farm!</p>
                 </div>
 
@@ -37,14 +38,16 @@ export default function ContactUs() {
                     </div>
 
                     <div className={styles.contactInfo}>
-                        <div className={styles.contactInfoCard}>
+                        <div className={classNames(styles.contactUsInfoCard, styles.div1)}>
                             <h2 className={styles.sectionHeading}>Contact Details</h2>
                             <div className={styles.infoRow}>
                                 <span className={styles.infoLabel}>Phone:</span> (662) 202-8899
                             </div>
                             <div className={styles.infoRow}>
                                 <span className={styles.infoLabel}>Email:</span>
-                                <a href="mailto:robinson.llinda@yahoo.com">robinson.llinda@yahoo.com</a>
+                                <a href="mailto:robinson.llinda@yahoo.com">
+                                    robinson.llinda@yahoo.com
+                                </a>
                             </div>
                             <div className={styles.infoRow}>
                                 <span className={styles.infoLabel}>Address:</span>
@@ -53,20 +56,22 @@ export default function ContactUs() {
 
                             <h2 className={styles.sectionHeading}>Business Hours</h2>
                             <div className={styles.infoRow}>Monday - Wednesday: Closed</div>
-                            <div className={styles.infoRow}>Thursday - Sunday: 9:00 AM – 5:00 PM</div>
+                            <div className={styles.infoRow}>
+                                Thursday - Sunday: 9:00 AM – 5:00 PM
+                            </div>
 
                             <h2 className={styles.sectionHeading}>Follow Us On</h2>
                             <div className={styles.socialSection}>
-                                <a 
-                                    href="https://www.facebook.com/oakhillfarm7030/" 
-                                    className={styles.socialLink} 
-                                    target="_blank" 
+                                <a
+                                    href="https://www.facebook.com/oakhillfarm7030/"
+                                    className={styles.socialLink}
+                                    target="_blank"
                                     rel="noopener noreferrer"
                                 >
-                                    <img 
-                                        src={fbLogo} 
-                                        alt="Facebook" 
-                                        className={styles.socialIcon} 
+                                    <img
+                                        src={fbLogo}
+                                        alt="Facebook"
+                                        className={styles.socialIcon}
                                     />
                                     <span>Facebook</span>
                                 </a>

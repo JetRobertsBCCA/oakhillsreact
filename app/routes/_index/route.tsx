@@ -41,7 +41,7 @@ export default function Home() {
                         <div className={styles.pricingCard}>
                             <div className={styles.pricingPlanOverview}>
                                 <h2 className={styles.pricingHeaderTitle}>Homeschooling Program</h2>
-                                <h1 className={styles.pricingHeaderCost}>$300+</h1>
+                                <h1 className={styles.pricingHeaderCost}>$300</h1>
                             </div>
                             <ul className={styles.pricingPlanFeatures}>
                                 <li className={styles.pricingFeature}>
@@ -86,7 +86,7 @@ export default function Home() {
                                 <h2 className={styles.pricingHeaderTitle}>
                                     Private Birthday Parties
                                 </h2>
-                                <h1 className={styles.pricingHeaderCost}>$100+</h1>
+                                <h1 className={styles.pricingHeaderCost}>$100</h1>
                                 <p className={styles.pricingHeaderDescription}></p>
                             </div>
                             <ul className={styles.pricingPlanFeatures}>
